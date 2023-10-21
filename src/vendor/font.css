@@ -1,0 +1,20 @@
+@font-face {
+    font-family: YS Display;
+    font-weight: 400;
+    src: url('./font/YS\ Display-Regular.ttf');
+}
+@font-face {
+    font-family: YS Display;
+    font-weight: 500;
+    src: url('./font/YS\ Display-Medium.ttf');
+}
+@font-face {
+    font-family: YS Text;
+    font-weight: 400;
+    src: url('./font//YS\ Text-Regular.ttf');
+}
+@font-face {
+    font-family: YS Text;
+    font-weight: 500;
+    src: url('./font/YS\ Text-Medium.ttf');
+}
