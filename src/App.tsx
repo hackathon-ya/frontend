@@ -1,13 +1,11 @@
-
 import './App.css'
+import Find from './pages/Find/Find'
 
 function App() {
  
 
   return (
-    <div>
-      App
-    </div>
+    <Find/>
   )
 }
 

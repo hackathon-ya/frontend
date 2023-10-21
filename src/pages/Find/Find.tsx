@@ -1,5 +1,6 @@
+import './Find.scss'
 const Find = () => {
-  return <div>Find</div>;
+  return <div className="find">Find</div>;
 };
 
 export default Find;
