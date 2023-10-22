@@ -1,9 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import { ROUTES } from "../constants/constants.ts";
 
-import Find from "../pages/Find/Find.tsx";
-import Post from "../pages/Post/Post.tsx";
-import Selection from "../pages/Selection/Selection.tsx";
+import Applicant from "../pages/Applicant/Applicant.tsx";
+import Vacancies from "../pages/Vacancies/Vacancies.tsx";
+import Profile from "../pages/Profile/Profile.tsx";
 import MainPage from "../pages/MainPage/MainPage.tsx";
 import App from "../App.tsx";
 
@@ -17,16 +17,16 @@ const router = createBrowserRouter([
         element: <MainPage />,
       },
       {
-        path: ROUTES.FIND,
-        element: <Find />,
+        path: ROUTES.APPLICANT,
+        element: <Applicant />,
       },
       {
-        path: ROUTES.POST,
-        element: <Post />,
+        path: ROUTES.VACANCIES,
+        element: <Vacancies />,
       },
       {
-        path: ROUTES.SELECTION,
-        element: <Selection />,
+        path: ROUTES.PROFILE,
+        element: <Profile />,
       },
     ],
   },
