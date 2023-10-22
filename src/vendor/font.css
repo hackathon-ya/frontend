@@ -1,0 +1,31 @@
+@font-face {
+    font-family: YS Display;
+    font-weight: 400;
+    src: url('./font/YS\ Display-Regular.ttf'),
+        url('./font/YS\ Display-Regular.woff'),
+        url('./font/YS\ Display-Regular.woff2');
+}
+
+@font-face {
+    font-family: YS Display;
+    font-weight: 500;
+    src: url('./font/YS\ Display-Medium.ttf'),
+        url('./font/YS\ Display-Medium.woff'),
+        url('./font/YS\ Display-Medium.woff2');
+}
+
+@font-face {
+    font-family: YS Text;
+    font-weight: 400;
+    src: url('./font/YS\ Text-Regular.ttf'),
+        url('./font/YS\ Text-Regular.woff'),
+        url('./font/YS\ Text-Regular.woff2');
+}
+
+@font-face {
+    font-family: YS Text;
+    font-weight: 500;
+    src: url('./font/YS\ Text-Medium.ttf'),
+        url('./font/YS\ Text-Medium.woff'),
+        url('./font/YS\ Text-Medium.woff2');
+}
