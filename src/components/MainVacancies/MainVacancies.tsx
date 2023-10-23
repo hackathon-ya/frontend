@@ -5,8 +5,7 @@ const MainVacancies = () => {
   return (
     <section>
       <div className={styles.wrapper}>
-        <h3>Активные</h3>
-        <button></button>
+        <h3 className={styles.header}>Активные вакансии</h3>
       </div>
       <CardVacancies/>
     </section>

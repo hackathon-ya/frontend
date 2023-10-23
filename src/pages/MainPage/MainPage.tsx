@@ -1,7 +1,5 @@
-
 const MainPage = () => {
-    return <div>Main</div>;
-  };
-  
-  export default MainPage;
-  
+  return <section>Selection</section>;
+};
+
+export default MainPage;
