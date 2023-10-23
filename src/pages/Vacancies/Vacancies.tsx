@@ -1,19 +1,22 @@
 import BarVacancies from "../../components/BarVacancies/BarVacancies";
-import MainVacancies from "../../components/MainVacancies/MainVacancies";
-import styles from './Vacancies.module.scss'
+import styles from "./Vacancies.module.scss";
+import ActiveVacancies from "../ActiveVacansies/ActiveVacancies";
 import { vacanciesSelectors } from "../../store/vacancies/vacanciesSelectors";
-import { useSelector } from "react-redux/es/hooks/useSelector";
-import ArchiveVacancies from "../../components/ArchiveVacancies/ArchiveVacancies";
-import DraftVacancies from "../../components/DraftComponents/DraftComponents";
+import { useSelector } from "react-redux";
+import DraftVacancies from "../DraftComponents/DraftComponents";
+import ArchiveVacancies from "../ArchiveVacancies/ArchiveVacancies";
+
 const Vacancies = () => {
   const view = useSelector(vacanciesSelectors.getView);
-
   return (
     <section className={styles.vacancies}>
       <BarVacancies />
-      {view === "active" && <MainVacancies />}
-      {view === "archive" && <ArchiveVacancies />}
-      {view === "draft" && <DraftVacancies />}
+      <div className={styles.wrapper}>
+        <h3 className={styles.header}>Активные вакансии</h3>
+        {view === "active" && <ActiveVacancies />}
+        {view === "archive" && <ArchiveVacancies />}
+        {view === "draft" && <DraftVacancies />}
+      </div>
     </section>
   );
 };

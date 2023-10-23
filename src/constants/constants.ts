@@ -3,4 +3,6 @@ export const ROUTES = {
     APPLICANT: '/applicant',
     VACANCIES: '/vacancies',
     PROFILE: '/profile',
+    ARCHIVE: '/vacancies/archive',
+    DRAFT: 'vacancies/draft'
   }
