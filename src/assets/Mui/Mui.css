@@ -1,0 +1,7 @@
+/* TODO удалить вместе с Mui.tsx */
+.mui {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  gap: 20px;
+}
