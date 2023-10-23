@@ -1,11 +1,15 @@
 import './App.css'
-import Find from './pages/Find/Find'
+// import Find from './pages/Find/Find'
+import Vacancy from './components/Vacancy/vacancy'
 
 function App() {
  
 
   return (
-    <Find/>
+    <>
+      {/* <Find/> */}
+      <Vacancy />
+    </>
   )
 }
 
