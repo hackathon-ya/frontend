@@ -1,5 +1,5 @@
 const ArchiveVacancies = () => {
-  return <div>Архив</div>;
+  return <div>вакансии</div>
 };
 
 export default ArchiveVacancies;

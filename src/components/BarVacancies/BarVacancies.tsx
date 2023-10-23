@@ -5,14 +5,21 @@ import {
   handleDraft,
 } from "../../store/vacancies/vacanciesSlice";
 import { useDispatch } from "react-redux";
+import { Link } from "react-router-dom";
 
 const BarVacancies = () => {
   const dispatch = useDispatch();
   return (
     <ul className={styles.list}>
-      <li className={styles.item} onClick={() => dispatch(handleActive())}>Активные</li>
-      <li className={styles.item} onClick={() => dispatch(handleArchive())}>Черновики</li>
-      <li className={styles.item} onClick={() => dispatch(handleDraft())}>Архив</li>
+      <li className={styles.item} onClick={() => dispatch(handleActive())}>
+        <Link to="/vacancies">Активные</Link>
+      </li>
+      <li className={styles.item} onClick={() => dispatch(handleArchive())}>
+        <Link to="/vacancies/draft">Черновики</Link>
+      </li>
+      <li className={styles.item} onClick={() => dispatch(handleDraft())}>
+        <Link to="/vacancies/archive">Архив</Link>
+      </li>
     </ul>
   );
 };
