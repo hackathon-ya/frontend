@@ -1,0 +1,21 @@
+@import "../../vendor/constants";
+.header {
+  background-color: $header;
+  height: 100px;
+  width: 1440px;
+  padding: 40px 0 0 267px;
+  box-sizing: border-box;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+}
+
+.link {
+  color: $clBasicText;
+  margin-right: 32px;
+}
