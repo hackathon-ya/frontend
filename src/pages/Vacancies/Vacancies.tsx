@@ -20,7 +20,7 @@ const Vacancies = () => {
             <h3 className={styles.header}>Активные вакансии</h3>
             <FormFind />
           </div>
-          <ButtonMUI variant="outlined" text="+5 откликов" />
+          <ButtonMUI variant="outlined" text="+ Создать новую" />
         </div>
         {view === "active" && <ActiveVacancies />}
         {view === "archive" && <ArchiveVacancies />}

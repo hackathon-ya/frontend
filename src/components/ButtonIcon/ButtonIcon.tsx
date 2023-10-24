@@ -1,8 +1,9 @@
 interface Props {
   type: "submit" | "button";
+  className?: string;
 }
-const ButtonIcon = ({ type }: Props) => {
-  return <button type={type}></button>;
+const ButtonIcon = ({ type, className }: Props) => {
+  return <button type={type} className={className}></button>;
 };
 
 export default ButtonIcon;

@@ -1,5 +1,5 @@
 import styles from "./ActiveVacansies.module.scss";
-// import ButtonIcon from "../../components/ButtonIcon/ButtonIcon";
+import ButtonIcon from "../../components/ButtonIcon/ButtonIcon";
 import ButtonMUI from "../../components/ButtonMUI/ButtonMUI";
 
 const ActiveVacancies = () => {
@@ -14,8 +14,8 @@ const ActiveVacancies = () => {
           <p className={styles.experience}>Опыт от 1 года до 3 лет</p>
         </div>
         <div>
-          {/* <ButtonIcon type="button" className={styles.edit} />
-          <ButtonIcon type="button" className={styles.close} /> */}
+          <ButtonIcon type="button" className={styles.edit} />
+          <ButtonIcon type="button" className={styles.close} />
         </div>
       </div>
       <div className={styles.buttonWrapper}>
