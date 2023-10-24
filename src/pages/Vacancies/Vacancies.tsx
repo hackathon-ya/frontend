@@ -23,6 +23,10 @@ const Vacancies = () => {
           <ButtonMUI variant="outlined" text="+ Создать новую" />
         </div>
         {view === "active" && <ActiveVacancies />}
+        {view === "active" && <ActiveVacancies />}
+        {view === "active" && <ActiveVacancies />}
+        {view === "active" && <ActiveVacancies />}
+        {view === "active" && <ActiveVacancies />}
         {view === "archive" && <ArchiveVacancies />}
         {view === "draft" && <DraftVacancies />}
       </div>
