@@ -1,0 +1,48 @@
+@import "../../vendor/constants.scss";
+@import "../../assets/styles/fonts-mixins";
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $header;
+  opacity: 0.6;
+}
+.container {
+  width: 369px;
+  height: 128px;
+  padding: 36px 32px 32px 27px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  border-radius: 8px;
+}
+.title {
+  @include h3-medium;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  @include text-regular;
+  margin-bottom: 32px;
+}
+
+.close {
+  background: url(../../assets/images/Close.svg) no-repeat center;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 24px;
+  height: 24px;
+}

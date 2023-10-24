@@ -1,8 +1,11 @@
+import Modal from "../../components/Modals/Modal";
 import styles from "./ActiveVacansies.module.scss";
+import { useState } from "react";
 import ButtonIcon from "../../components/ButtonIcon/ButtonIcon";
 import ButtonMUI from "../../components/ButtonMUI/ButtonMUI";
 
 const ActiveVacancies = () => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className={styles.card}>
       <div className={styles.vacancie}>
@@ -15,18 +18,29 @@ const ActiveVacancies = () => {
         </div>
         <div>
           <ButtonIcon type="button" className={styles.edit} />
-          <ButtonIcon type="button" className={styles.close} />
+          <ButtonIcon
+            type="button"
+            className={styles.close}
+            openModal={() => setShowModal(true)}
+          />
         </div>
       </div>
       <div className={styles.buttonWrapper}>
         <div>
-          <ButtonMUI variant='outlined' text='+5 новых откликов'/>
-          <ButtonMUI variant='outlined' text='Показать 420 кандидатов'/>
+          <ButtonMUI variant="outlined" text="+5 новых откликов" />
+          <ButtonMUI variant="outlined" text="Показать 420 кандидатов" />
         </div>
-        <ButtonMUI variant='contained' text="Закрыть вакансию"/>
+        <ButtonMUI variant="contained" text="Закрыть вакансию" />
       </div>
+      <Modal
+        show={showModal}
+        title={"Удалить вакансию?"}
+        subtitle={"Вы действительно хотите удалить вакансию?"}
+        closeModal={() => setShowModal(false)}
+      />
     </div>
   );
 };
 
 export default ActiveVacancies;
+

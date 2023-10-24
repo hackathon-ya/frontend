@@ -10,7 +10,6 @@ import ButtonMUI from "../../components/ButtonMUI/ButtonMUI";
 
 const Vacancies = () => {
   const view = useSelector(vacanciesSelectors.getView);
-
   return (
     <section className={styles.vacancies}>
       <BarVacancies />
