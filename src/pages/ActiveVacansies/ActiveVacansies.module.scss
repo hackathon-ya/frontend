@@ -1,6 +1,72 @@
 @import "../../vendor/constants.scss";
+@import "../../assets/styles/fonts-mixins";
+
 .card {
   width: 980px;
-  height: 265px;
   background-color: $card-bg;
+  padding: 32px;
+  border-radius: 12px;
+  box-sizing: border-box;
+}
+
+.buttonWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.vacancieWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.vacancie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.header {
+  margin-bottom: 8px;
+  text-align: left;
+  @include h3-medium;
+}
+.pay {
+  margin-bottom: 12px;
+  @include text-medium;
+}
+.company {
+  margin-bottom: 4px;
+  @include text-regular;
+  color: $text;
+}
+.sity {
+  margin-bottom: 12px;
+  @include text-regular;
+  color: $text;
+}
+.experience {
+  background: url(../../assets/images/suitcase.svg) no-repeat;
+  @include text-regular;
+  color: $text;
+  padding-left: 32px;
+}
+.close {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  background: url(../../assets/images/x-close.svg) no-repeat center;
+}
+
+.edit {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  margin-right: 12px;
+  background: url(../../assets/images/edit.svg) no-repeat center;
 }
