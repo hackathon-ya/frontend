@@ -1,16 +1,12 @@
-import './App.css'
-import Find from './pages/Find/Find'
-import NewVacancy from './components/NewVacancy/NewVacancy'
+import "./App.css";
+import Find from "./pages/Find/Find";
 
 function App() {
- 
-
   return (
     <>
-    <Find />
-    <NewVacancy />
+      <Find />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
