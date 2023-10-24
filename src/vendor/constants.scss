@@ -1,23 +1,28 @@
-$clBasicText: #1A1B22; //Основной цвет текста и панели меню
+$clBasicText: #1a1b22; //Основной цвет текста и панели меню
 $clPlaceholder: #797981; //Используется для подзаголовков/плейсхолдеров
-$clTextOnBlackBackground: #B5B5B7; //Используется для текста на темном фоне (например, невыбранные разделы в меню), состояние «disabled» у кнопок
-$clDisabled: #DDE0E4; //Используется для состояния «disabled»у полей ввода/выпадающих списков и тд
-$clDopElement: #F9FAFB; //Заливка у доп.элементов (например, незаполненная часть прогресс бара)
-$clActive: #FFFFFF; //Фоновый цвет плиток/кнопок и активного раздела в меню
-$clBasicButton: #5A9BFF; //Основной цвет кнопок
-$clBasicClick: #1D6BF3; //Базовый цвет кликабельных элементов (иконок, фильтр-ссылок) и состояния «Focus/hover» у кнопок
-$clBackground: #F1F6FF; //Используется в качестве заливки/фонового цвета для выбранных элементов, например, в выпадающем списке
-$clErrorAndDelete: #FF0200; //Индикация ошибок и деструктивных действий 
+$clTextOnBlackBackground: #b5b5b7; //Используется для текста на темном фоне (например, невыбранные разделы в меню), состояние «disabled» у кнопок
+$clDisabled: #dde0e4; //Используется для состояния «disabled»у полей ввода/выпадающих списков и тд
+$clDopElement: #f9fafb; //Заливка у доп.элементов (например, незаполненная часть прогресс бара)
+$clActive: #ffffff; //Фоновый цвет плиток/кнопок и активного раздела в меню
+$clBasicButton: #5a9bff; //Основной цвет кнопок
+$clBasicClick: #1d6bf3; //Базовый цвет кликабельных элементов (иконок, фильтр-ссылок) и состояния «Focus/hover» у кнопок
+$clBackground: #f1f6ff; //Используется в качестве заливки/фонового цвета для выбранных элементов, например, в выпадающем списке
+$clErrorAndDelete: #ff0200; //Индикация ошибок и деструктивных действий
 
 //дополнительные Цвета
-$clGreen: #87CC9E;
-$clPurple: #7F67D2;
-$clOrange: #FFCE92;
-$clGreenLight: #C2E5CE;
-$clPuprleLight: #CCC2ED;
-$clOrangeLight: #FFE1BD;
-$clRose: #FFDDE5;
-$clYellow: #FFF9D3;
-$clPink: #FFBFFD;
-$clBrown: #A99175;
-$clBlueLight: #ACCCFF;
+$clGreen: #87cc9e;
+$clPurple: #7f67d2;
+$clOrange: #ffce92;
+$clGreenLight: #c2e5ce;
+$clPuprleLight: #ccc2ed;
+$clOrangeLight: #ffe1bd;
+$clRose: #ffdde5;
+$clYellow: #fff9d3;
+$clPink: #ffbffd;
+$clBrown: #a99175;
+$clBlueLight: #acccff;
+
+$header: #d9d9d9;
+$card-bg: #e8f1f6;
+$text: #646464;
+

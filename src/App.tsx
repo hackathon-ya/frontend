@@ -1,16 +1,16 @@
-import './App.css'
-// import Find from './pages/Find/Find'
-import Vacancy from './components/Vacancy/vacancy'
+import "./App.css";
+import Header from "./components/Header/Header";
+import Footer from './components/Footer/Footer.tsx'
+import { Outlet } from "react-router-dom";
 
 function App() {
- 
-
   return (
     <>
-      {/* <Find/> */}
-      <Vacancy />
+      <Header />
+      <Outlet />
+      <Footer />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
