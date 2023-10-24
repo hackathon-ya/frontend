@@ -1,7 +1,14 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.scss";
+import like from "../../assets/images/Like.svg";
+import profile from "../../assets/images/Profile.svg";
+import group from "../../assets/images/Group.svg";
+import SearchBar from "../SearchBar/SearchBar";
+import { handleActive } from "../../store/vacancies/vacanciesSlice";
+import { useDispatch } from "react-redux";
 
 const Header = () => {
+  const dispatch = useDispatch();
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -12,15 +19,37 @@ const Header = () => {
             </Link>
           </li>
           <li>
-            <Link to="/vacancies" className={styles.link}>
+            <Link
+              to="/vacancies"
+              onClick={() => dispatch(handleActive())}
+              className={styles.link}
+            >
               Вакансии
             </Link>
           </li>
           <li>
-            <Link to="/profile" className={styles.link}>
-              Профиль
-            </Link>
+            <SearchBar />
           </li>
+          <div className={styles.iconsWrapper}>
+            <li>
+              <Link to="/profile">
+                <img src={like} alt="Лайк" className={styles.img} />
+              </Link>
+            </li>
+            <li>
+              <Link to="/profile">
+                <img src={group} alt="Сообщения" className={styles.img} />
+              </Link>
+            </li>
+            <li>
+              <Link to="/">
+                <div className={styles.profileWrapper}>
+                  <img src={profile} alt="Профиль" className={styles.img} />
+                  <p>Евгения</p>
+                </div>
+              </Link>
+            </li>
+          </div>
         </ul>
       </nav>
     </header>
