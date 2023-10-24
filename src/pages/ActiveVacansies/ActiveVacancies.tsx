@@ -1,19 +1,14 @@
+import Modal from "../../components/Modals/Modal";
 import styles from "./ActiveVacansies.module.scss";
+import { useState } from "react";
 const ActiveVacancies = () => {
+  const [showAuthModal, setShowAuthModal] = useState(true);
   return (
-    <div className={styles.card}>
-      <div>
-        <div>
-          <h3></h3>
-          <h4></h4>
-          <p></p>
-          <p></p>
-          <p></p>
-        </div>
-        <div></div>
-      </div>
-      <div></div>
-    </div>
+    <Modal
+      show={showAuthModal}
+      title={"Удалить вакансию?"}
+      subtitle={"Вы действительно хотите удалить вакансию?"}
+    />
   );
 };
 
