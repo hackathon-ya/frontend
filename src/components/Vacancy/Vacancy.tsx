@@ -12,8 +12,8 @@ const Vacancy = () => {
                         <h4 className={styles.vacancy__header_subtitle}>80 000 - 120 000 ₽</h4>
                     </div>
                     <div className={styles.vacancy__header_icons}>
-                        <button className={styles.vacancy__header_icon_edit}></button>
-                        <button className={styles.vacancy__header_icon_delete}></button>
+                        <button className={styles.vacancy__header_icon_edit} type='button'></button>
+                        <button className={styles.vacancy__header_icon_delete} type='button'></button>
                     </div>
                 </div>
                 <p className={styles.vacancy__header_text}>ООО название компании</p>
@@ -28,44 +28,44 @@ const Vacancy = () => {
 
 
                 <div className={styles.vacancy__info}>
-                <div className={styles.vacancy__info_box}>
-                    <h4 className={styles.vacancy__info_title}>Обязанности</h4>
-                    <ul className={styles.vacancy__list}>
-                        <li>обязанность первая, самая важная, основная</li>
-                        <li>вторая обязанность такая же важная как и первая</li>
-                        <li>третья обязанность не менее важная, чем все остальные</li>
-                    </ul>
-                    <h4 className={styles.vacancy__info_title}>Условия</h4>
-                    <ul className={styles.vacancy__list}>
-                        <li>обязанность первая, самая важная, основная</li>
-                        <li>вторая обязанность такая же важная как и первая</li>
-                        <li>третья обязанность не менее важная, чем все остальные</li>
-                    </ul>
-                    <h4 className={styles.vacancy__info_title}>Пожелания</h4>
-                    <ul className={styles.vacancy__list}>
-                        <li>пожелание к кандидату первое</li>
-                        <li>пожелание к кандидату второе</li>
-                        <li>пожелание к кандидату последнее</li>
-                    </ul>
-                    <h4 className={styles.vacancy__info_title}>Ключевые навыки</h4>
-                    <div className={styles.vacancy__info_skills}>
-                        <div className={styles.vacancy__info_skill}>Навык 1</div>
-                        <div className={styles.vacancy__info_skill}>Навык 1</div>
-                        <div className={styles.vacancy__info_skill}>Навык 1</div>
-                        <div className={styles.vacancy__info_skill}>Навык 1</div>
-                        <div className={styles.vacancy__info_skill}>Навык 1</div>
-                        <div className={styles.vacancy__info_skill}>Навык 1</div>
-                        <div className={styles.vacancy__info_skill}>Навык 1</div>
-                        <div className={styles.vacancy__info_skill}>Навык 1</div>
-                        <div className={styles.vacancy__info_skill}>Навык 1</div>
-                        <div className={styles.vacancy__info_skill}>Навык 1</div>
-                        <div className={styles.vacancy__info_skill}>Навык 1</div>
-                        <div className={styles.vacancy__info_skill}>Навык 1</div>
+                    <div className={styles.vacancy__info_box}>
+                        <h4 className={styles.vacancy__info_title}>Обязанности</h4>
+                        <ul className={styles.vacancy__list}>
+                            <li>обязанность первая, самая важная, основная</li>
+                            <li>вторая обязанность такая же важная как и первая</li>
+                            <li>третья обязанность не менее важная, чем все остальные</li>
+                        </ul>
+                        <h4 className={styles.vacancy__info_title}>Условия</h4>
+                        <ul className={styles.vacancy__list}>
+                            <li>обязанность первая, самая важная, основная</li>
+                            <li>вторая обязанность такая же важная как и первая</li>
+                            <li>третья обязанность не менее важная, чем все остальные</li>
+                        </ul>
+                        <h4 className={styles.vacancy__info_title}>Пожелания</h4>
+                        <ul className={styles.vacancy__list}>
+                            <li>пожелание к кандидату первое</li>
+                            <li>пожелание к кандидату второе</li>
+                            <li>пожелание к кандидату последнее</li>
+                        </ul>
+                        <h4 className={styles.vacancy__info_title}>Ключевые навыки</h4>
+                        <div className={styles.vacancy__info_skills}>
+                            <div className={styles.vacancy__info_skill}>Навык 1</div>
+                            <div className={styles.vacancy__info_skill}>Навык 1</div>
+                            <div className={styles.vacancy__info_skill}>Навык 1</div>
+                            <div className={styles.vacancy__info_skill}>Навык 1</div>
+                            <div className={styles.vacancy__info_skill}>Навык 1</div>
+                            <div className={styles.vacancy__info_skill}>Навык 1</div>
+                            <div className={styles.vacancy__info_skill}>Навык 1</div>
+                            <div className={styles.vacancy__info_skill}>Навык 1</div>
+                            <div className={styles.vacancy__info_skill}>Навык 1</div>
+                            <div className={styles.vacancy__info_skill}>Навык 1</div>
+                            <div className={styles.vacancy__info_skill}>Навык 1</div>
+                            <div className={styles.vacancy__info_skill}>Навык 1</div>
+                        </div>
+                        <h4 className={styles.vacancy__info_title}>Дополнительная информация</h4>
+                        <p className={styles.vacancy__info_text}>Будем рады видеть вас в нашей команде!</p>
                     </div>
-                    <h4 className={styles.vacancy__info_title}>Дополнительная информация</h4>
-                    <p className={styles.vacancy__info_text}>Будем рады видеть вас в нашей команде!</p>
                 </div>
-            </div>
 
 
 
@@ -74,9 +74,9 @@ const Vacancy = () => {
                         <button className={styles.vacancy__header_button_response}>+ 5 новых откликов</button>
                         <button className={styles.vacancy__header_button_condidats}>Показать 420 кандидатов</button>
                     </div>
-                    <button className={styles.vacancy__header_button_close}>Закрыть вакансию</button>
+                    <button className={styles.vacancy__header_button_close} type='button'>Закрыть вакансию</button>
                 </div>
-                <button className={styles.vacancy__close}><img className={styles.vacancy__close_image} src={strelka}/>Свернуть</button>
+                <button className={styles.vacancy__close} type='button'><img className={styles.vacancy__close_image} src={strelka}/>Свернуть</button>
             </div>
 
             
