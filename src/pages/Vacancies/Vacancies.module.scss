@@ -1,5 +1,15 @@
 .vacancies {
-    display: flex;
-    flex-direction: row;
-    padding: 60px 152px 60px 60px;
+  display: flex;
+  flex-direction: row;
+  padding: 60px 152px 60px 60px;
+}
+.header {
+  margin-bottom: 14.5px;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 40px;
 }
