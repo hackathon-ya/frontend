@@ -1,10 +1,14 @@
 import "./App.css";
-import Find from "./pages/Find/Find";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer.tsx";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
-      <Find />
+      <Header />
+      <Outlet />
+      <Footer />
     </>
   );
 }

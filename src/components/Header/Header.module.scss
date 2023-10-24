@@ -1,0 +1,36 @@
+@import "../../vendor/constants";
+.header {
+  background-color: $header;
+  height: 100px;
+  width: 1440px;
+  padding: 40px 152px 0 308px;
+  box-sizing: border-box;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.link {
+  color: $clBasicText;
+  margin-right: 26px;
+}
+.img {
+  padding: 8px 10px 0;
+  width: 24px;
+  height: 24px;
+}
+
+.profileWrapper {
+  display: flex;
+  align-items: end;
+}
+
+.iconsWrapper {
+  display: flex;
+}
