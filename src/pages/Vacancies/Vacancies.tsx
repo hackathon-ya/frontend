@@ -8,7 +8,7 @@ import ArchiveVacancies from '../ArchiveVacancies/ArchiveVacancies';
 import FormFind from '../../components/FormFind/FormFind';
 import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
 import NewVacancy from '../../components/NewVacancy/NewVacancy';
-import { handelOpenForm } from '../../store/vacancies/vacanciesSlice';
+import { handleOpenForm } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -24,7 +24,7 @@ const Vacancies = () => {
             <h3 className={styles.header}>Активные вакансии</h3>
             <FormFind />
           </div>
-          <Link to='/vacancies/add' onClick={() => dispatch(handelOpenForm())}>
+          <Link to='/vacancies/add' onClick={() => dispatch(handleOpenForm())}>
             <ButtonMUI variant='outlined' text='+ Создать новую' />
           </Link>
         </div>

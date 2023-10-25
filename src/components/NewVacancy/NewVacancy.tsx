@@ -8,7 +8,7 @@ import InputSelectMUI from '../InputSelectMUI/InputSelectMUI';
 import InputMultilineMUI from '../InputMultilineMUI/InputMultilineMUI.tsx';
 import constants from '../../constants/constants.ts';
 import { useDispatch } from 'react-redux';
-import { handelOpenForm } from '../../store/vacancies/vacanciesSlice';
+import { handleActive } from '../../store/vacancies/vacanciesSlice';
 
 interface Vacancy {
   name: string;
@@ -32,7 +32,7 @@ const NewVacancy = () => {
 
   return (
     <section className={styles.addVacancy}>
-      <Link to='/vacancies' onClick={() => dispatch(handelOpenForm())}>
+      <Link to='/vacancies' onClick={() => dispatch(handleActive())}>
         <button className={styles.addVacancy__button_back}>
           <img className={styles.addVacancy__image} src={back} />
           <p className={styles.addVacancy__link}>Назад</p>
