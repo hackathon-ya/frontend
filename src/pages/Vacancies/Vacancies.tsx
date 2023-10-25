@@ -10,7 +10,6 @@ import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
 import NewVacancy from '../../components/NewVacancy/NewVacancy';
 import { handleOpenForm } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
 
 const Vacancies = () => {
   const dispatch = useDispatch();
@@ -19,15 +18,21 @@ const Vacancies = () => {
     <section className={styles.vacancies}>
       <BarVacancies />
       <div className={styles.wrapper}>
-        <div className={styles.headerWrapper}>
-          <div>
-            <h3 className={styles.header}>Активные вакансии</h3>
-            <FormFind />
+        {view === 'add' ? (
+          ''
+        ) : (
+          <div className={styles.headerWrapper}>
+            <div>
+              <h3 className={styles.header}>Активные вакансии</h3>
+              <FormFind />
+            </div>
+            <ButtonMUI
+              variant='outlined'
+              text='+ Создать новую'
+              onClick={() => dispatch(handleOpenForm())}
+            />
           </div>
-          <Link to='/vacancies/add' onClick={() => dispatch(handleOpenForm())}>
-            <ButtonMUI variant='outlined' text='+ Создать новую' />
-          </Link>
-        </div>
+        )}
         {view === 'active' && <ActiveVacancies />}
         {view === 'archive' && <ArchiveVacancies />}
         {view === 'draft' && <DraftVacancies />}

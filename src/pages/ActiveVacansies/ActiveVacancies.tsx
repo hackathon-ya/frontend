@@ -1,8 +1,8 @@
-import Modal from "../../components/Modals/Modal";
-import styles from "./ActiveVacansies.module.scss";
-import { useState } from "react";
-import ButtonIcon from "../../components/ButtonIcon/ButtonIcon";
-import ButtonMUI from "../../components/ButtonMUI/ButtonMUI";
+import Modal from '../../components/Modals/Modal';
+import styles from './ActiveVacansies.module.scss';
+import { useState } from 'react';
+import ButtonIcon from '../../components/ButtonIcon/ButtonIcon';
+import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
 
 const ActiveVacancies = () => {
   const [showModal, setShowModal] = useState(false);
@@ -17,9 +17,9 @@ const ActiveVacancies = () => {
           <p className={styles.experience}>Опыт от 1 года до 3 лет</p>
         </div>
         <div>
-          <ButtonIcon type="button" className={styles.edit} />
+          <ButtonIcon type='button' className={styles.edit} />
           <ButtonIcon
-            type="button"
+            type='button'
             className={styles.close}
             openModal={() => setShowModal(true)}
           />
@@ -27,15 +27,15 @@ const ActiveVacancies = () => {
       </div>
       <div className={styles.buttonWrapper}>
         <div>
-          <ButtonMUI variant="outlined" text="+5 новых откликов" />
-          <ButtonMUI variant="outlined" text="Показать 420 кандидатов" />
+          <ButtonMUI variant='outlined' text='+5 новых откликов' />
+          <ButtonMUI variant='outlined' text='Показать 420 кандидатов' />
         </div>
-        <ButtonMUI variant="contained" text="Закрыть вакансию" />
+        <ButtonMUI variant='contained' text='Закрыть вакансию' />
       </div>
       <Modal
         show={showModal}
-        title={"Удалить вакансию?"}
-        subtitle={"Вы действительно хотите удалить вакансию?"}
+        title={'Удалить вакансию?'}
+        subtitle={'Вы действительно хотите удалить вакансию?'}
         closeModal={() => setShowModal(false)}
       />
     </div>
@@ -43,4 +43,3 @@ const ActiveVacancies = () => {
 };
 
 export default ActiveVacancies;
-
