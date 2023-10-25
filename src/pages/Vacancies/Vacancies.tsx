@@ -34,6 +34,8 @@ const Vacancies = () => {
           </div>
         )}
         {view === 'active' && <ActiveVacancies />}
+        {view === 'active' && <ActiveVacancies />}
+        {view === 'active' && <ActiveVacancies />}
         {view === 'archive' && <ArchiveVacancies />}
         {view === 'draft' && <DraftVacancies />}
         {view === 'add' && <NewVacancy />}
