@@ -7,6 +7,8 @@ import InputMUI from '../InputMUI/InputMUI';
 import InputSelectMUI from '../InputSelectMUI/InputSelectMUI';
 import InputMultilineMUI from '../InputMultilineMUI/InputMultilineMUI.tsx';
 import constants from '../../constants/constants.ts';
+import { useDispatch } from 'react-redux';
+import { handleActive } from '../../store/vacancies/vacanciesSlice';
 
 interface Vacancy {
   name: string;
@@ -22,6 +24,7 @@ interface Vacancy {
 
 const NewVacancy = () => {
   const { handleSubmit } = useForm<Vacancy>();
+  const dispatch = useDispatch();
 
   const onSubmit: SubmitHandler<Vacancy> = (data) => {
     alert(data);
@@ -29,12 +32,12 @@ const NewVacancy = () => {
 
   return (
     <section className={styles.addVacancy}>
-      <button className={styles.addVacancy__button_back}>
-        <img className={styles.addVacancy__image} src={back} />
-        <Link to='' className={styles.addVacancy__link}>
-          Назад
-        </Link>
-      </button>
+      <Link to='/vacancies' onClick={() => dispatch(handleActive())}>
+        <button className={styles.addVacancy__button_back}>
+          <img className={styles.addVacancy__image} src={back} />
+          <p className={styles.addVacancy__link}>Назад</p>
+        </button>
+      </Link>
       <form
         className={styles.addVacancy__form}
         onSubmit={handleSubmit(onSubmit)}
@@ -155,18 +158,18 @@ const NewVacancy = () => {
         </div>
         <div className={styles.addVacancy__buttons}>
           {/* <ButtonMUI
-            variant="outlined"
-            text="Сохранить и опубликовать"
-            className="vacancy__button_published"
-          /> */}
+              variant="outlined"
+              text="Сохранить и опубликовать"
+              className="vacancy__button_published"
+            /> */}
           <button className={styles.addVacancy__button_published}>
             Сохранить и опубликовать
           </button>
           {/* <ButtonMUI
-            variant="contained"
-            text="Сохранить черновик"
-            className="vacancy__button_save"
-          /> */}
+              variant="contained"
+              text="Сохранить черновик"
+              className="vacancy__button_save"
+            /> */}
           <button className={styles.addVacancy__button_save}>
             Сохранить черновик
           </button>

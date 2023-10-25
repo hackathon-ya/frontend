@@ -1,5 +1,7 @@
 @import '../../vendor/constants';
 .addVacancy {
+}
+.addVacancy {
   width: 428px;
   display: flex;
   flex-direction: column;
@@ -143,6 +145,7 @@
 }
 .addVacancy__button_published {
   width: 227px;
+  height: 40px;
   background-color: $clBasicButton;
   color: #fff;
   font-family: 'YS Text', Arial, sans-serif;
@@ -158,6 +161,7 @@
 }
 .addVacancy__button_save {
   width: 184px;
+  height: 40px;
   border-radius: 6px;
   border: 1px solid var(--Blue-Main, #1d6bf3);
   background-color: #fff;
