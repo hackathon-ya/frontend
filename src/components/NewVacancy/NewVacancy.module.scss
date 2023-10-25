@@ -1,10 +1,7 @@
 @import '../../vendor/constants';
 .addVacancy {
-  display: flex;
-  flex-direction: row;
-  padding: 60px 152px 60px 60px;
 }
-.addVacancy__box {
+.addVacancy {
   width: 428px;
   display: flex;
   flex-direction: column;
