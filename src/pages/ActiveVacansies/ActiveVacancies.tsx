@@ -1,11 +1,19 @@
 import Modal from "../../components/Modals/Modal";
 import styles from "./ActiveVacansies.module.scss";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ButtonIcon from "../../components/ButtonIcon/ButtonIcon";
 import ButtonMUI from "../../components/ButtonMUI/ButtonMUI";
+import { useDispatch } from "react-redux";
+import { getVacancies } from "../../store/vacancies/vacanciesSlice";
 
 const ActiveVacancies = () => {
+  const dispatch = useDispatch<any>();
   const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    dispatch(getVacancies());
+  }, [dispatch]);
+
   return (
     <div className={styles.card}>
       <div className={styles.vacancie}>
@@ -43,4 +51,3 @@ const ActiveVacancies = () => {
 };
 
 export default ActiveVacancies;
-
