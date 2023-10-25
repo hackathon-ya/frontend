@@ -2,7 +2,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer.tsx';
 import { Outlet } from 'react-router-dom';
-import Candidates from './pages/Candidates/Candidates.tsx';
+import CandidatesInfo from './components/CandidatesInfo/CandidatesInfo.tsx';
 
 function App() {
   return (
@@ -10,7 +10,7 @@ function App() {
       <Header />
       <Outlet />
       <Footer />
-      <Candidates />
+      <CandidatesInfo />
     </>
   );
 }

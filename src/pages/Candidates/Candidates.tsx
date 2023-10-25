@@ -18,12 +18,14 @@ const Candidates = () => {
           <p className={styles.candidates__experience}>
             Опыт от 1 года до 3 лет
           </p>
-          <div className={styles.candidates__skills}>
-            <div className={styles.candidates__skill}>Навый 1</div>
-            <div className={styles.candidates__skill}>Навый 1</div>
-            <div className={styles.candidates__skill}>Навый 1</div>
-            <div className={styles.candidates__skill}>Навый 1</div>
-            <div className={styles.candidates__skill}>Навый 1</div>
+          <div className={styles.candidates__list}>
+            <p className={styles.candidates__list_title}>Навыки</p>
+            <div className={styles.candidates__skills}>
+              <div className={styles.candidates__skill}>Навык 1</div>
+              <div className={styles.candidates__skill}>Навык 1</div>
+              <div className={styles.candidates__skill}>Навык 1</div>
+              <div className={styles.candidates__skill}>Навык 1</div>
+            </div>
           </div>
         </div>
         <div className={styles.candidates__buttons}>
