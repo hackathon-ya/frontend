@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 export const vacanciesSlice = createSlice({
   name: 'vacancies',
@@ -6,18 +6,22 @@ export const vacanciesSlice = createSlice({
     vacanciesView: 'active',
   },
   reducers: {
-    handleActive: state => {
-      state.vacanciesView = 'active'
+    handleActive: (state) => {
+      state.vacanciesView = 'active';
     },
-    handleArchive: state => {
-      state.vacanciesView = 'archive'
+    handleArchive: (state) => {
+      state.vacanciesView = 'archive';
     },
-    handleDraft: state => {
-        state.vacanciesView = 'draft'
-      },
+    handleDraft: (state) => {
+      state.vacanciesView = 'draft';
+    },
+    handelOpenForm: (state) => {
+      state.vacanciesView = 'add';
+    },
   },
-})
+});
 
-export const { handleActive, handleArchive, handleDraft } = vacanciesSlice.actions
+export const { handleActive, handleArchive, handleDraft, handelOpenForm } =
+  vacanciesSlice.actions;
 
-export default vacanciesSlice.reducer
+export default vacanciesSlice.reducer;

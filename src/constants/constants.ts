@@ -5,6 +5,7 @@ export const ROUTES = {
   PROFILE: '/profile',
   ARCHIVE: '/vacancies/archive',
   DRAFT: 'vacancies/draft',
+  ADDVACANCIES: 'vacancies/add',
 };
 
 const Expiriens = [
