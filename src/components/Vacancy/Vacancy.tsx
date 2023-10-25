@@ -1,13 +1,20 @@
 import suitcase from '../../assets/images/suitcase.svg';
 import Modal from '../../components/Modals/Modal';
-import { useState } from 'react';
 import strelka from '../../assets/images/Vector.svg';
 import styles from './Vacancy.module.scss';
 import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
 import ButtonIcon from '../../components/ButtonIcon/ButtonIcon';
+import { handleOpenModal } from '../../store/vacancies/vacanciesSlice';
+import { useDispatch } from 'react-redux';
 
-const Vacancy = ({ onClick }) => {
-  const [showModal, setShowModal] = useState(false);
+type VacancyProps = {
+  onClick: () => void;
+};
+
+const Vacancy = (props: VacancyProps) => {
+  const { onClick } = props;
+  const dispatch = useDispatch();
+
   return (
     <section className={styles.vacancy}>
       <div className={styles.vacancy__header}>
@@ -22,20 +29,20 @@ const Vacancy = ({ onClick }) => {
           </div>
           <div className={styles.vacancy__header_icons}>
             <ButtonIcon
-              type='button'
+              type="button"
               className={styles.vacancy__header_icon_edit}
             />
             <ButtonIcon
-              type='button'
+              type="button"
               className={styles.vacancy__header_icon_delete}
-              openModal={() => setShowModal(true)}
+              openModal={() => dispatch(handleOpenModal())}
             />
           </div>
         </div>
         <p className={styles.vacancy__header_text}>ООО название компании</p>
         <p className={styles.vacancy__header_text}>Москва</p>
         <div className={styles.vacancy__header_expiriencs}>
-          <img src={suitcase} className={styles.vacancy__header_icon} alt='' />
+          <img src={suitcase} className={styles.vacancy__header_icon} alt="" />
           <p className={styles.vacancy__header_text}>Опыт о 1 года до 3 лет</p>
         </div>
 
@@ -88,35 +95,33 @@ const Vacancy = ({ onClick }) => {
         <div className={styles.vacancy__header_buttons}>
           <div>
             <ButtonMUI
-              variant='outlined'
-              text='+5 новых откликов'
+              variant="outlined"
+              text="+5 новых откликов"
               onClick={() => {}}
             />
             <ButtonMUI
-              variant='outlined'
-              text='Показать 420 кандидатов'
+              variant="outlined"
+              text="Показать 420 кандидатов"
               onClick={() => {}}
             />
           </div>
           <ButtonMUI
-            variant='contained'
-            text='Закрыть вакансию'
+            variant="contained"
+            text="Закрыть вакансию"
             onClick={() => {}}
           />
         </div>
         <button
           className={styles.vacancy__close}
-          type='button'
+          type="button"
           onClick={onClick}
         >
           <img className={styles.vacancy__close_image} src={strelka} />
           Свернуть
         </button>
         <Modal
-          show={showModal}
           title={'Удалить вакансию?'}
           subtitle={'Вы действительно хотите удалить вакансию?'}
-          closeModal={() => setShowModal(false)}
         />
       </div>
     </section>

@@ -1,4 +1,4 @@
-@import url("./vendor/font.css");
+@import url('./vendor/font/font.css');
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;

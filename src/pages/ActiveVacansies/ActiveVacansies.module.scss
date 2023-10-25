@@ -26,8 +26,6 @@
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 20px;
-}
-.header {
   margin-bottom: 8px;
   text-align: left;
   @include h3-medium;
@@ -69,4 +67,18 @@
   height: 44px;
   margin-right: 12px;
   background: url(../../assets/images/edit.svg) no-repeat center;
+}
+.vacancy {
+  margin-bottom: 8px;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.header__block {
+  align-self: end;
 }
