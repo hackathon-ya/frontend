@@ -1,0 +1,37 @@
+@import '../../assets/styles/fonts-mixins.scss';
+.addVacancy__input {
+  padding: 0;
+  margin: 0;
+  width: 428px;
+  height: 40px;
+  border-radius: 4px;
+  height: 100%;
+  font-family: YS Text;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+}
+.addVacancy__input_skills {
+  height: 100%;
+  font-family: YS Text;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  width: 428px;
+}
+.addVacancy__input_money {
+  height: 100%;
+  font-family: YS Text;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 20px;
+  width: 207px;
+  height: 40px;
+  border-radius: 4px;
+}
+.addVacancy__input_money:not(:last-child) {
+  margin-right: auto;
+}
