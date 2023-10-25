@@ -1,9 +1,13 @@
-import suitcase from "../../assets/images/suitcase.svg";
-import strelka from "../../assets/Vector.svg";
-import styles from "./Vacancy.module.scss";
-import ButtonMUI from "../../components/ButtonMUI/ButtonMUI";
+import suitcase from '../../assets/images/suitcase.svg';
+import Modal from '../../components/Modals/Modal';
+import { useState } from 'react';
+import strelka from '../../assets/images/Vector.svg';
+import styles from './Vacancy.module.scss';
+import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
+import ButtonIcon from '../../components/ButtonIcon/ButtonIcon';
 
 const Vacancy = ({ onClick }) => {
+  const [showModal, setShowModal] = useState(false);
   return (
     <section className={styles.vacancy}>
       <div className={styles.vacancy__header}>
@@ -17,20 +21,21 @@ const Vacancy = ({ onClick }) => {
             </h4>
           </div>
           <div className={styles.vacancy__header_icons}>
-            <button
+            <ButtonIcon
+              type='button'
               className={styles.vacancy__header_icon_edit}
-              type="button"
-            ></button>
-            <button
+            />
+            <ButtonIcon
+              type='button'
               className={styles.vacancy__header_icon_delete}
-              type="button"
-            ></button>
+              openModal={() => setShowModal(true)}
+            />
           </div>
         </div>
         <p className={styles.vacancy__header_text}>ООО название компании</p>
         <p className={styles.vacancy__header_text}>Москва</p>
         <div className={styles.vacancy__header_expiriencs}>
-          <img src={suitcase} className={styles.vacancy__header_icon} alt="" />
+          <img src={suitcase} className={styles.vacancy__header_icon} alt='' />
           <p className={styles.vacancy__header_text}>Опыт о 1 года до 3 лет</p>
         </div>
 
@@ -81,31 +86,38 @@ const Vacancy = ({ onClick }) => {
         </div>
 
         <div className={styles.vacancy__header_buttons}>
-          {/* <div className={styles.vacancy__header_show}>
-            <button className={styles.vacancy__header_button_response}>
-              + 5 новых откликов
-            </button>
-            <button className={styles.vacancy__header_button_condidats}>
-              Показать 420 кандидатов
-            </button>
-          </div>
-          <button className={styles.vacancy__header_button_close} type="button">
-            Закрыть вакансию
-          </button> */}
           <div>
-            <ButtonMUI variant="outlined" text="+5 новых откликов" />
-            <ButtonMUI variant="outlined" text="Показать 420 кандидатов" />
+            <ButtonMUI
+              variant='outlined'
+              text='+5 новых откликов'
+              onClick={() => {}}
+            />
+            <ButtonMUI
+              variant='outlined'
+              text='Показать 420 кандидатов'
+              onClick={() => {}}
+            />
           </div>
-          <ButtonMUI variant="contained" text="Закрыть вакансию" />
+          <ButtonMUI
+            variant='contained'
+            text='Закрыть вакансию'
+            onClick={() => {}}
+          />
         </div>
         <button
           className={styles.vacancy__close}
-          type="button"
+          type='button'
           onClick={onClick}
         >
           <img className={styles.vacancy__close_image} src={strelka} />
           Свернуть
         </button>
+        <Modal
+          show={showModal}
+          title={'Удалить вакансию?'}
+          subtitle={'Вы действительно хотите удалить вакансию?'}
+          closeModal={() => setShowModal(false)}
+        />
       </div>
     </section>
   );

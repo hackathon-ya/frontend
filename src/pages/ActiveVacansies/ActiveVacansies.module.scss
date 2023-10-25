@@ -1,5 +1,5 @@
-@import "../../vendor/constants.scss";
-@import "../../assets/styles/fonts-mixins";
+@import '../../vendor/constants.scss';
+@import '../../assets/styles/fonts-mixins';
 
 .card {
   margin: 20px 0 0;
@@ -9,7 +9,6 @@
   border-radius: 12px;
   box-sizing: border-box;
 }
-
 .buttonWrapper {
   display: flex;
   flex-direction: row;

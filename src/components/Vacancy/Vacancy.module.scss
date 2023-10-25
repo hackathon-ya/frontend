@@ -25,23 +25,21 @@
 }
 .vacancy__header_title {
   color: #000;
-  font-family: Inter;
+  font-family: 'YS Display', Arial, sans-serif;
   font-size: 20px;
   font-style: normal;
   font-weight: 500;
-  line-height: normal;
+  line-height: 24px;
   margin: 0;
 }
 .vacancy__header_subtitle {
   margin: 8px 0 0;
   color: #000;
-  font-family: Inter;
+  font-family: 'YS Display', Arial, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-}
-.vacancy__header_icons {
 }
 .vacancy__header_icon_edit {
   margin: 0 15px 0 0;
@@ -50,7 +48,7 @@
   padding: 10px;
   border: none;
   background-color: #fff;
-  background-image: url("../../assets/images/edit.svg");
+  background-image: url('../../assets/images/edit.svg');
   background-repeat: no-repeat;
   background-position: center;
   &:hover {
@@ -65,7 +63,7 @@
   padding: 10px;
   border: none;
   background-color: #fff;
-  background-image: url("../../assets/images/x-close.svg");
+  background-image: url('../../assets/images/x-close.svg');
   background-repeat: no-repeat;
   background-position: center;
   object-fit: cover;
@@ -76,14 +74,14 @@
 }
 .vacancy__header_text {
   color: #646464;
-  font-family: Inter;
+  font-family: 'YS Text', Arial, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   margin: 0;
 }
-.vacancy__header_text:first-child {
+.vacancy__header_text:first-of-type {
   margin-bottom: 4px;
 }
 .vacancy__header_icon {
@@ -122,7 +120,7 @@
   border: 1px solid var(--Blue-Main, #1d6bf3);
   padding: 10px 20px;
   align-items: center;
-  font-family: Inter;
+  font-family: 'YS Text', Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -142,7 +140,7 @@
   border: 1px solid var(--Blue-Main, #1d6bf3);
   padding: 10px 20px;
   align-items: center;
-  font-family: Inter;
+  font-family: 'YS Text', Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -161,7 +159,7 @@
   background-color: #1d6bf3;
   color: #fff;
   align-items: center;
-  font-family: Inter;
+  font-family: 'YS Text', Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -192,7 +190,7 @@
 }
 .vacancy__info_title {
   margin: 0 0 12px 0;
-  font-family: "YS Text";
+  font-family: 'YS Text', Arial, sans-serif;
   font-size: 18px;
   font-style: normal;
   font-weight: 500;
@@ -201,7 +199,7 @@
 .vacancy__list {
   margin: 0 0 16px 0;
   text-align: start;
-  font-family: "YS Text";
+  font-family: 'YS Text', Arial, sans-serif;
   font-size: 16px;
   font-style: normal;
   font-weight: 400;
@@ -220,14 +218,14 @@
 }
 .vacancy__info_skill {
   color: #5a5a5a;
-  font-family: Inter;
+  font-family: 'YS Text', Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 .vacancy__info_text {
-  font-family: Inter;
+  font-family: 'YS Text', Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -238,6 +236,7 @@
   margin-top: 22px;
   align-self: center;
   color: #797981;
+  font-family: 'YS Text', Arial, sans-serif;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
