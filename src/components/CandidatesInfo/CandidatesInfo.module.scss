@@ -10,57 +10,57 @@
     0px 8px 24px 0px rgba(176, 190, 197, 0.2);
 }
 
-.candidates__buttonWrapper {
+.candidatesInfo__buttonWrapper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.candidates__buttons {
+.candidatesInfo__buttons {
   display: flex;
   flex-direction: row;
   height: 44px;
 }
-.candidates {
+.candidatesInfo {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.candidates__wrapper {
+.candidatesInfo__wrapper {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
-.candidates__vacancie {
+.candidatesInfo__vacancie {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.candidates__header {
+.candidatesInfo__header {
   margin-bottom: 8px;
   text-align: left;
   @include h3-medium;
 }
-.candidates__pay {
+.candidatesInfo__pay {
   margin-bottom: 12px;
   @include text-medium;
 }
-.candidates__name {
+.candidatesInfo__name {
   margin-bottom: 4px;
   @include text-regular;
   color: $text;
 }
-.candidates__sity {
+.candidatesInfo__sity {
   margin-bottom: 14px;
   @include text-regular;
   color: $text;
 }
-.candidates__experience {
+.candidatesInfo__experience {
   @include text-regular;
   color: $text;
 }
-.candidates__list {
+.candidatesInfo__list {
   width: 420px;
   margin-top: 14px;
   display: flex;
@@ -68,18 +68,18 @@
   align-items: center;
   justify-content: space-between;
 }
-.candidates__list_title {
+.candidatesInfo__list_title {
   @include text-medium;
   color: #797981;
 }
-.candidates__skills {
+.candidatesInfo__skills {
   width: 335px;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(auto, 77px));
   grid-template-rows: repeat(1, 32px);
   gap: 8px;
 }
-.candidates__skill {
+.candidatesInfo__skill {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -97,14 +97,14 @@
   border-top: 1px solid #d9d9d9;
 }
 
-.candidates__comparisons {
+.candidatesInfo__comparisons {
   display: flex;
   width: 127px;
   height: 44px;
   align-items: center;
   text-align: center;
 }
-.candidates__coincidences {
+.candidatesInfo__coincidences {
   background: linear-gradient(to right, #c2e5ce 72%, #fff 28%);
   display: flex;
   padding: 0;
@@ -120,7 +120,7 @@
 .candidatesInfo__coincidences_text {
   @include text-medium;
 }
-.candidates__comparison {
+.candidatesInfo__comparison {
   width: 127px;
   background-color: $clBackground;
   border: none;
@@ -136,21 +136,17 @@
     cursor: pointer;
   }
 }
-.candidates__image {
+.candidatesInfo__image {
   width: 24px;
   height: 24px;
   margin: 0;
 }
-.candidates__text {
-  font-family: Inter;
+.candidatesInfo__text {
+  @include text-medium;
   color: $clBasicClick;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
   text-align: center;
 }
-.candidates__like {
+.candidatesInfo__like {
   display: flex;
   cursor: pointer;
   margin-left: 12px;
@@ -200,12 +196,12 @@
   @include text-regular;
   margin-bottom: 12px;
 }
-.candidatesInfo__text {
+.candidatesInfo__about_text {
   width: 544px;
   margin-bottom: 12px;
   @include button-text;
 }
-.candidatesInfo__text:last-child {
+.candidatesInfo__about_text:last-child {
   margin-bottom: 0;
 }
 .candidatesInfo__email {

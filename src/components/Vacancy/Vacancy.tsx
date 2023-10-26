@@ -1,6 +1,6 @@
 import suitcase from '../../assets/images/suitcase.svg';
 import Modal from '../../components/Modals/Modal';
-import strelka from '../../assets/images/Vector.svg';
+import strelkaUP from '../../assets/images/strelka_up.svg';
 import styles from './Vacancy.module.scss';
 import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
 import ButtonIcon from '../../components/ButtonIcon/ButtonIcon';
@@ -29,11 +29,11 @@ const Vacancy = (props: VacancyProps) => {
           </div>
           <div className={styles.vacancy__header_icons}>
             <ButtonIcon
-              type="button"
+              type='button'
               className={styles.vacancy__header_icon_edit}
             />
             <ButtonIcon
-              type="button"
+              type='button'
               className={styles.vacancy__header_icon_delete}
               openModal={() => dispatch(handleOpenModal())}
             />
@@ -42,7 +42,7 @@ const Vacancy = (props: VacancyProps) => {
         <p className={styles.vacancy__header_text}>ООО название компании</p>
         <p className={styles.vacancy__header_text}>Москва</p>
         <div className={styles.vacancy__header_expiriencs}>
-          <img src={suitcase} className={styles.vacancy__header_icon} alt="" />
+          <img src={suitcase} className={styles.vacancy__header_icon} alt='' />
           <p className={styles.vacancy__header_text}>Опыт о 1 года до 3 лет</p>
         </div>
 
@@ -95,29 +95,28 @@ const Vacancy = (props: VacancyProps) => {
         <div className={styles.vacancy__header_buttons}>
           <div>
             <ButtonMUI
-              variant="outlined"
-              text="+5 новых откликов"
+              variant='outlined'
+              text='+5 новых откликов'
               onClick={() => {}}
             />
             <ButtonMUI
-              variant="outlined"
-              text="Показать 420 кандидатов"
+              variant='outlined'
+              text='Показать 420 кандидатов'
               onClick={() => {}}
             />
           </div>
           <ButtonMUI
-            variant="contained"
-            text="Закрыть вакансию"
+            variant='contained'
+            text='Закрыть вакансию'
             onClick={() => {}}
           />
         </div>
         <button
           className={styles.vacancy__close}
-          type="button"
+          type='button'
           onClick={onClick}
         >
-          <img className={styles.vacancy__close_image} src={strelka} />
-          Свернуть
+          <img className={styles.vacancy__close_image} src={strelkaUP} />
         </button>
         <Modal
           title={'Удалить вакансию?'}

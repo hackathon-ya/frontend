@@ -99,7 +99,7 @@ const Candidates = () => {
           </div>
         </>
       ) : (
-        <CandidatesInfo onClick={onClick} hadleLike={handleLike} like={like} />
+        <CandidatesInfo onClick={onClick} like={like} />
       )}
     </div>
   );
