@@ -87,7 +87,7 @@
   width: 77px;
   height: 28px;
   border-radius: 4px;
-  background-color: $clTextOnBlackBackground;
+  background-color: $clDisabled;
 }
 
 .candidatesInfo__underLine {
@@ -122,7 +122,7 @@
 }
 .candidates__comparison {
   width: 127px;
-  background-color: $clActive;
+  background-color: $clBackground;
   border: none;
   border-radius: 0;
   display: flex;
