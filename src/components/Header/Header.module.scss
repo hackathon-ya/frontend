@@ -17,19 +17,33 @@
 }
 
 .link {
-  margin-right: 26px;
+  margin-right: 32px;
 }
 .img {
-  padding: 8px 10px 0;
+  padding: 8px 0 0;
   width: 24px;
   height: 24px;
 }
-
+.link_like {
+  background: url(../../assets/images/Like.svg) no-repeat;
+  width: 24px;
+  height: 24px;
+  align-self: center;
+}
+.link_like:hover {
+  background: url(../../assets/images/header__like_active.svg) no-repeat;
+}
 .profileWrapper {
   display: flex;
   align-items: end;
 }
 
 .iconsWrapper {
+  width: 193px;
   display: flex;
+  justify-content: space-between;
+}
+.text{
+  color: $clTextOnBlackBackground;
+  padding-left: 8px;
 }

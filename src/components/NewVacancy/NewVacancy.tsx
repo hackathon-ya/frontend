@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { SubmitHandler, useForm } from 'react-hook-form';
+import { SubmitHandler, useForm, Controller } from 'react-hook-form';
 import back from '../../assets/images/back-left.svg';
 import done from '../../assets/images/check_mini.svg';
 import styles from './NewVacancy.module.scss';
@@ -8,15 +8,20 @@ import InputSelectMUI from '../InputSelectMUI/InputSelectMUI';
 import InputMultilineMUI from '../InputMultilineMUI/InputMultilineMUI.tsx';
 import constants from '../../constants/constants.ts';
 import { useDispatch, useSelector } from 'react-redux';
-import { handleActive } from '../../store/vacancies/vacanciesSlice';
+import {
+  handleActive,
+  handleOpenModal,
+} from '../../store/vacancies/vacanciesSlice';
 import { vacanciesSelectors } from '../../store/vacancies/vacanciesSelectors';
 import ButtonMUI from '../ButtonMUI/ButtonMUI.tsx';
+import Modal from '../Modals/Modal.tsx';
 
 interface Vacancy {
   name: string;
   company: string;
   city: string;
-  cash: number;
+  cash_from: number;
+  cash_to: number;
   skills: string;
   textVacancy: string;
   experience: string;
@@ -25,13 +30,15 @@ interface Vacancy {
 }
 
 const NewVacancy = ({ text }: { text: string }) => {
-  const { handleSubmit } = useForm<Vacancy>();
+  const { handleSubmit, control } = useForm<Vacancy>({
+    mode: 'onBlur',
+  });
   const dispatch = useDispatch();
 
   const view = useSelector(vacanciesSelectors.getView);
 
   const onSubmit: SubmitHandler<Vacancy> = (data) => {
-    alert(data);
+    console.log(data);
   };
 
   return (
@@ -50,57 +57,98 @@ const NewVacancy = ({ text }: { text: string }) => {
         <h3 className={styles.addVacancy__subtitle}>Информация о вакансии</h3>
         <div className={styles.addVacancy__inputs}>
           <h4 className={styles.addVacancy__input_title}>Название вакансии</h4>
-          <InputMUI
-            variant="outlined"
-            id="input-vacancy-name"
-            className="addVacancy__input"
-            placeholder=""
+          <Controller
+            render={({ field: { onChange } }) => (
+              <InputMUI
+                variant="outlined"
+                id="input-vacancy-name"
+                className="addVacancy__input"
+                onChange={onChange}
+              />
+            )}
+            control={control}
+            name="name"
           />
         </div>
         <div className={styles.addVacancy__inputs}>
           <h4 className={styles.addVacancy__input_title}>Компания</h4>
-          <InputMUI
-            variant="outlined"
-            id="input-vacancy-name"
-            className="addVacancy__input"
-            placeholder=""
+          <Controller
+            render={({ field: { onChange } }) => (
+              <InputMUI
+                variant="outlined"
+                id="input-vacancy-name"
+                className="addVacancy__input"
+                onChange={onChange}
+              />
+            )}
+            control={control}
+            name="company"
           />
         </div>
         <div className={styles.addVacancy__inputs}>
           <h4 className={styles.addVacancy__input_title}>Город</h4>
-          <InputSelectMUI
-            id="input-vacancy-name"
-            className="addVacancy__input_select"
-            currencies={constants.City}
-            defaultValue="Москва"
+          <Controller
+            render={({ field: { onChange } }) => (
+              <InputSelectMUI
+                id="input-vacancy-name"
+                className="addVacancy__input_select"
+                currencies={constants.City}
+                defaultValue="Москва"
+                onChange={onChange}
+              />
+            )}
+            control={control}
+            name="city"
           />
         </div>
         <div className={styles.addVacancy__inputs}>
           <h4 className={styles.addVacancy__input_title}>Зарплата</h4>
           <div className={styles.addVacancy__input_moneys}>
-            <InputMUI
-              variant="outlined"
-              id="input-vacancy-cash-from"
-              className="addVacancy__input_money"
-              placeholder="От"
+            <Controller
+              render={({ field: { onChange } }) => (
+                <InputMUI
+                  variant="outlined"
+                  id="input-vacancy-cash-from"
+                  className="addVacancy__input_money"
+                  placeholder="От"
+                  onChange={onChange}
+                />
+              )}
+              control={control}
+              name="cash_from"
             />
-            <InputMUI
-              variant="outlined"
-              id="input-vacancy-cash-before"
-              className="addVacancy__input_money"
-              placeholder="До"
+            <Controller
+              render={({ field: { onChange } }) => (
+                <InputMUI
+                  variant="outlined"
+                  id="input-vacancy-cash-before"
+                  className="addVacancy__input_money"
+                  placeholder="До"
+                  onChange={onChange}
+                />
+              )}
+              control={control}
+              name="cash_to"
             />
           </div>
         </div>
         <div className={styles.addVacancy__inputs}>
           <h4 className={styles.addVacancy__input_title}>Ключевые навыки</h4>
           <div className={styles.addVacancy__input_box}>
-            <InputMUI
-              variant="outlined"
-              id="input-vacancy-name"
-              className="addVacancy__input_skills"
-              placeholder="Навыки"
+            <Controller
+              render={({ field: { onChange } }) => (
+                <InputMUI
+                  variant="outlined"
+                  id="input-vacancy-name"
+                  className="addVacancy__input_skills"
+                  placeholder="Навыки"
+                  onChange={onChange}
+                />
+              )}
+              control={control}
+              name="skills"
             />
+
             <img className={styles.addVacancy__image_done} src={done} />
           </div>
           <div className={styles.addVacancy__skills}>
@@ -124,37 +172,67 @@ const NewVacancy = ({ text }: { text: string }) => {
         </div>
         <div className={styles.addVacancy__inputs}>
           <h4 className={styles.addVacancy__input_title}>Описание вакансии</h4>
-          <InputMultilineMUI
-            id="filled-multiline-static"
-            className="addVacancy__input_about"
+          <Controller
+            render={({ field: { onChange } }) => (
+              <InputMultilineMUI
+              id="filled-multiline-static"
+              className="addVacancy__input_about"
+              onChange={onChange}
+            />
+            )}
+            control={control}
+            name="textVacancy"
           />
+
         </div>
         <h3 className={styles.addVacancy__wishes}>Пожелания к соискателю</h3>
         <div className={styles.addVacancy__inputs}>
           <h4 className={styles.addVacancy__input_title}>Опыт работы</h4>
-          <InputSelectMUI
-            id="input-vacancy-expiriens"
-            className="addVacancy__input_select"
-            currencies={constants.Expiriens}
-            defaultValue="Не важен"
+          <Controller
+            render={({ field: { onChange } }) => (
+              <InputSelectMUI
+                id="input-vacancy-expiriens"
+                className="addVacancy__input_select"
+                currencies={constants.Expiriens}
+                defaultValue="Не важен"
+                onChange={onChange}
+              />
+            )}
+            control={control}
+            name="experience"
           />
         </div>
         <div className={styles.addVacancy__inputs}>
           <h4 className={styles.addVacancy__input_title}>Занятость</h4>
-          <InputSelectMUI
-            id="input-vacancy-busyness"
-            className="addVacancy__input_select"
-            currencies={constants.Busyness}
-            defaultValue="Полная"
+          <Controller
+            render={({ field: { onChange } }) => (
+              <InputSelectMUI
+                id="input-vacancy-busyness"
+                className="addVacancy__input_select"
+                currencies={constants.Busyness}
+                defaultValue="Полная"
+                onChange={onChange}
+              />
+            )}
+            control={control}
+            name="work"
           />
         </div>
         <div className={styles.addVacancy__inputs}>
           <h4 className={styles.addVacancy__input_title}>Формат работы</h4>
-          <InputSelectMUI
-            id="input-vacancy-formatWork"
-            className="addVacancy__input_select"
-            currencies={constants.FormatWork}
-            defaultValue="Не важен"
+
+          <Controller
+            render={({ field: { onChange } }) => (
+              <InputSelectMUI
+                id="input-vacancy-formatWork"
+                className="addVacancy__input_select"
+                currencies={constants.FormatWork}
+                defaultValue="Не важен"
+                onChange={onChange}
+              />
+            )}
+            control={control}
+            name="formatWork"
           />
         </div>
         <div className={styles.addVacancy__buttons}>
@@ -163,25 +241,41 @@ const NewVacancy = ({ text }: { text: string }) => {
               <ButtonMUI
                 variant="outlined"
                 text="Сохранить и опубликовать"
+                type='submit'
                 // className="vacancy__button_published"
               />
               <ButtonMUI
                 variant="contained"
                 text="Сохранить черновик"
+                type='submit'
                 // className="vacancy__button_save"
               />
             </>
           )}
-          {view === 'edit' && <> <ButtonMUI
-                variant="outlined"
-                text="Сохранить"
-                // className="vacancy__button_published"
-              />
+          {view === 'edit' && (
+            <>
               <ButtonMUI
                 variant="contained"
+                text="Сохранить"
+                type='button'
+                // className="vacancy__button_published"
+                onClick={() => dispatch(handleOpenModal())}
+              />
+              <ButtonMUI
+                variant="outlined"
                 text="Отменить"
+                type='button'
                 // className="vacancy__button_save"
-              /></>}
+              />
+            </>
+          )}
+          <Modal
+            title={'Сохранить изменения?'}
+            subtitle={'Все изменения будут сохранены'}
+          />
+          <button type="submit" className='className="vacancy__button_save'>
+            Cjhacj
+          </button>
         </div>
       </form>
     </section>

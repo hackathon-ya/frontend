@@ -1,16 +1,16 @@
-import { useDispatch, useSelector } from "react-redux";
-import { handleCloseModal } from "../../store/vacancies/vacanciesSlice";
-import ButtonMUI from "../ButtonMUI/ButtonMUI";
-import styles from "./Modal.module.scss";
-import { createPortal } from "react-dom";
-import { vacanciesSelectors } from "../../store/vacancies/vacanciesSelectors";
+import { useDispatch, useSelector } from 'react-redux';
+import { handleCloseModal } from '../../store/vacancies/vacanciesSlice';
+import ButtonMUI from '../ButtonMUI/ButtonMUI';
+import styles from './Modal.module.scss';
+import { createPortal } from 'react-dom';
+import { vacanciesSelectors } from '../../store/vacancies/vacanciesSelectors';
 
 interface ModalProps {
   title: string;
   subtitle: string;
 }
 function Modal({ title, subtitle }: ModalProps) {
-  const show = useSelector(vacanciesSelectors.getShow)
+  const show = useSelector(vacanciesSelectors.getShow);
   const dispatch = useDispatch();
   if (!show) return null;
   return (
@@ -27,12 +27,16 @@ function Modal({ title, subtitle }: ModalProps) {
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.subtitle}>{subtitle}</p>
             <div className={styles.wrapperButton}>
-              <ButtonMUI variant={"outlined"} text={"Отменить"} />
-              <ButtonMUI variant={"contained"} text={"Сохранить"} />
+              <ButtonMUI
+                variant={'outlined'}
+                text={'Отменить'}
+                onClick={() => dispatch(handleCloseModal())}
+              />
+              <ButtonMUI variant={'contained'} text={'Сохранить'} />
             </div>
           </div>
         </section>,
-        document.getElementById("root")!
+        document.getElementById('root')!
       )}
     </>
   );

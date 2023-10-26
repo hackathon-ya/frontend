@@ -21,17 +21,17 @@ const ActiveVacancies = () => {
 
   return (
     <div>
+      <div className={styles.headerWrapper}>
+        <h3 className={styles.header__block}>Активные вакансии</h3>
+        <ButtonMUI
+          variant="outlined"
+          text="+ Создать новую"
+          onClick={() => dispatch(handleOpenForm())}
+        />
+      </div>
       {open ? (
         <>
-          <div className={styles.headerWrapper}>
-            <h3 className={styles.header__block}>Активные вакансии</h3>
-            <ButtonMUI
-              variant='outlined'
-              text='+ Создать новую'
-              onClick={() => dispatch(handleOpenForm())}
-            />
-          </div>
-          <div className={styles.card} id='card'>
+          <div className={styles.card} id="card">
             <div className={styles.vacancie}>
               <div className={styles.vacancieWrapper}>
                 <h3 className={styles.vacancy}>Интернет-маркетолог</h3>
@@ -48,7 +48,7 @@ const ActiveVacancies = () => {
                 />
 
                 <ButtonIcon
-                  type='button'
+                  type="button"
                   className={styles.close}
                   openModal={() => dispatch(handleOpenModal())}
                 />
@@ -56,14 +56,14 @@ const ActiveVacancies = () => {
             </div>
             <div className={styles.buttonWrapper}>
               <div>
-                <ButtonMUI variant='outlined' text='+5 новых откликов' />
-                <ButtonMUI variant='outlined' text='Показать 420 кандидатов' />
+                <ButtonMUI variant="contained" text="Показать 420 кандидатов" />
+                <ButtonMUI variant="outlined" text="+5 новых откликов" />
               </div>
-              <ButtonMUI variant='contained' text='Закрыть вакансию' />
+              <ButtonMUI variant="contained" text="Закрыть вакансию" />
             </div>
             <button
               className={styles.close__info}
-              type='button'
+              type="button"
               onClick={onClick}
             >
               <img className={styles.close_image} src={strelkaUP} />

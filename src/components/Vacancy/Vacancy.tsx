@@ -4,7 +4,7 @@ import strelkaUP from '../../assets/images/strelka_up.svg';
 import styles from './Vacancy.module.scss';
 import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
 import ButtonIcon from '../../components/ButtonIcon/ButtonIcon';
-import { handleOpenModal } from '../../store/vacancies/vacanciesSlice';
+import { handleOpenEditForm, handleOpenModal } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
 
 type VacancyProps = {
@@ -31,6 +31,7 @@ const Vacancy = (props: VacancyProps) => {
             <ButtonIcon
               type='button'
               className={styles.vacancy__header_icon_edit}
+              openModal={() => dispatch(handleOpenEditForm())}
             />
             <ButtonIcon
               type='button'

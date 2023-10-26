@@ -6,7 +6,7 @@ import Profile from '../pages/Profile/Profile.tsx';
 import MainPage from '../pages/MainPage/MainPage.tsx';
 import App from '../App.tsx';
 import ArchiveVacancies from '../pages/ArchiveVacancies/ArchiveVacancies';
-import DraftVacancies from '../pages/DraftComponents/DraftComponents';
+import DraftVacancies from '../pages/DraftVacancies/DraftVacancies.tsx';
 import Vacancies from '../pages/Vacancies/Vacancies.tsx';
 import Favorites from '../pages/Favorites/Favorites.tsx';
 
