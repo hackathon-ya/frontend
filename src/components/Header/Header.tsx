@@ -1,11 +1,11 @@
-import { Link } from "react-router-dom";
-import styles from "./Header.module.scss";
-import like from "../../assets/images/Like.svg";
-import profile from "../../assets/images/Profile.svg";
-import group from "../../assets/images/Group.svg";
-import SearchBar from "../SearchBar/SearchBar";
-import { handleActive } from "../../store/vacancies/vacanciesSlice";
-import { useDispatch } from "react-redux";
+import { Link } from 'react-router-dom';
+import styles from './Header.module.scss';
+import like from '../../assets/images/like.svg';
+import profile from '../../assets/images/profile.svg';
+import group from '../../assets/images/group.svg';
+import SearchBar from '../SearchBar/SearchBar';
+import { handleActive } from '../../store/vacancies/vacanciesSlice';
+import { useDispatch } from 'react-redux';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -32,14 +32,12 @@ const Header = () => {
           </li>
           <div className={styles.iconsWrapper}>
             <li>
-              <Link to="/profile">
+              <Link to="/applicant/favorites">
                 <img src={like} alt="Лайк" className={styles.img} />
               </Link>
             </li>
             <li>
-              <Link to="/profile">
-                <img src={group} alt="Сообщения" className={styles.img} />
-              </Link>
+              <img src={group} alt="Сообщения" className={styles.img} />
             </li>
             <li>
               <Link to="/">

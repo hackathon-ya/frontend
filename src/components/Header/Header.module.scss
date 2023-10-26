@@ -1,6 +1,6 @@
 @import "../../vendor/constants";
 .header {
-  background-color: $header;
+  background-color: $clBasicText;
   height: 100px;
   width: 1440px;
   padding: 40px 152px 0 308px;
@@ -17,7 +17,6 @@
 }
 
 .link {
-  color: $clBasicText;
   margin-right: 26px;
 }
 .img {

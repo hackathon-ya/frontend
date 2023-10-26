@@ -8,7 +8,7 @@ import ArchiveVacancies from '../ArchiveVacancies/ArchiveVacancies';
 import NewVacancy from '../../components/NewVacancy/NewVacancy';
 
 const Vacancies = () => {
-  const view = useSelector(vacanciesSelectors.getView);
+  const view = useSelector(vacanciesSelectors.getView);      
   return (
     <section className={styles.vacancies}>
       <BarVacancies />
@@ -16,8 +16,10 @@ const Vacancies = () => {
         {view === 'active' && <ActiveVacancies />}
         {view === 'archive' && <ArchiveVacancies />}
         {view === 'draft' && <DraftVacancies />}
-        {view === 'add' && <NewVacancy />}
+        {view === 'add' && <NewVacancy text={'Новая вакансия'}/>}
+        {view === 'edit' && <NewVacancy text={'Редактирование вакансии'}/>}
       </div>
+
     </section>
   );
 };

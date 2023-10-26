@@ -8,7 +8,7 @@ import App from '../App.tsx';
 import ArchiveVacancies from '../pages/ArchiveVacancies/ArchiveVacancies';
 import DraftVacancies from '../pages/DraftComponents/DraftComponents';
 import Vacancies from '../pages/Vacancies/Vacancies.tsx';
-import NewVacancy from '../components/NewVacancy/NewVacancy.tsx';
+import Favorites from '../pages/Favorites/Favorites.tsx';
 
 const router = createBrowserRouter([
   {
@@ -28,10 +28,6 @@ const router = createBrowserRouter([
         element: <Vacancies />,
       },
       {
-        path: ROUTES.ADDVACANCIES,
-        element: <NewVacancy />,
-      },
-      {
         path: ROUTES.PROFILE,
         element: <Profile />,
       },
@@ -42,6 +38,10 @@ const router = createBrowserRouter([
       {
         path: ROUTES.DRAFT,
         element: <DraftVacancies />,
+      },
+      {
+        path: ROUTES.FAVORITES,
+        element: <Favorites />,
       },
     ],
   },
