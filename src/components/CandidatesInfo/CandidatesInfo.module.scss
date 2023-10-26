@@ -1,0 +1,220 @@
+@import '../../vendor/constants.scss';
+@import '../../assets/styles/fonts-mixins';
+.card {
+  width: 980px;
+  background-color: $clBackground;
+  padding: 32px 32px 8px 32px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 6px 0px rgba(176, 190, 197, 0.2),
+    0px 8px 24px 0px rgba(176, 190, 197, 0.2);
+}
+
+.candidatesInfo__buttonWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.candidatesInfo__buttons {
+  display: flex;
+  flex-direction: row;
+  height: 44px;
+}
+.candidatesInfo {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.candidatesInfo__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.candidatesInfo__vacancie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.candidatesInfo__header {
+  margin-bottom: 8px;
+  text-align: left;
+  @include h3-medium;
+}
+.candidatesInfo__pay {
+  margin-bottom: 12px;
+  @include text-medium;
+}
+.candidatesInfo__name {
+  margin-bottom: 4px;
+  @include text-regular;
+  color: $text;
+}
+.candidatesInfo__sity {
+  margin-bottom: 14px;
+  @include text-regular;
+  color: $text;
+}
+.candidatesInfo__experience {
+  @include text-regular;
+  color: $text;
+}
+.candidatesInfo__list {
+  width: 420px;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.candidatesInfo__list_title {
+  @include text-medium;
+  color: #797981;
+}
+.candidatesInfo__skills {
+  width: 335px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 77px));
+  grid-template-rows: repeat(1, 32px);
+  gap: 8px;
+}
+.candidatesInfo__skill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include button-text;
+  width: 77px;
+  height: 28px;
+  border-radius: 4px;
+  background-color: $clDisabled;
+}
+
+.candidatesInfo__underLine {
+  display: flex;
+  margin-top: 16px;
+  width: 544px;
+  border-top: 1px solid #d9d9d9;
+}
+
+.candidatesInfo__comparisons {
+  display: flex;
+  width: 127px;
+  height: 44px;
+  align-items: center;
+  text-align: center;
+}
+.candidatesInfo__coincidences {
+  background: linear-gradient(to right, #c2e5ce 72%, #fff 28%);
+  display: flex;
+  padding: 0;
+  align-items: center;
+  width: 200px;
+  height: 36px;
+  border-radius: 4px;
+  border: 1px solid #c2e5ce;
+  margin-right: 12px;
+  text-align: center;
+  justify-content: center;
+}
+.candidatesInfo__coincidences_text {
+  @include text-medium;
+}
+.candidatesInfo__comparison {
+  width: 127px;
+  background-color: $clBackground;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include text-regular;
+  color: $text;
+  padding: 10px;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.candidatesInfo__image {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+.candidatesInfo__text {
+  @include text-medium;
+  color: $clBasicClick;
+  text-align: center;
+}
+.candidatesInfo__like {
+  display: flex;
+  cursor: pointer;
+  margin-left: 12px;
+  border: none;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  background: url(../../assets/images/Like_blue.svg) no-repeat center;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.candidatesInfo__like_active {
+  display: flex;
+  cursor: pointer;
+  margin-left: 12px;
+  border: none;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  background: url(../../assets/images/Like_active.svg) no-repeat center;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.candidatesInfo__about {
+  width: 544px;
+  margin: 20px 0 32px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+.candidatesInfo__box {
+  display: flex;
+  align-items: start;
+  flex-direction: column;
+  text-align: start;
+  margin-bottom: 16px;
+}
+.candidatesInfo__about_title {
+  @include subtitle-medium;
+  margin-bottom: 12px;
+}
+.candidatesInfo__about_subtitle {
+  @include text-regular;
+  margin-bottom: 12px;
+}
+.candidatesInfo__about_text {
+  width: 544px;
+  margin-bottom: 12px;
+  @include button-text;
+}
+.candidatesInfo__about_text:last-child {
+  margin-bottom: 0;
+}
+.candidatesInfo__email {
+  @include button-text;
+}
+.candidatesInfo__close {
+  width: 100%;
+  margin-top: 20px;
+  align-self: center;
+  background: none;
+  border: none;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
