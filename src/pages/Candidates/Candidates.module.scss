@@ -11,11 +11,16 @@
 }
 .headerWrapper {
   display: flex;
+  flex-direction: column;
   justify-content: start;
+  align-items: start;
+  width: 258px;
   margin-bottom: 40px;
 }
+
 .header__title {
   @include h2-regular;
+  margin-bottom: 16px;
 }
 .candidates__buttonWrapper {
   display: flex;

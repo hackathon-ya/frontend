@@ -4,6 +4,7 @@ import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
 import comparison from '../../assets/images/sravnenie.svg';
 import CandidatesInfo from '../../components/CandidatesInfo/CandidatesInfo';
 import strelkaUP from '../../assets/images/strelka_up.svg';
+import FormFind from '../../components/FormFind/FormFind';
 
 const Candidates = () => {
   const [open, setOpen] = useState(true);
@@ -20,7 +21,8 @@ const Candidates = () => {
   return (
     <div>
       <div className={styles.headerWrapper}>
-        <h3 className={styles.header__title}>Активные вакансии</h3>
+        <h3 className={styles.header__title}>Найдено 533 вакансии</h3>
+        <FormFind />
       </div>
       {open ? (
         <>
