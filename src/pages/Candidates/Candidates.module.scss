@@ -9,7 +9,14 @@
   box-shadow: 0px 4px 6px 0px rgba(176, 190, 197, 0.2),
     0px 8px 24px 0px rgba(176, 190, 197, 0.2);
 }
-
+.headerWrapper {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 40px;
+}
+.header__title {
+  @include h2-regular;
+}
 .candidates__buttonWrapper {
   display: flex;
   flex-direction: row;
@@ -88,7 +95,7 @@
   width: 77px;
   height: 28px;
   border-radius: 4px;
-  background-color: $clTextOnBlackBackground;
+  background-color: $clDisabled;
 }
 .candidates__comparisons {
   display: flex;
@@ -109,6 +116,9 @@
   margin-right: 12px;
   text-align: center;
   justify-content: center;
+}
+.candidates__coincidences_text {
+  @include text-medium;
 }
 .candidates__comparison {
   width: 127px;
@@ -153,4 +163,32 @@
     opacity: 0.6;
     cursor: pointer;
   }
+}
+.candidates__like_active {
+  display: flex;
+  cursor: pointer;
+  margin-left: 12px;
+  border: none;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  background: url(../../assets/images/like_active.svg) no-repeat center;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.candidates__close {
+  padding: 8px;
+  width: 100%;
+  align-self: center;
+  background: none;
+  border: none;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.candidates__close_image {
+  transform: rotate(180deg);
 }

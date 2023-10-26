@@ -5,7 +5,13 @@ import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
 import comparison from '../../assets/images/sravnenie.svg';
 import strelkaUP from '../../assets/images/strelka_up.svg';
 
-const CandidatesInfo = () => {
+type CadndidatesProps = {
+  onClick: () => void;
+  like: boolean;
+};
+
+const CandidatesInfo = (props: CadndidatesProps) => {
+  const { onClick } = props;
   //   const [showModal, setShowModal] = useState(false);
   return (
     <div className={styles.card}>
@@ -40,7 +46,14 @@ const CandidatesInfo = () => {
               <p className={styles.candidates__text}>Сравнить</p>
             </button>
           </div>
-          <button type='button' className={styles.candidates__like} />
+          <button
+            type='button'
+            className={
+              props.like
+                ? styles.candidatesInfo__like_active
+                : styles.candidates__like
+            }
+          />
         </div>
       </div>
       <span className={styles.candidatesInfo__underLine}></span>
@@ -92,7 +105,11 @@ const CandidatesInfo = () => {
           <ButtonMUI variant='outlined' text='Скачать резюме' />
         </div>
       </div>
-      <button className={styles.candidatesInfo__close} type='button'>
+      <button
+        className={styles.candidatesInfo__close}
+        type='button'
+        onClick={onClick}
+      >
         <img className={styles.candidatesInfo__close_image} src={strelkaUP} />
       </button>
       {/* <Modal

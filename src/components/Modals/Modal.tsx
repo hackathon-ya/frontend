@@ -1,14 +1,17 @@
+import { useDispatch, useSelector } from "react-redux";
+import { handleCloseModal } from "../../store/vacancies/vacanciesSlice";
 import ButtonMUI from "../ButtonMUI/ButtonMUI";
 import styles from "./Modal.module.scss";
 import { createPortal } from "react-dom";
+import { vacanciesSelectors } from "../../store/vacancies/vacanciesSelectors";
 
 interface ModalProps {
-  show: boolean;
   title: string;
   subtitle: string;
-  closeModal: Function;
 }
-function Modal({ show, title, subtitle, closeModal }: ModalProps) {
+function Modal({ title, subtitle }: ModalProps) {
+  const show = useSelector(vacanciesSelectors.getShow)
+  const dispatch = useDispatch();
   if (!show) return null;
   return (
     <>
@@ -19,7 +22,7 @@ function Modal({ show, title, subtitle, closeModal }: ModalProps) {
             <button
               className={styles.close}
               type="button"
-              onClick={() => closeModal()}
+              onClick={() => dispatch(handleCloseModal())}
             ></button>
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.subtitle}>{subtitle}</p>
