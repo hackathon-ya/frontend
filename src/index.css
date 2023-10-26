@@ -19,12 +19,16 @@ ul {
   padding: 0;
 }
 a {
-  font-weight: 500;
-  color: #000;
+  color: #b5b5b7;
   text-decoration: none;
 }
+
 a:hover {
-  color: #000;
+  color: #fff;
+}
+
+a:active {
+  color: #fff;
 }
 
 body {

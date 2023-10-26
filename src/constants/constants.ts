@@ -6,6 +6,7 @@ export const ROUTES = {
   ARCHIVE: '/vacancies/archive',
   DRAFT: 'vacancies/draft',
   ADDVACANCIES: 'vacancies/add',
+  FAVORITES: '/applicant/favorites'
 };
 
 const Expiriens = [

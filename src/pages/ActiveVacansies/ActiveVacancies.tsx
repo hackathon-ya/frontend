@@ -6,6 +6,7 @@ import Vacancy from '../../components/Vacancy/Vacancy';
 import {
   handleOpenForm,
   handleOpenModal,
+  handleOpenEditForm,
 } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -39,7 +40,11 @@ const ActiveVacancies = () => {
                 <p className={styles.experience}>Опыт от 1 года до 3 лет</p>
               </div>
               <div>
-                <ButtonIcon type="button" className={styles.edit} />
+                <ButtonIcon
+                  type="button"
+                  className={styles.edit}
+                  openModal={() => dispatch(handleOpenEditForm())}
+                />
                 <ButtonIcon
                   type="button"
                   className={styles.close}

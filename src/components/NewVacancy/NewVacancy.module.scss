@@ -1,6 +1,5 @@
 @import '../../vendor/constants';
-.addVacancy {
-}
+@import '../../assets/styles/fonts-mixins';
 .addVacancy {
   width: 428px;
   display: flex;
@@ -21,11 +20,7 @@
   align-self: flex-start;
   border: none;
   background: none;
-  font-family: 'YS Text', Arial, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  @include text-medium;
   &:hover {
     opacity: 0.6;
     cursor: pointer;
@@ -35,40 +30,23 @@
   text-align: end;
   text-decoration: none;
   color: #5a5a5a;
-  font-family: 'YS Text', Arial, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  @include text-medium;
 }
-.NewVacancy__form {
-}
+
 .addVacancy__title {
   text-align: start;
-  font-family: 'YS Display', Arial, sans-serif;
-  font-size: 24px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  @include h2-medium;
   margin-bottom: 40px;
 }
 .addVacancy__subtitle {
   text-align: start;
-  font-family: 'YS Display', Arial, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  @include text-medium;
   margin-bottom: 24px;
 }
 .addVacancy__input_title {
   margin-bottom: 4px;
   text-align: start;
-  font-family: 'YS Text', Arial, sans-serif;
-  font-family: Inter;
-  font-size: 13px;
-  font-style: normal;
-  font-weight: 500;
+  @include text-medium;
   line-height: 16px;
 }
 .addVacancy__inputs {
@@ -96,7 +74,6 @@
 .addVacancy__skills {
   margin-top: 10px;
   display: grid;
-  font-family: 'YS Text', Arial, sans-serif;
   grid-template-columns: repeat(auto-fit, minmax(auto, 114px));
   grid-template-rows: repeat(auto-fit, min(32px));
   gap: 10px 10px;
@@ -109,10 +86,7 @@
   height: 32px;
   border-radius: 4px;
   background: #ededed;
-  font-family: 'YS Text', Arial, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
+  @include text-medium;
   line-height: 16px;
 }
 .addVacancy__skill_button {
@@ -133,46 +107,36 @@
   margin-top: 36px;
   margin-bottom: 24px;
   text-align: start;
-  font-family: 'YS Display', Arial, sans-serif;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
+  @include text-medium;
 }
 .addVacancy__buttons {
   display: flex;
   margin-top: 36px;
 }
-.addVacancy__button_published {
-  width: 227px;
-  height: 40px;
-  background-color: $clBasicButton;
-  color: #fff;
-  font-family: 'YS Text', Arial, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  margin-right: auto;
-  &:hover {
-    opacity: 0.6;
-    cursor: pointer;
-  }
-}
-.addVacancy__button_save {
-  width: 184px;
-  height: 40px;
-  border-radius: 6px;
-  border: 1px solid var(--Blue-Main, #1d6bf3);
-  background-color: #fff;
-  color: var(--Blue-Main, #1d6bf3);
-  font-family: 'YS Text', Arial, sans-serif;
-  font-size: 14px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 20px;
-  &:hover {
-    opacity: 0.6;
-    cursor: pointer;
-  }
-}
+// .addVacancy__button_published {
+//   width: 227px;
+//   height: 40px;
+//   background-color: $clBasicButton;
+//   color: #fff;
+//   @include text-medium;
+//   line-height: 20px;
+//   margin-right: auto;
+//   &:hover {
+//     opacity: 0.6;
+//     cursor: pointer;
+//   }
+// }
+// .addVacancy__button_save {
+//   width: 184px;
+//   height: 40px;
+//   border-radius: 6px;
+//   border: 1px solid var(--Blue-Main, #1d6bf3);
+//   background-color: #fff;
+//   color: var(--Blue-Main, #1d6bf3);
+//   @include text-medium;
+//   line-height: 20px;
+//   &:hover {
+//     opacity: 0.6;
+//     cursor: pointer;
+//   }
+// }

@@ -20,15 +20,25 @@ export const vacanciesSlice = createSlice({
       state.vacanciesView = 'add';
     },
     handleOpenModal: (state) => {
-      state.show = true
+      state.show = true;
     },
     handleCloseModal: (state) => {
-      state.show = false
-    }
+      state.show = false;
+    },
+    handleOpenEditForm: (state) => {
+      state.vacanciesView = 'edit';
+    },
   },
 });
 
-export const { handleActive, handleArchive, handleDraft, handleOpenForm, handleCloseModal, handleOpenModal } =
-  vacanciesSlice.actions;
+export const {
+  handleActive,
+  handleArchive,
+  handleDraft,
+  handleOpenForm,
+  handleCloseModal,
+  handleOpenModal,
+  handleOpenEditForm,
+} = vacanciesSlice.actions;
 
 export default vacanciesSlice.reducer;
