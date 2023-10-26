@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 export const getVacancies = createAsyncThunk(
-  "vacancies/get",
+  "vacancies/getVacancies",
   async function (_, { rejectWithValue }) {
     try {
       const response = await fetch("https://api/v1/vacancies");
@@ -16,7 +16,22 @@ export const getVacancies = createAsyncThunk(
     }
   }
 );
-
+// export const deleteVacancies = createAsyncThunk(
+//   "vacancies/deleteVacancy",
+//   async function (_id, { rejectWithValue }) {
+//     try {
+//       const response = await fetch(`https://api/v1/vacancies/${_id}`);
+//       if (!response.ok) {
+//         return rejectWithValue("Error");
+//       }
+//       const data = await response.json();
+//       return data;
+//     } catch (e: any) {
+//       return rejectWithValue(e);
+//     }
+//   }
+// );
+// method delete добавить
 export const vacanciesSlice = createSlice({
   name: "vacancies",
   initialState: {
