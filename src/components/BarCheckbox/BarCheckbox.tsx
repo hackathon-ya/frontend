@@ -5,6 +5,7 @@ import FormControlLabel from '@mui/material/FormControlLabel';
 import styles from './BarCheckbox.module.scss';
 import basket from '../../assets/images/delete.svg';
 import ButtonMUI from '../ButtonMUI/ButtonMUI';
+import { Typography } from '@mui/material';
 
 const BarCheckbox = () => {
   const [state, setState] = React.useState({
@@ -66,7 +67,11 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='Полный день'
+              label={
+                <Typography className={styles.typography}>
+                  Полный день
+                </Typography>
+              }
             />
             <FormControlLabel
               className={styles.barCheckbox__box}
@@ -78,7 +83,11 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='Частичная занятость'
+              label={
+                <Typography className={styles.typography}>
+                  Частичная занятость
+                </Typography>
+              }
             />
             <FormControlLabel
               className={styles.barCheckbox__box}
@@ -90,7 +99,11 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='Проектная работа'
+              label={
+                <Typography className={styles.typography}>
+                  Проектная работа
+                </Typography>
+              }
             />
           </FormGroup>
         </div>
@@ -107,7 +120,9 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='Не важен'
+              label={
+                <Typography className={styles.typography}>Не важен</Typography>
+              }
             />
             <FormControlLabel
               className={styles.barCheckbox__box}
@@ -119,7 +134,9 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='до 1 года'
+              label={
+                <Typography className={styles.typography}>до 1 года</Typography>
+              }
             />
             <FormControlLabel
               className={styles.barCheckbox__box}
@@ -131,7 +148,11 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='от 1 до 3 лет'
+              label={
+                <Typography className={styles.typography}>
+                  от 1 до 3 лет
+                </Typography>
+              }
             />
             <FormControlLabel
               className={styles.barCheckbox__box}
@@ -143,7 +164,11 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='больше 3 лет'
+              label={
+                <Typography className={styles.typography}>
+                  больше 3 лет
+                </Typography>
+              }
             />
           </FormGroup>
         </div>
@@ -160,7 +185,9 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='Офис'
+              label={
+                <Typography className={styles.typography}>Офис</Typography>
+              }
             />
             <FormControlLabel
               className={styles.barCheckbox__box}
@@ -172,7 +199,9 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='Гибридный'
+              label={
+                <Typography className={styles.typography}>Гибридный</Typography>
+              }
             />
             <FormControlLabel
               className={styles.barCheckbox__box}
@@ -184,7 +213,9 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='Удаленный'
+              label={
+                <Typography className={styles.typography}>Удаленный</Typography>
+              }
             />
           </FormGroup>
         </div>
@@ -201,7 +232,9 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='Москва'
+              label={
+                <Typography className={styles.typography}>Москва</Typography>
+              }
             />
             <FormControlLabel
               className={styles.barCheckbox__box}
@@ -213,7 +246,11 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='Московская область'
+              label={
+                <Typography className={styles.typography}>
+                  Московская область
+                </Typography>
+              }
             />
             <FormControlLabel
               className={styles.barCheckbox__box}
@@ -225,7 +262,11 @@ const BarCheckbox = () => {
                   className={styles.barCheckbox__checkbox}
                 />
               }
-              label='Санкт-Петербург'
+              label={
+                <Typography className={styles.typography}>
+                  Санкт-Петербург
+                </Typography>
+              }
             />
           </FormGroup>
         </div>
