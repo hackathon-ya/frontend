@@ -1,9 +1,8 @@
-import Button from '@mui/material/Button';
-import styles from './ButtonMUI.module.scss';
-import React from 'react';
+import Button from "@mui/material/Button";
+import styles from "./ButtonMUI.module.scss";
 
 interface Props {
-  variant: string;
+  variant: any;
   text: string;
   onClick?: any;
 }
@@ -11,7 +10,7 @@ const ButtonMUI = ({ variant, text, onClick }: Props) => {
   return (
     <Button
       variant={variant}
-      className={styles['outlined']}
+      className={styles["outlined"]}
       onClick={() => onClick()}
     >
       {text}
