@@ -28,7 +28,6 @@
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 20px;
-  margin-bottom: 8px;
   text-align: left;
   @include h3-medium;
 }
@@ -82,7 +81,7 @@
 }
 
 .header__block {
-  align-self: end;
+  align-self: center;
 }
 .close__info {
   display: flex;
@@ -100,4 +99,42 @@
 }
 .close_image {
   transform: rotate(180deg);
+}
+
+.header__button{
+  height: 50px;
+  width: 250px;
+  @include text-medium;
+  color: $clBasicClick;
+  text-transform: none;
+  border-radius: 6px;
+  border-color: $clBasicClick;
+}
+
+.button_outlined {
+  height: 40px;
+  width: 169px;
+  text-transform: none;
+  background-color: #fff;
+  color: $clBasicClick;
+  border-color: $clBasicClick;
+  @include text-medium;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.button_contained {
+  height: 40px;
+  width: 209px;
+  margin-right: 20px;
+  text-transform: none;
+  background-color: $clBasicButton;
+  box-shadow: none;
+  color: #fff;
+  @include text-medium;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
 }

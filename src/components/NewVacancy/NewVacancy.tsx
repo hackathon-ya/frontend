@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { SubmitHandler, useForm, Controller } from 'react-hook-form';
-import back from '../../assets/images/back-left.svg';
+import back from '../../assets/images/arrow_left.svg';
 import done from '../../assets/images/check_mini.svg';
 import styles from './NewVacancy.module.scss';
 import InputMUI from '../InputMUI/InputMUI';
@@ -13,9 +13,9 @@ import {
   handleOpenModal,
 } from '../../store/vacancies/vacanciesSlice';
 import { vacanciesSelectors } from '../../store/vacancies/vacanciesSelectors';
-import ButtonMUI from '../ButtonMUI/ButtonMUI.tsx';
 import Modal from '../Modals/Modal.tsx';
 import Response from '../Response/Response.tsx';
+import { Button } from '@mui/material';
 
 interface Vacancy {
   name: string;
@@ -176,15 +176,14 @@ const NewVacancy = ({ text }: { text: string }) => {
           <Controller
             render={({ field: { onChange } }) => (
               <InputMultilineMUI
-              id="filled-multiline-static"
-              className="addVacancy__input_about"
-              onChange={onChange}
-            />
+                id="filled-multiline-static"
+                className="addVacancy__input_about"
+                onChange={onChange}
+              />
             )}
             control={control}
             name="textVacancy"
           />
-
         </div>
         <h3 className={styles.addVacancy__wishes}>Пожелания к соискателю</h3>
         <div className={styles.addVacancy__inputs}>
@@ -239,44 +238,48 @@ const NewVacancy = ({ text }: { text: string }) => {
         <div className={styles.addVacancy__buttons}>
           {view === 'add' && (
             <>
-              <ButtonMUI
-                variant="outlined"
-                text="Сохранить и опубликовать"
-                type='submit'
-                // className="vacancy__button_published"
-              />
-              <ButtonMUI
+              <Button
                 variant="contained"
-                text="Сохранить черновик"
-                type='submit'
-                // className="vacancy__button_save"
-              />
+                type="submit"
+                className={styles.button__published}
+              >
+                Сохранить и опубликовать
+              </Button>
+              <Button
+                variant="outlined"
+                type="submit"
+                className={styles.button__save}
+              >
+                Сохранить черновик
+              </Button>
             </>
           )}
+
           {view === 'edit' && (
             <>
-              <ButtonMUI
+              <Button
                 variant="contained"
-                text="Сохранить"
-                type='button'
-                // className="vacancy__button_published"
+                type="button"
+                className={styles.button__published}
                 onClick={() => dispatch(handleOpenModal())}
-              />
-              <ButtonMUI
+              >
+                Сохранить
+              </Button>
+              <Button
                 variant="outlined"
-                text="Отменить"
-                type='button'
-                // className="vacancy__button_save"
-              />
+                type="button"
+                className={styles.button__save}
+              >
+                Отменить
+              </Button>
             </>
           )}
           <Modal
             title={'Сохранить изменения?'}
             subtitle={'Все изменения будут сохранены'}
           />
-
         </div>
-        <Response/>          
+        {/* <Response /> */}
       </form>
     </section>
   );
