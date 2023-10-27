@@ -11,6 +11,7 @@ interface ModalProps {
 }
 function Modal({ title, subtitle }: ModalProps) {
   const show = useSelector(vacanciesSelectors.getShow);
+  const view = useSelector(vacanciesSelectors.getView);
   const dispatch = useDispatch();
   if (!show) return null;
   return (
@@ -32,17 +33,28 @@ function Modal({ title, subtitle }: ModalProps) {
                 type="button"
                 className={styles.modal__cancell}
                 onClick={() => dispatch(handleCloseModal())}
-                sx={{mr:'12px'}}
+                sx={{ mr: '12px' }}
               >
                 Отменить
               </Button>
-              <Button
-                variant="contained"
-                className={styles.modal__action}
-                type="button"
-              >
-                Текст
-              </Button>
+              {view != 'edit' && (
+                <Button
+                  variant="contained"
+                  className={styles.modal__action}
+                  type="button"
+                >
+                  Удалить
+                </Button>
+              )}
+              {view === 'edit' && (
+                <Button
+                  variant="contained"
+                  className={styles.modal__action}
+                  type="button"
+                >
+                  Сохранить
+                </Button>
+              )}
             </div>
           </div>
         </section>,
