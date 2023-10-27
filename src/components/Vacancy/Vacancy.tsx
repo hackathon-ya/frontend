@@ -9,7 +9,7 @@ import {
 } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
 import { Button } from '@mui/material';
-import SendMessage from '../Modals/SendMessage/SendMessage';
+// import SendMessage from '../Modals/SendMessage/SendMessage';
 
 type VacancyProps = {
   onClick: () => void;
@@ -33,12 +33,12 @@ const Vacancy = (props: VacancyProps) => {
           </div>
           <div className={styles.vacancy__header_icons}>
             <ButtonIcon
-              type="button"
+              type='button'
               className={styles.vacancy__header_icon_edit}
               openModal={() => dispatch(handleOpenEditForm())}
             />
             <ButtonIcon
-              type="button"
+              type='button'
               className={styles.vacancy__header_icon_delete}
               openModal={() => dispatch(handleOpenModal())}
             />
@@ -47,7 +47,7 @@ const Vacancy = (props: VacancyProps) => {
         <p className={styles.vacancy__header_text}>ООО название компании</p>
         <p className={styles.vacancy__header_text}>Москва</p>
         <div className={styles.vacancy__header_expiriencs}>
-          <img src={suitcase} className={styles.vacancy__header_icon} alt="" />
+          <img src={suitcase} className={styles.vacancy__header_icon} alt='' />
           <p className={styles.vacancy__header_text}>Опыт о 1 года до 3 лет</p>
         </div>
 
@@ -100,23 +100,23 @@ const Vacancy = (props: VacancyProps) => {
         <div className={styles.vacancy__header_buttons}>
           <div>
             <Button
-              type="button"
-              variant="contained"
+              type='button'
+              variant='contained'
               className={styles.button_contained}
             >
               Показать 420 кандидатов
             </Button>
             <Button
-              type="button"
-              variant="outlined"
+              type='button'
+              variant='outlined'
               className={styles.button_outlined}
             >
               +5 новых откликов
             </Button>
           </div>
           <Button
-            type="button"
-            variant="outlined"
+            type='button'
+            variant='outlined'
             className={styles.button_outlined}
           >
             Закрыть вакансию
@@ -124,7 +124,7 @@ const Vacancy = (props: VacancyProps) => {
         </div>
         <button
           className={styles.vacancy__close}
-          type="button"
+          type='button'
           onClick={onClick}
         >
           <img className={styles.vacancy__close_image} src={strelkaUP} />

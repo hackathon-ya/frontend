@@ -14,7 +14,7 @@ import {
 } from '../../store/vacancies/vacanciesSlice';
 import { vacanciesSelectors } from '../../store/vacancies/vacanciesSelectors';
 import Modal from '../Modals/Modal.tsx';
-import Response from '../Response/Response.tsx';
+// import Response from '../Response/Response.tsx';
 import { Button } from '@mui/material';
 
 interface Vacancy {
@@ -44,7 +44,7 @@ const NewVacancy = ({ text }: { text: string }) => {
 
   return (
     <section className={styles.addVacancy}>
-      <Link to="/vacancies/active" onClick={() => dispatch(handleActive())}>
+      <Link to='/vacancies/active' onClick={() => dispatch(handleActive())}>
         <button className={styles.addVacancy__button_back}>
           <img className={styles.addVacancy__image} src={back} />
           <p className={styles.addVacancy__link}>Назад</p>
@@ -61,14 +61,14 @@ const NewVacancy = ({ text }: { text: string }) => {
           <Controller
             render={({ field: { onChange } }) => (
               <InputMUI
-                variant="outlined"
-                id="input-vacancy-name"
-                className="addVacancy__input"
+                variant='outlined'
+                id='input-vacancy-name'
+                className='addVacancy__input'
                 onChange={onChange}
               />
             )}
             control={control}
-            name="name"
+            name='name'
           />
         </div>
         <div className={styles.addVacancy__inputs}>
@@ -76,14 +76,14 @@ const NewVacancy = ({ text }: { text: string }) => {
           <Controller
             render={({ field: { onChange } }) => (
               <InputMUI
-                variant="outlined"
-                id="input-vacancy-name"
-                className="addVacancy__input"
+                variant='outlined'
+                id='input-vacancy-name'
+                className='addVacancy__input'
                 onChange={onChange}
               />
             )}
             control={control}
-            name="company"
+            name='company'
           />
         </div>
         <div className={styles.addVacancy__inputs}>
@@ -91,15 +91,15 @@ const NewVacancy = ({ text }: { text: string }) => {
           <Controller
             render={({ field: { onChange } }) => (
               <InputSelectMUI
-                id="input-vacancy-name"
-                className="addVacancy__input_select"
+                id='input-vacancy-name'
+                className='addVacancy__input_select'
                 currencies={constants.City}
-                defaultValue="Москва"
+                defaultValue='Москва'
                 onChange={onChange}
               />
             )}
             control={control}
-            name="city"
+            name='city'
           />
         </div>
         <div className={styles.addVacancy__inputs}>
@@ -108,28 +108,28 @@ const NewVacancy = ({ text }: { text: string }) => {
             <Controller
               render={({ field: { onChange } }) => (
                 <InputMUI
-                  variant="outlined"
-                  id="input-vacancy-cash-from"
-                  className="addVacancy__input_money"
-                  placeholder="От"
+                  variant='outlined'
+                  id='input-vacancy-cash-from'
+                  className='addVacancy__input_money'
+                  placeholder='От'
                   onChange={onChange}
                 />
               )}
               control={control}
-              name="cash_from"
+              name='cash_from'
             />
             <Controller
               render={({ field: { onChange } }) => (
                 <InputMUI
-                  variant="outlined"
-                  id="input-vacancy-cash-before"
-                  className="addVacancy__input_money"
-                  placeholder="До"
+                  variant='outlined'
+                  id='input-vacancy-cash-before'
+                  className='addVacancy__input_money'
+                  placeholder='До'
                   onChange={onChange}
                 />
               )}
               control={control}
-              name="cash_to"
+              name='cash_to'
             />
           </div>
         </div>
@@ -139,15 +139,15 @@ const NewVacancy = ({ text }: { text: string }) => {
             <Controller
               render={({ field: { onChange } }) => (
                 <InputMUI
-                  variant="outlined"
-                  id="input-vacancy-name"
-                  className="addVacancy__input_skills"
-                  placeholder="Навыки"
+                  variant='outlined'
+                  id='input-vacancy-name'
+                  className='addVacancy__input_skills'
+                  placeholder='Навыки'
                   onChange={onChange}
                 />
               )}
               control={control}
-              name="skills"
+              name='skills'
             />
 
             <img className={styles.addVacancy__image_done} src={done} />
@@ -176,13 +176,13 @@ const NewVacancy = ({ text }: { text: string }) => {
           <Controller
             render={({ field: { onChange } }) => (
               <InputMultilineMUI
-                id="filled-multiline-static"
-                className="addVacancy__input_about"
+                id='filled-multiline-static'
+                className='addVacancy__input_about'
                 onChange={onChange}
               />
             )}
             control={control}
-            name="textVacancy"
+            name='textVacancy'
           />
         </div>
         <h3 className={styles.addVacancy__wishes}>Пожелания к соискателю</h3>
@@ -191,15 +191,15 @@ const NewVacancy = ({ text }: { text: string }) => {
           <Controller
             render={({ field: { onChange } }) => (
               <InputSelectMUI
-                id="input-vacancy-expiriens"
-                className="addVacancy__input_select"
+                id='input-vacancy-expiriens'
+                className='addVacancy__input_select'
                 currencies={constants.Expiriens}
-                defaultValue="Не важен"
+                defaultValue='Не важен'
                 onChange={onChange}
               />
             )}
             control={control}
-            name="experience"
+            name='experience'
           />
         </div>
         <div className={styles.addVacancy__inputs}>
@@ -207,15 +207,15 @@ const NewVacancy = ({ text }: { text: string }) => {
           <Controller
             render={({ field: { onChange } }) => (
               <InputSelectMUI
-                id="input-vacancy-busyness"
-                className="addVacancy__input_select"
+                id='input-vacancy-busyness'
+                className='addVacancy__input_select'
                 currencies={constants.Busyness}
-                defaultValue="Полная"
+                defaultValue='Полная'
                 onChange={onChange}
               />
             )}
             control={control}
-            name="work"
+            name='work'
           />
         </div>
         <div className={styles.addVacancy__inputs}>
@@ -224,30 +224,30 @@ const NewVacancy = ({ text }: { text: string }) => {
           <Controller
             render={({ field: { onChange } }) => (
               <InputSelectMUI
-                id="input-vacancy-formatWork"
-                className="addVacancy__input_select"
+                id='input-vacancy-formatWork'
+                className='addVacancy__input_select'
                 currencies={constants.FormatWork}
-                defaultValue="Не важен"
+                defaultValue='Не важен'
                 onChange={onChange}
               />
             )}
             control={control}
-            name="formatWork"
+            name='formatWork'
           />
         </div>
         <div className={styles.addVacancy__buttons}>
           {view === 'add' && (
             <>
               <Button
-                variant="contained"
-                type="submit"
+                variant='contained'
+                type='submit'
                 className={styles.button__published}
               >
                 Сохранить и опубликовать
               </Button>
               <Button
-                variant="outlined"
-                type="submit"
+                variant='outlined'
+                type='submit'
                 className={styles.button__save}
               >
                 Сохранить черновик
@@ -258,16 +258,16 @@ const NewVacancy = ({ text }: { text: string }) => {
           {view === 'edit' && (
             <>
               <Button
-                variant="contained"
-                type="button"
+                variant='contained'
+                type='button'
                 className={styles.button__published}
                 onClick={() => dispatch(handleOpenModal())}
               >
                 Сохранить
               </Button>
               <Button
-                variant="outlined"
-                type="button"
+                variant='outlined'
+                type='button'
                 className={styles.button__save}
               >
                 Отменить
