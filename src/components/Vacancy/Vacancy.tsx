@@ -9,6 +9,7 @@ import {
 } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
 import { Button } from '@mui/material';
+import SendMessage from '../Modals/SendMessage/SendMessage';
 
 type VacancyProps = {
   onClick: () => void;

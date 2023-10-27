@@ -33,7 +33,7 @@ function Modal({ title, subtitle }: ModalProps) {
                 type="button"
                 className={styles.modal__cancell}
                 onClick={() => dispatch(handleCloseModal())}
-                sx={{ mr: '12px' }}
+                sx={{ mr: '12px', width: '152px' }}
               >
                 Отменить
               </Button>
@@ -42,6 +42,7 @@ function Modal({ title, subtitle }: ModalProps) {
                   variant="contained"
                   className={styles.modal__action}
                   type="button"
+                  sx={{ width: '152px' }}
                 >
                   Удалить
                 </Button>
@@ -51,6 +52,7 @@ function Modal({ title, subtitle }: ModalProps) {
                   variant="contained"
                   className={styles.modal__action}
                   type="button"
+                  sx={{ width: '152px' }}
                 >
                   Сохранить
                 </Button>

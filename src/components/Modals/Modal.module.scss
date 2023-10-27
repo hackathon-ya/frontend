@@ -28,6 +28,7 @@
   background-color: #fff;
   border-radius: 8px;
 }
+
 .title {
   @include h2-medium;
   margin-bottom: 12px;
@@ -51,7 +52,6 @@
 
 .modal__cancell {
   height: 40px;
-  width: 152px;
   text-transform: none;
   background-color: #fff;
   border-color: $clBasicClick;
@@ -64,7 +64,6 @@
 }
 .modal__action {
   height: 40px;
-  width: 152px;
   text-transform: none;
   background-color: $clBasicButton;
   box-shadow: none;
