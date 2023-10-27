@@ -6,6 +6,7 @@ import styles from './BarCheckbox.module.scss';
 import basket from '../../assets/images/delete.svg';
 import ButtonMUI from '../ButtonMUI/ButtonMUI';
 import { Typography } from '@mui/material';
+import { CheckBoxOutlineBlankTwoTone } from '@mui/icons-material';
 
 const BarCheckbox = () => {
   const [state, setState] = React.useState({
@@ -64,7 +65,23 @@ const BarCheckbox = () => {
                   checked={fullDay}
                   onChange={handleChange}
                   name='fullDay'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    fullDay
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={
@@ -80,7 +97,23 @@ const BarCheckbox = () => {
                   checked={parttime}
                   onChange={handleChange}
                   name='parttime'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    parttime
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={
@@ -96,7 +129,23 @@ const BarCheckbox = () => {
                   checked={project}
                   onChange={handleChange}
                   name='project'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    project
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={
@@ -117,7 +166,23 @@ const BarCheckbox = () => {
                   checked={nothing}
                   onChange={handleChange}
                   name='nothing'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    nothing
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={
@@ -131,7 +196,23 @@ const BarCheckbox = () => {
                   checked={oneYear}
                   onChange={handleChange}
                   name='oneYear'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    oneYear
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={
@@ -145,7 +226,23 @@ const BarCheckbox = () => {
                   checked={threeYear}
                   onChange={handleChange}
                   name='threeYear'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    threeYear
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={
@@ -161,7 +258,23 @@ const BarCheckbox = () => {
                   checked={moreThreeYear}
                   onChange={handleChange}
                   name='moreThreeYear'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    moreThreeYear
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={
@@ -174,15 +287,32 @@ const BarCheckbox = () => {
         </div>
         <div className={styles.barCheckbox__conteiner}>
           <h3 className={styles.barCheckbox__subtitle}>Формат работы</h3>
-          <FormGroup>
+          <FormGroup color='default'>
             <FormControlLabel
               className={styles.barCheckbox__box}
+              color='default'
               control={
                 <Checkbox
                   checked={office}
                   onChange={handleChange}
                   name='office'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    office
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={
@@ -196,7 +326,23 @@ const BarCheckbox = () => {
                   checked={gibrid}
                   onChange={handleChange}
                   name='gibrid'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    gibrid
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={
@@ -210,7 +356,23 @@ const BarCheckbox = () => {
                   checked={remote}
                   onChange={handleChange}
                   name='remote'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    remote
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={
@@ -229,7 +391,23 @@ const BarCheckbox = () => {
                   checked={moscow}
                   onChange={handleChange}
                   name='moscow'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    moscow
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={
@@ -243,7 +421,23 @@ const BarCheckbox = () => {
                   checked={moscowArea}
                   onChange={handleChange}
                   name='moscowArea'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    moscowArea
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={
@@ -259,7 +453,23 @@ const BarCheckbox = () => {
                   checked={SPB}
                   onChange={handleChange}
                   name='SPB'
-                  className={styles.barCheckbox__checkbox}
+                  className={
+                    SPB
+                      ? styles.barCheckbox__checkbox_active
+                      : styles.barCheckbox__checkbox
+                  }
+                  color='default'
+                  sx={{ '& .MuiSvgIcon-root': { fontSize: 30 } }}
+                  icon={
+                    <CheckBoxOutlineBlankTwoTone
+                      style={{
+                        background: '#fff',
+                        borderRadius: '3px',
+                        width: '24px',
+                        height: '24px',
+                      }}
+                    />
+                  }
                 />
               }
               label={

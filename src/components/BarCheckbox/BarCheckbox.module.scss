@@ -60,6 +60,16 @@
   color: #fff;
   margin-right: 8px;
 }
+.barCheckbox__checkbox_active {
+  color: $clActive;
+  border: 1px solid $clBasicClick;
+  border-radius: 3px;
+  background-color: $clBasicClick;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin-right: 8px;
+}
 .typography {
   @include text-medium;
 }
