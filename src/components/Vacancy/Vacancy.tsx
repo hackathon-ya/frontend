@@ -4,7 +4,10 @@ import strelkaUP from '../../assets/images/strelka_up.svg';
 import styles from './Vacancy.module.scss';
 import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
 import ButtonIcon from '../../components/ButtonIcon/ButtonIcon';
-import { handleOpenEditForm, handleOpenModal } from '../../store/vacancies/vacanciesSlice';
+import {
+  handleOpenEditForm,
+  handleOpenModal,
+} from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
 
 type VacancyProps = {
@@ -29,12 +32,12 @@ const Vacancy = (props: VacancyProps) => {
           </div>
           <div className={styles.vacancy__header_icons}>
             <ButtonIcon
-              type='button'
+              type="button"
               className={styles.vacancy__header_icon_edit}
               openModal={() => dispatch(handleOpenEditForm())}
             />
             <ButtonIcon
-              type='button'
+              type="button"
               className={styles.vacancy__header_icon_delete}
               openModal={() => dispatch(handleOpenModal())}
             />
@@ -43,7 +46,7 @@ const Vacancy = (props: VacancyProps) => {
         <p className={styles.vacancy__header_text}>ООО название компании</p>
         <p className={styles.vacancy__header_text}>Москва</p>
         <div className={styles.vacancy__header_expiriencs}>
-          <img src={suitcase} className={styles.vacancy__header_icon} alt='' />
+          <img src={suitcase} className={styles.vacancy__header_icon} alt="" />
           <p className={styles.vacancy__header_text}>Опыт о 1 года до 3 лет</p>
         </div>
 
@@ -96,25 +99,28 @@ const Vacancy = (props: VacancyProps) => {
         <div className={styles.vacancy__header_buttons}>
           <div>
             <ButtonMUI
-              variant='outlined'
-              text='+5 новых откликов'
+              type="button"
+              variant="contained"
+              text="Показать 420 кандидатов"
               onClick={() => {}}
             />
             <ButtonMUI
-              variant='outlined'
-              text='Показать 420 кандидатов'
+              type="button"
+              variant="outlined"
+              text="+5 новых откликов"
               onClick={() => {}}
             />
           </div>
           <ButtonMUI
-            variant='contained'
-            text='Закрыть вакансию'
+            type="button"
+            variant="outlined"
+            text="Закрыть вакансию"
             onClick={() => {}}
           />
         </div>
         <button
           className={styles.vacancy__close}
-          type='button'
+          type="button"
           onClick={onClick}
         >
           <img className={styles.vacancy__close_image} src={strelkaUP} />

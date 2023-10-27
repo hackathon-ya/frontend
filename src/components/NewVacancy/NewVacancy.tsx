@@ -15,6 +15,7 @@ import {
 import { vacanciesSelectors } from '../../store/vacancies/vacanciesSelectors';
 import ButtonMUI from '../ButtonMUI/ButtonMUI.tsx';
 import Modal from '../Modals/Modal.tsx';
+import Response from '../Response/Response.tsx';
 
 interface Vacancy {
   name: string;
@@ -273,10 +274,9 @@ const NewVacancy = ({ text }: { text: string }) => {
             title={'Сохранить изменения?'}
             subtitle={'Все изменения будут сохранены'}
           />
-          <button type="submit" className='className="vacancy__button_save'>
-            Cjhacj
-          </button>
+
         </div>
+        <Response/>          
       </form>
     </section>
   );

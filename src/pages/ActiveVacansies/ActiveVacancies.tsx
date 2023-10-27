@@ -24,6 +24,7 @@ const ActiveVacancies = () => {
       <div className={styles.headerWrapper}>
         <h3 className={styles.header__block}>Активные вакансии</h3>
         <ButtonMUI
+          type="button"
           variant="outlined"
           text="+ Создать новую"
           onClick={() => dispatch(handleOpenForm())}
@@ -56,10 +57,22 @@ const ActiveVacancies = () => {
             </div>
             <div className={styles.buttonWrapper}>
               <div>
-                <ButtonMUI variant="contained" text="Показать 420 кандидатов" />
-                <ButtonMUI variant="outlined" text="+5 новых откликов" />
+                <ButtonMUI
+                  type="button"
+                  variant="contained"
+                  text="Показать 420 кандидатов"
+                />
+                <ButtonMUI
+                  type="button"
+                  variant="outlined"
+                  text="+5 новых откликов"
+                />
               </div>
-              <ButtonMUI variant="contained" text="Закрыть вакансию" />
+              <ButtonMUI
+                type="button"
+                variant="outlined"
+                text="Закрыть вакансию"
+              />
             </div>
             <button
               className={styles.close__info}
