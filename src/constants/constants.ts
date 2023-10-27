@@ -1,12 +1,12 @@
 export const ROUTES = {
   HOME: '/',
   APPLICANT: '/applicant',
-  VACANCIES: '/vacancies',
+  VACANCIES: '/vacancies/active',
   PROFILE: '/profile',
   ARCHIVE: '/vacancies/archive',
   DRAFT: 'vacancies/draft',
   ADDVACANCIES: 'vacancies/add',
-  FAVORITES: '/applicant/favorites'
+  FAVORITES: '/favorites'
 };
 
 const Expiriens = [

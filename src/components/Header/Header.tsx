@@ -1,9 +1,8 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Header.module.scss';
 import profile from '../../assets/images/profile.svg';
 import group from '../../assets/images/group.svg';
 import SearchBar from '../SearchBar/SearchBar';
-import like from '../../assets/images/Like.svg'
 import { handleActive } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
 
@@ -14,14 +13,21 @@ const Header = () => {
       <nav className={styles.nav}>
         <ul className={styles.list}>
           <li>
-            <Link to="/applicant" className={styles.link}>
+            <NavLink
+              to="/applicant"
+              className={({ isActive }) => (isActive ? styles.active_rigth : styles.link)}
+            >
               Кандидаты
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link to="/vacancies" onClick={() => dispatch(handleActive())}>
+            <NavLink
+              to="/vacancies/active"
+              className={({ isActive }) => (isActive ? styles.active : '')}
+              onClick={() => dispatch(handleActive())}
+            >
               Вакансии
-            </Link>
+            </NavLink>
           </li>
           <li>
             <SearchBar />
@@ -30,10 +36,15 @@ const Header = () => {
             <li>
               <img src={group} alt="Сообщения" className={styles.img} />
             </li>
-            <li>
-              <Link to="/applicant/favorites">
-                <img src={like} alt="Избранные" className={styles.img} />
-              </Link>
+            <li className={styles.like}>
+              <NavLink
+                to="/favorites"
+                className={({ isActive }) =>
+                  isActive ? styles.like_active : ''
+                }
+              >
+                <div className={styles.like}></div>
+              </NavLink>
             </li>
             <li>
               <div className={styles.profileWrapper}>

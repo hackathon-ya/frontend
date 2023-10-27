@@ -1,4 +1,4 @@
-@import "../../vendor/constants";
+@import '../../vendor/constants';
 .list {
   list-style: none;
   padding: 60px 106px 0 60px;
@@ -10,6 +10,6 @@
   cursor: pointer;
   margin-bottom: 24px;
 }
-.item:active {
+.active {
   color: #fff;
 }

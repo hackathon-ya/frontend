@@ -44,7 +44,7 @@ const NewVacancy = ({ text }: { text: string }) => {
 
   return (
     <section className={styles.addVacancy}>
-      <Link to="/vacancies" onClick={() => dispatch(handleActive())}>
+      <Link to="/vacancies/active" onClick={() => dispatch(handleActive())}>
         <button className={styles.addVacancy__button_back}>
           <img className={styles.addVacancy__image} src={back} />
           <p className={styles.addVacancy__link}>Назад</p>

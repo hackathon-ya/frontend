@@ -1,4 +1,4 @@
-@import "../../vendor/constants";
+@import '../../vendor/constants';
 .header {
   background-color: $clBasicText;
   height: 100px;
@@ -15,10 +15,18 @@
   flex-direction: row;
   align-items: center;
 }
+.active {
+  color: #fff;
+}
 
+.active_rigth{
+  margin-right: 32px;
+  color: #fff;
+}
 .link {
   margin-right: 32px;
 }
+
 .img {
   padding: 8px 0 0;
   width: 24px;
@@ -43,7 +51,22 @@
   display: flex;
   justify-content: space-between;
 }
-.text{
+.text {
   color: $clTextOnBlackBackground;
   padding-left: 8px;
+}
+
+.active_like {
+  background: url(../../assets/images/like_white.svg) no-repeat;
+  background-size: 24px 24px;
+}
+
+.like {
+  width: 24px;
+  height: 37px;
+  background: url(../../assets/images/like_gray.svg) no-repeat 0 7px;
+}
+
+.like:hover {
+  background: url(../../assets/images/like_white.svg) no-repeat 0 7px;
 }
