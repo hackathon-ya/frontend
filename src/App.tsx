@@ -12,7 +12,7 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="applicant" element={<Applicant />} />
+        <Route path="/" element={<Applicant />} />
         <Route path="favorites" element={<Favorites />} />
         <Route path="vacancies" element={<Vacancies />}>
           <Route path="active" element={<Vacancies />} />

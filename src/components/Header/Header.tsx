@@ -22,7 +22,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to="/vacancies"
+              to="/vacancies/active"
               className={({ isActive }) => (isActive ? styles.active : '')}
               onClick={() => dispatch(handleActive())}
             >
