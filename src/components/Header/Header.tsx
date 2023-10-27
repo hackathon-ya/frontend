@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.scss';
-import profile from '../../assets/images/profile.svg';
+import profile from '../../assets/images/Profile.svg';
 import group from '../../assets/images/group.svg';
 import SearchBar from '../SearchBar/SearchBar';
 import { handleActive } from '../../store/vacancies/vacanciesSlice';
@@ -14,15 +14,17 @@ const Header = () => {
         <ul className={styles.list}>
           <li>
             <NavLink
-              to="/applicant"
-              className={({ isActive }) => (isActive ? styles.active_rigth : styles.link)}
+              to='/applicant'
+              className={({ isActive }) =>
+                isActive ? styles.active_rigth : styles.link
+              }
             >
               Кандидаты
             </NavLink>
           </li>
           <li>
             <NavLink
-              to="/vacancies/active"
+              to='/vacancies/active'
               className={({ isActive }) => (isActive ? styles.active : '')}
               onClick={() => dispatch(handleActive())}
             >
@@ -34,18 +36,16 @@ const Header = () => {
           </li>
           <div className={styles.iconsWrapper}>
             <li>
-              <img src={group} alt="Сообщения" className={styles.img} />
+              <img src={group} alt='Сообщения' className={styles.img} />
             </li>
             <li className={styles.like}>
-              <NavLink
-                to="/favorites"
-              >
+              <NavLink to='/favorites'>
                 <div className={styles.like}></div>
               </NavLink>
             </li>
             <li>
               <div className={styles.profileWrapper}>
-                <img src={profile} alt="Профиль" className={styles.img} />
+                <img src={profile} alt='Профиль' className={styles.img} />
                 <p className={styles.text}>Евгения</p>
               </div>
             </li>
