@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Header.module.scss';
 import profile from '../../assets/images/Profile.svg';
-import group from '../../assets/images/group.svg';
+import group from '../../assets/images/Group.svg';
 import SearchBar from '../SearchBar/SearchBar';
 import { handleActive } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
