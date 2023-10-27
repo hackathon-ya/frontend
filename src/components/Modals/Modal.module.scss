@@ -1,5 +1,5 @@
-@import "../../vendor/constants.scss";
-@import "../../assets/styles/fonts-mixins";
+@import '../../vendor/constants.scss';
+@import '../../assets/styles/fonts-mixins';
 
 .modal {
   position: fixed;
@@ -28,6 +28,7 @@
   background-color: #fff;
   border-radius: 8px;
 }
+
 .title {
   @include h2-medium;
   margin-bottom: 12px;
@@ -47,4 +48,29 @@
   right: 10px;
   width: 24px;
   height: 24px;
+}
+
+.modal__cancell {
+  height: 40px;
+  text-transform: none;
+  background-color: #fff;
+  border-color: $clBasicClick;
+  color: $clBasicClick;
+  @include text-medium;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.modal__action {
+  height: 40px;
+  text-transform: none;
+  background-color: $clBasicButton;
+  box-shadow: none;
+  color: #fff;
+  @include text-medium;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
 }

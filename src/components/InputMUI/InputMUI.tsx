@@ -7,10 +7,11 @@ interface Props {
   variant: any;
   id: string;
   className: string;
-  placeholder: string;
+  placeholder?: string;
+  onChange: () => void,
 }
 
-const InputMUI = ({ variant, id, className, placeholder }: Props) => {
+const InputMUI = ({ variant, id, className, placeholder, onChange }: Props) => {
   return (
     <TextField
       id={id}
@@ -18,6 +19,7 @@ const InputMUI = ({ variant, id, className, placeholder }: Props) => {
       size={'small'}
       className={styles[className]}
       placeholder={placeholder}
+      onChange={onChange}
       InputProps={{ classes: { root: styles[className] } }}
       InputLabelProps={{
         classes: {

@@ -4,14 +4,16 @@ import styles from "./ButtonMUI.module.scss";
 interface Props {
   variant: any;
   text: string;
-  onClick?: any;
+  type: 'submit' | 'button';
+  onClick?: () => void;
 }
-const ButtonMUI = ({ variant, text, onClick }: Props) => {
+const ButtonMUI = ({ variant, text, onClick, type }: Props) => {
   return (
     <Button
       variant={variant}
       className={styles["outlined"]}
-      onClick={() => onClick()}
+      onClick={onClick}
+      type={type}
     >
       {text}
     </Button>
