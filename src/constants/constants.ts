@@ -1,14 +1,3 @@
-export const ROUTES = {
-  HOME: '/',
-  APPLICANT: '/applicant',
-  VACANCIES: '/vacancies/active',
-  PROFILE: '/profile',
-  ARCHIVE: '/vacancies/archive',
-  DRAFT: 'vacancies/draft',
-  ADDVACANCIES: 'vacancies/add',
-  FAVORITES: '/favorites'
-};
-
 const Expiriens = [
   {
     value: 'Не важен',

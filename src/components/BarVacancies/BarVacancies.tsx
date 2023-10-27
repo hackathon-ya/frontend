@@ -13,7 +13,7 @@ const BarVacancies = () => {
     <ul className={styles.list}>
       <li className={styles.item} onClick={() => dispatch(handleActive())}>
         <NavLink
-          to="/vacancies/active"
+          to="active"
           className={({ isActive }) => (isActive ? styles.active : undefined)}
         >
           Активные
@@ -21,7 +21,7 @@ const BarVacancies = () => {
       </li>
       <li className={styles.item} onClick={() => dispatch(handleArchive())}>
         <NavLink
-          to="/vacancies/draft"
+          to="draft"
           className={({ isActive }) => (isActive ? styles.active : undefined)}
         >
           Черновики
@@ -29,7 +29,7 @@ const BarVacancies = () => {
       </li>
       <li className={styles.item} onClick={() => dispatch(handleDraft())}>
         <NavLink
-          to="/vacancies/archive"
+          to="archive"
           className={({ isActive }) => (isActive ? styles.active : undefined)}
         >
           Архив

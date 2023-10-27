@@ -22,7 +22,7 @@ const Header = () => {
           </li>
           <li>
             <NavLink
-              to="/vacancies/active"
+              to="/vacancies"
               className={({ isActive }) => (isActive ? styles.active : '')}
               onClick={() => dispatch(handleActive())}
             >
@@ -39,9 +39,6 @@ const Header = () => {
             <li className={styles.like}>
               <NavLink
                 to="/favorites"
-                className={({ isActive }) =>
-                  isActive ? styles.like_active : ''
-                }
               >
                 <div className={styles.like}></div>
               </NavLink>
