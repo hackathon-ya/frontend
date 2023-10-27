@@ -480,7 +480,7 @@ const BarCheckbox = () => {
             />
           </FormGroup>
         </div>
-        <ButtonMUI variant='contained' text='Применить' />
+        <ButtonMUI variant='contained' type='button' text='Применить' />
       </form>
     </section>
   );

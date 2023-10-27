@@ -1,0 +1,30 @@
+@import '../../../vendor/constants.scss';
+@import '../../../assets/styles/fonts-mixins';
+
+.title {
+  @include h2-medium;
+  margin-bottom: 12px;
+  color: $clBasicText;
+  text-align: left;
+}
+.container_message {
+  width: 428px;
+  padding: 52px 32px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  border-radius: 8px;
+  box-sizing: border-box;
+}
+.area {
+  width: 364px;
+  height: 80px;
+  margin-bottom: 20px;
+  padding: 12px 10px;
+  border-color: $clPlaceholder;
+  border-radius: 4px;
+  color: $clPlaceholder;
+  resize: none;
+  box-sizing: border-box;
+}

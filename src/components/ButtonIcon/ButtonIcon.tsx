@@ -1,7 +1,7 @@
 interface Props {
   type: 'submit' | 'button';
   className?: string;
-  openModal?: any;
+  openModal?: () => void;
 }
 const ButtonIcon = ({ type, className, openModal }: Props) => {
   return (

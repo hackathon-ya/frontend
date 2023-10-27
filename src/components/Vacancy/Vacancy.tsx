@@ -2,10 +2,14 @@ import suitcase from '../../assets/images/suitcase.svg';
 import Modal from '../../components/Modals/Modal';
 import strelkaUP from '../../assets/images/strelka_up.svg';
 import styles from './Vacancy.module.scss';
-import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
 import ButtonIcon from '../../components/ButtonIcon/ButtonIcon';
-import { handleOpenModal } from '../../store/vacancies/vacanciesSlice';
+import {
+  handleOpenEditForm,
+  handleOpenModal,
+} from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
+import { Button } from '@mui/material';
+// import SendMessage from '../Modals/SendMessage/SendMessage';
 
 type VacancyProps = {
   onClick: () => void;
@@ -31,6 +35,7 @@ const Vacancy = (props: VacancyProps) => {
             <ButtonIcon
               type='button'
               className={styles.vacancy__header_icon_edit}
+              openModal={() => dispatch(handleOpenEditForm())}
             />
             <ButtonIcon
               type='button'
@@ -94,22 +99,28 @@ const Vacancy = (props: VacancyProps) => {
 
         <div className={styles.vacancy__header_buttons}>
           <div>
-            <ButtonMUI
+            <Button
+              type='button'
+              variant='contained'
+              className={styles.button_contained}
+            >
+              Показать 420 кандидатов
+            </Button>
+            <Button
+              type='button'
               variant='outlined'
-              text='+5 новых откликов'
-              onClick={() => {}}
-            />
-            <ButtonMUI
-              variant='outlined'
-              text='Показать 420 кандидатов'
-              onClick={() => {}}
-            />
+              className={styles.button_outlined}
+            >
+              +5 новых откликов
+            </Button>
           </div>
-          <ButtonMUI
-            variant='contained'
-            text='Закрыть вакансию'
-            onClick={() => {}}
-          />
+          <Button
+            type='button'
+            variant='outlined'
+            className={styles.button_outlined}
+          >
+            Закрыть вакансию
+          </Button>
         </div>
         <button
           className={styles.vacancy__close}

@@ -209,3 +209,31 @@
     cursor: pointer;
   }
 }
+
+.button_outlined {
+  height: 40px;
+  width: 169px;
+  text-transform: none;
+  background-color: #fff;
+  color: $clBasicClick;
+  border-color: $clBasicClick;
+  @include text-medium;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.button_contained {
+  height: 40px;
+  width: 209px;
+  margin-right: 20px;
+  text-transform: none;
+  background-color: $clBasicButton;
+  box-shadow: none;
+  color: #fff;
+  @include text-medium;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}

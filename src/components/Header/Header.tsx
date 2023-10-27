@@ -1,8 +1,7 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import styles from './Header.module.scss';
-import like from '../../assets/images/like.svg';
-import profile from '../../assets/images/profile.svg';
-import group from '../../assets/images/group.svg';
+import profile from '../../assets/images/Profile.svg';
+import group from '../../assets/images/Group.svg';
 import SearchBar from '../SearchBar/SearchBar';
 import { handleActive } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
@@ -14,38 +13,41 @@ const Header = () => {
       <nav className={styles.nav}>
         <ul className={styles.list}>
           <li>
-            <Link to="/applicant" className={styles.link}>
+            <NavLink
+              to='/applicant'
+              className={({ isActive }) =>
+                isActive ? styles.active_rigth : styles.link
+              }
+            >
               Кандидаты
-            </Link>
+            </NavLink>
           </li>
           <li>
-            <Link
-              to="/vacancies"
+            <NavLink
+              to='/vacancies/active'
+              className={({ isActive }) => (isActive ? styles.active : '')}
               onClick={() => dispatch(handleActive())}
-              className={styles.link}
             >
               Вакансии
-            </Link>
+            </NavLink>
           </li>
           <li>
             <SearchBar />
           </li>
           <div className={styles.iconsWrapper}>
             <li>
-              <Link to="/applicant/favorites">
-                <img src={like} alt="Лайк" className={styles.img} />
-              </Link>
+              <img src={group} alt='Сообщения' className={styles.img} />
+            </li>
+            <li className={styles.like}>
+              <NavLink to='/favorites'>
+                <div className={styles.like}></div>
+              </NavLink>
             </li>
             <li>
-              <img src={group} alt="Сообщения" className={styles.img} />
-            </li>
-            <li>
-              <Link to="/">
-                <div className={styles.profileWrapper}>
-                  <img src={profile} alt="Профиль" className={styles.img} />
-                  <p>Евгения</p>
-                </div>
-              </Link>
+              <div className={styles.profileWrapper}>
+                <img src={profile} alt='Профиль' className={styles.img} />
+                <p className={styles.text}>Евгения</p>
+              </div>
             </li>
           </div>
         </ul>

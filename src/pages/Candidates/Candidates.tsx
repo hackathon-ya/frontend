@@ -84,7 +84,11 @@ const Candidates = () => {
               </div>
               <div className={styles.candidates__buttonWrapper}>
                 <div>
-                  <ButtonMUI variant='contained' text='Пригласить' />
+                  <ButtonMUI
+                    type='button'
+                    variant='contained'
+                    text='Пригласить'
+                  />
                 </div>
               </div>
 

@@ -1,7 +1,6 @@
 import Modal from '../../components/Modals/Modal';
 import styles from './ActiveVacansies.module.scss';
 import ButtonIcon from '../../components/ButtonIcon/ButtonIcon';
-import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
 import Vacancy from '../../components/Vacancy/Vacancy';
 import strelkaUP from '../../assets/images/strelka_up.svg';
 import {
@@ -11,6 +10,7 @@ import {
 } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { Button } from '@mui/material';
 
 const ActiveVacancies = () => {
   const [open, setOpen] = useState(true);
@@ -21,17 +21,20 @@ const ActiveVacancies = () => {
 
   return (
     <div>
+      <div className={styles.headerWrapper}>
+        <h3 className={styles.header__block}>Активные вакансии</h3>
+        <Button
+          type="button"
+          variant="outlined"
+          className={styles.header__button}
+          onClick={() => dispatch(handleOpenForm())}
+        >
+          + Создать новую
+        </Button>
+      </div>
       {open ? (
         <>
-          <div className={styles.headerWrapper}>
-            <h3 className={styles.header__block}>Активные вакансии</h3>
-            <ButtonMUI
-              variant='outlined'
-              text='+ Создать новую'
-              onClick={() => dispatch(handleOpenForm())}
-            />
-          </div>
-          <div className={styles.card} id='card'>
+          <div className={styles.card} id="card">
             <div className={styles.vacancie}>
               <div className={styles.vacancieWrapper}>
                 <h3 className={styles.vacancy}>Интернет-маркетолог</h3>
@@ -48,7 +51,7 @@ const ActiveVacancies = () => {
                 />
 
                 <ButtonIcon
-                  type='button'
+                  type="button"
                   className={styles.close}
                   openModal={() => dispatch(handleOpenModal())}
                 />
@@ -56,14 +59,32 @@ const ActiveVacancies = () => {
             </div>
             <div className={styles.buttonWrapper}>
               <div>
-                <ButtonMUI variant='outlined' text='+5 новых откликов' />
-                <ButtonMUI variant='outlined' text='Показать 420 кандидатов' />
+                <Button
+                  type="button"
+                  variant="contained"
+                  className={styles.button_contained}
+                >
+                  Показать 420 кандидатов
+                </Button>
+                <Button
+                  type="button"
+                  variant="outlined"
+                  className={styles.button_outlined}
+                >
+                  +5 новых откликов
+                </Button>
               </div>
-              <ButtonMUI variant='contained' text='Закрыть вакансию' />
+              <Button
+                type="button"
+                variant="outlined"
+                className={styles.button_outlined}
+              >
+                Закрыть вакансию
+              </Button>
             </div>
             <button
               className={styles.close__info}
-              type='button'
+              type="button"
               onClick={onClick}
             >
               <img className={styles.close_image} src={strelkaUP} />

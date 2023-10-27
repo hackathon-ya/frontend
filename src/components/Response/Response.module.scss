@@ -1,0 +1,32 @@
+@import '../../assets/styles/fonts-mixins';
+@import '../../vendor/constants.scss';
+.response {
+  width: 350px;
+  height: 104px;
+  border-radius: 12px;
+  background: linear-gradient(
+    to bottom,
+    $clBasicButton 0%,
+    $clBasicButton 90%,
+    $clBlueLight 90%,
+    $clBlueLight 100%
+  );
+  display: flex;
+  padding: 20px 52px 22px 24px;
+  box-sizing: border-box;
+}
+.header {
+  color: #fff;
+  @include text-medium;
+  margin-bottom: 4px;
+}
+
+.text {
+  color: #fff;
+  @include caption-text;
+}
+.image {
+  width: 53.33px;
+  height: 53.33px;
+  margin-right: 13.33px;
+}

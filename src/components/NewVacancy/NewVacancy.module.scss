@@ -29,7 +29,7 @@
 .addVacancy__link {
   text-align: end;
   text-decoration: none;
-  color: #5a5a5a;
+  color: $clBasicClick;
   @include text-medium;
 }
 
@@ -113,30 +113,32 @@
   display: flex;
   margin-top: 36px;
 }
-// .addVacancy__button_published {
-//   width: 227px;
-//   height: 40px;
-//   background-color: $clBasicButton;
-//   color: #fff;
-//   @include text-medium;
-//   line-height: 20px;
-//   margin-right: auto;
-//   &:hover {
-//     opacity: 0.6;
-//     cursor: pointer;
-//   }
-// }
-// .addVacancy__button_save {
-//   width: 184px;
-//   height: 40px;
-//   border-radius: 6px;
-//   border: 1px solid var(--Blue-Main, #1d6bf3);
-//   background-color: #fff;
-//   color: var(--Blue-Main, #1d6bf3);
-//   @include text-medium;
-//   line-height: 20px;
-//   &:hover {
-//     opacity: 0.6;
-//     cursor: pointer;
-//   }
-// }
+.button__published {
+  width: 227px;
+  height: 40px;
+  background-color: $clBasicButton;
+  color: #fff;
+  @include text-medium;
+  line-height: 20px;
+  text-transform: none;
+  margin-right: auto;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.button__save {
+  width: 184px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid $clBasicClick;
+  background-color: #fff;
+  color: $clBasicClick;
+  @include text-medium;
+  line-height: 20px;
+  text-transform: none;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}

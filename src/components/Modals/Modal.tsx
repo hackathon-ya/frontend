@@ -1,16 +1,17 @@
-import { useDispatch, useSelector } from "react-redux";
-import { handleCloseModal } from "../../store/vacancies/vacanciesSlice";
-import ButtonMUI from "../ButtonMUI/ButtonMUI";
-import styles from "./Modal.module.scss";
-import { createPortal } from "react-dom";
-import { vacanciesSelectors } from "../../store/vacancies/vacanciesSelectors";
+import { useDispatch, useSelector } from 'react-redux';
+import { handleCloseModal } from '../../store/vacancies/vacanciesSlice';
+import styles from './Modal.module.scss';
+import { createPortal } from 'react-dom';
+import { vacanciesSelectors } from '../../store/vacancies/vacanciesSelectors';
+import { Button } from '@mui/material';
 
 interface ModalProps {
   title: string;
   subtitle: string;
 }
 function Modal({ title, subtitle }: ModalProps) {
-  const show = useSelector(vacanciesSelectors.getShow)
+  const show = useSelector(vacanciesSelectors.getShow);
+  const view = useSelector(vacanciesSelectors.getView);
   const dispatch = useDispatch();
   if (!show) return null;
   return (
@@ -27,12 +28,39 @@ function Modal({ title, subtitle }: ModalProps) {
             <h3 className={styles.title}>{title}</h3>
             <p className={styles.subtitle}>{subtitle}</p>
             <div className={styles.wrapperButton}>
-              <ButtonMUI variant={"outlined"} text={"Отменить"} />
-              <ButtonMUI variant={"contained"} text={"Сохранить"} />
+              <Button
+                variant="outlined"
+                type="button"
+                className={styles.modal__cancell}
+                onClick={() => dispatch(handleCloseModal())}
+                sx={{ mr: '12px', width: '152px' }}
+              >
+                Отменить
+              </Button>
+              {view != 'edit' && (
+                <Button
+                  variant="contained"
+                  className={styles.modal__action}
+                  type="button"
+                  sx={{ width: '152px' }}
+                >
+                  Удалить
+                </Button>
+              )}
+              {view === 'edit' && (
+                <Button
+                  variant="contained"
+                  className={styles.modal__action}
+                  type="button"
+                  sx={{ width: '152px' }}
+                >
+                  Сохранить
+                </Button>
+              )}
             </div>
           </div>
         </section>,
-        document.getElementById("root")!
+        document.getElementById('root')!
       )}
     </>
   );

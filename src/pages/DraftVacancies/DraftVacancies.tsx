@@ -1,6 +1,6 @@
 import BarVacancies from '../../components/BarVacancies/BarVacancies';
-import styles from '../DraftVacancies/DraftVacancies.module.scss';
-const ArchiveVacancies = () => {
+import styles from './DraftVacancies.module.scss';
+const DraftVacancies = () => {
   return(
     <section className={styles.vacancies}>
       <BarVacancies />
@@ -10,4 +10,4 @@ const ArchiveVacancies = () => {
   );
 };
 
-export default ArchiveVacancies;
+export default DraftVacancies;
