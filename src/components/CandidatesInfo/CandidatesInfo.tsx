@@ -1,7 +1,7 @@
 // import Modal from '../../components/Modals/Modal';
 import styles from './CandidatesInfo.module.scss';
 // import { useState } from 'react';
-import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
+import { Button } from '@mui/material';
 import comparison from '../../assets/images/sravnenie.svg';
 import strelkaUP from '../../assets/images/strelka_up.svg';
 
@@ -106,8 +106,20 @@ const CandidatesInfo = (props: CadndidatesProps) => {
       </div>
       <div className={styles.candidatesInfo__buttonWrapper}>
         <div>
-          <ButtonMUI variant='contained' type='button' text='Пригласить' />
-          <ButtonMUI variant='outlined' type='button' text='Скачать резюме' />
+          <Button
+            className={styles.candidatesInfo__button_close}
+            type='button'
+            variant='contained'
+          >
+            Пригласить
+          </Button>
+          <Button
+            className={styles.candidatesInfo__button_downland}
+            type='button'
+            variant='outlined'
+          >
+            Скачать резюме
+          </Button>
         </div>
       </div>
       <button

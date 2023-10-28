@@ -9,6 +9,7 @@ import {
 } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
 import { Button } from '@mui/material';
+import { Link } from 'react-router-dom';
 // import SendMessage from '../Modals/SendMessage/SendMessage';
 
 type VacancyProps = {
@@ -99,13 +100,15 @@ const Vacancy = (props: VacancyProps) => {
 
         <div className={styles.vacancy__header_buttons}>
           <div>
-            <Button
-              type='button'
-              variant='contained'
-              className={styles.button_contained}
-            >
-              Показать 420 кандидатов
-            </Button>
+            <Link to='/'>
+              <Button
+                type='button'
+                variant='contained'
+                className={styles.button_contained}
+              >
+                Показать 420 кандидатов
+              </Button>
+            </Link>
             <Button
               type='button'
               variant='outlined'

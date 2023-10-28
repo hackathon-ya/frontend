@@ -5,6 +5,7 @@
   background-color: $clActive;
   padding: 32px;
   border-radius: 12px;
+  margin-bottom: 28px;
   box-sizing: border-box;
   box-shadow: 0px 4px 6px 0px rgba(176, 190, 197, 0.2),
     0px 8px 24px 0px rgba(176, 190, 197, 0.2);
@@ -12,9 +13,6 @@
 .candidate__page {
   display: flex;
   flex-direction: row;
-}
-.candidates__vacancy {
-  margin: 60px 0 0 48px;
 }
 .headerWrapper {
   display: flex;
@@ -185,6 +183,19 @@
   width: 44px;
   height: 44px;
   background: url(../../assets/images/like_active.svg) no-repeat center;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.candidates__button_close {
+  height: 40px;
+  width: 118px;
+  text-transform: none;
+  color: $clActive;
+  background-color: $clBasicButton;
+  border: none;
+  @include text-medium;
   &:hover {
     opacity: 0.6;
     cursor: pointer;

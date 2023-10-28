@@ -1,4 +1,13 @@
 @import '../../assets/styles/fonts-mixins';
+.applicant {
+  display: flex;
+  flex-direction: row;
+}
+.applicant_header {
+  display: flex;
+  flex-direction: column;
+  margin: 48px 0 0 60px;
+}
 .headerWrapper {
   display: flex;
   flex-direction: column;
