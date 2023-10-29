@@ -1,11 +1,11 @@
 import styles from './Candidates.module.scss';
 import { useState } from 'react';
-import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
 import comparison from '../../assets/images/sravnenie.svg';
 import CandidatesInfo from '../../components/CandidatesInfo/CandidatesInfo';
 import strelkaUP from '../../assets/images/strelka_up.svg';
-import FormFind from '../../components/FormFind/FormFind';
-import BarCheckbox from '../../components/BarCheckbox/BarCheckbox';
+// import FormFind from '../../components/FormFind/FormFind';
+// import BarCheckbox from '../../components/BarCheckbox/BarCheckbox';
+import { Button } from '@mui/material';
 
 const Candidates = () => {
   const [open, setOpen] = useState(true);
@@ -21,12 +21,12 @@ const Candidates = () => {
 
   return (
     <div className={styles.candidate__page}>
-      <BarCheckbox />
+      {/* <BarCheckbox /> */}
       <div className={styles.candidates__vacancy}>
-        <div className={styles.headerWrapper}>
+        {/* <div className={styles.headerWrapper}>
           <h3 className={styles.header__title}>Найдено 533 вакансии</h3>
           <FormFind />
-        </div>
+        </div> */}
         {open ? (
           <>
             <div className={styles.card}>
@@ -84,11 +84,13 @@ const Candidates = () => {
               </div>
               <div className={styles.candidates__buttonWrapper}>
                 <div>
-                  <ButtonMUI
+                  <Button
+                    className={styles.candidates__button_close}
                     type='button'
                     variant='contained'
-                    text='Пригласить'
-                  />
+                  >
+                    Пригласить
+                  </Button>
                 </div>
               </div>
 

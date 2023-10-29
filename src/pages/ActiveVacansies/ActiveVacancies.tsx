@@ -9,6 +9,7 @@ import {
   handleOpenEditForm,
 } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Button } from '@mui/material';
 
@@ -24,8 +25,8 @@ const ActiveVacancies = () => {
       <div className={styles.headerWrapper}>
         <h3 className={styles.header__block}>Активные вакансии</h3>
         <Button
-          type="button"
-          variant="outlined"
+          type='button'
+          variant='outlined'
           className={styles.header__button}
           onClick={() => dispatch(handleOpenForm())}
         >
@@ -34,7 +35,7 @@ const ActiveVacancies = () => {
       </div>
       {open ? (
         <>
-          <div className={styles.card} id="card">
+          <div className={styles.card} id='card'>
             <div className={styles.vacancie}>
               <div className={styles.vacancieWrapper}>
                 <h3 className={styles.vacancy}>Интернет-маркетолог</h3>
@@ -45,13 +46,13 @@ const ActiveVacancies = () => {
               </div>
               <div>
                 <ButtonIcon
-                  type="button"
+                  type='button'
                   className={styles.edit}
                   openModal={() => dispatch(handleOpenEditForm())}
                 />
 
                 <ButtonIcon
-                  type="button"
+                  type='button'
                   className={styles.close}
                   openModal={() => dispatch(handleOpenModal())}
                 />
@@ -59,24 +60,26 @@ const ActiveVacancies = () => {
             </div>
             <div className={styles.buttonWrapper}>
               <div>
+                <Link to='/'>
+                  <Button
+                    type='button'
+                    variant='contained'
+                    className={styles.button_contained}
+                  >
+                    Показать 420 кандидатов
+                  </Button>
+                </Link>
                 <Button
-                  type="button"
-                  variant="contained"
-                  className={styles.button_contained}
-                >
-                  Показать 420 кандидатов
-                </Button>
-                <Button
-                  type="button"
-                  variant="outlined"
+                  type='button'
+                  variant='outlined'
                   className={styles.button_outlined}
                 >
                   +5 новых откликов
                 </Button>
               </div>
               <Button
-                type="button"
-                variant="outlined"
+                type='button'
+                variant='outlined'
                 className={styles.button_outlined}
               >
                 Закрыть вакансию
@@ -84,7 +87,7 @@ const ActiveVacancies = () => {
             </div>
             <button
               className={styles.close__info}
-              type="button"
+              type='button'
               onClick={onClick}
             >
               <img className={styles.close_image} src={strelkaUP} />

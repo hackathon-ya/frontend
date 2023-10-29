@@ -152,7 +152,7 @@ const NewVacancy = ({ text }: { text: string }) => {
 
             <img className={styles.addVacancy__image_done} src={done} />
           </div>
-          <div className={styles.addVacancy__skills}>
+          {/* <div className={styles.addVacancy__skills}>
             <div className={styles.addVacancy__skill}>
               навык 1
               <button className={styles.addVacancy__skill_button}></button>
@@ -169,7 +169,7 @@ const NewVacancy = ({ text }: { text: string }) => {
               навык 1
               <button className={styles.addVacancy__skill_button}></button>
             </div>
-          </div>
+          </div> */}
         </div>
         <div className={styles.addVacancy__inputs}>
           <h4 className={styles.addVacancy__input_title}>Описание вакансии</h4>
