@@ -58,24 +58,10 @@ const Vacancy = ({ onClick, vacancy }: VacancyProps) => {
 
         <div className={styles.vacancy__info}>
           <div className={styles.vacancy__info_box}>
-            <h4 className={styles.vacancy__info_title}>Обязанности</h4>
-            <ul className={styles.vacancy__list}>
-              <li>обязанность первая, самая важная, основная</li>
-              <li>вторая обязанность такая же важная как и первая</li>
-              <li>третья обязанность не менее важная, чем все остальные</li>
-            </ul>
-            <h4 className={styles.vacancy__info_title}>Условия</h4>
-            <ul className={styles.vacancy__list}>
-              <li>обязанность первая, самая важная, основная</li>
-              <li>вторая обязанность такая же важная как и первая</li>
-              <li>третья обязанность не менее важная, чем все остальные</li>
-            </ul>
-            <h4 className={styles.vacancy__info_title}>Пожелания</h4>
-            <ul className={styles.vacancy__list}>
-              <li>пожелание к кандидату первое</li>
-              <li>пожелание к кандидату второе</li>
-              <li>пожелание к кандидату последнее</li>
-            </ul>
+            <h4 className={styles.vacancy__info_title}>Описание вакансии</h4>
+            <h4 className={styles.vacancy__list}>
+              <p>{vacancy.description}</p>
+            </h4>
             <h4 className={styles.vacancy__info_title}>Ключевые навыки</h4>
             <div className={styles.vacancy__info_skills}>
               {vacancy.skills.map((skill: string) => (

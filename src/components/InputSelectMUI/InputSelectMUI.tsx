@@ -7,10 +7,16 @@ interface Props {
   className: string;
   currencies: any;
   defaultValue: string;
-  onChange: () => void,
+  onChange: () => void;
 }
 
-const InputSelectMUI = ({ id, className, currencies, defaultValue, onChange }: Props) => {
+const InputSelectMUI = ({
+  id,
+  className,
+  currencies,
+  defaultValue,
+  onChange,
+}: Props) => {
   return (
     <TextField
       id={id}
@@ -28,7 +34,11 @@ const InputSelectMUI = ({ id, className, currencies, defaultValue, onChange }: P
       }}
     >
       {currencies.map((option: any) => (
-        <MenuItem key={option.value} value={option.value}>
+        <MenuItem
+          key={option.value}
+          value={option.value}
+          defaultValue={defaultValue}
+        >
           {option.label}
         </MenuItem>
       ))}
