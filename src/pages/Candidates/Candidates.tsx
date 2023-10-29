@@ -113,7 +113,11 @@ const Candidates = () => {
             </div>
           </>
         ) : (
-          <CandidatesInfo onClick={onClick} like={like} />
+          <CandidatesInfo
+            onClick={onClick}
+            handleLike={handleLike}
+            like={like}
+          />
         )}
       </div>
     </div>
