@@ -19,7 +19,7 @@
   color: #fff;
 }
 
-.active_rigth{
+.active_rigth {
   margin-right: 32px;
   color: #fff;
 }
@@ -32,10 +32,15 @@
   width: 24px;
   height: 24px;
 }
+.like__active {
+  width: 24px;
+  background: url(../../assets/images/like_white.svg) no-repeat 0 7px;
+  height: 37px;
+}
 .link_like {
   background: url(../../assets/images/Like.svg) no-repeat;
   width: 24px;
-  height: 24px;
+  height: 37px;
   align-self: center;
 }
 .link_like:hover {

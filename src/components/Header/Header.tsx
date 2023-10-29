@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import React from 'react';
 import styles from './Header.module.scss';
 import profile from '../../assets/images/Profile.svg';
 import group from '../../assets/images/Group.svg';
@@ -7,7 +8,12 @@ import { handleActive } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
 
 const Header = () => {
+  const [isFavorite, setisFavorite] = React.useState(false);
   const dispatch = useDispatch();
+  const onClick = () => {
+    setisFavorite(!isFavorite);
+  };
+
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
@@ -38,9 +44,16 @@ const Header = () => {
             <li>
               <img src={group} alt='Сообщения' className={styles.img} />
             </li>
-            <li className={styles.like}>
+            <li
+              className={isFavorite ? styles.like__active : styles.like}
+              onClick={onClick}
+            >
               <NavLink to='/favorites'>
-                <div className={styles.like}></div>
+                {({ isActive }) => (
+                  <div
+                    className={isActive ? styles.like__active : styles.like}
+                  ></div>
+                )}
               </NavLink>
             </li>
             <li>

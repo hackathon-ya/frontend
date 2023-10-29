@@ -15,7 +15,6 @@ export const getApplicant = createAsyncThunk(
         return rejectWithValue('Error');
       }
       const data = await response.json();
-      console.log(data)
       return data;
     } catch (e: any) {
       return rejectWithValue(e);

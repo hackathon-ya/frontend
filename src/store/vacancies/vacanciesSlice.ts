@@ -15,20 +15,26 @@ export const getVacancies = createAsyncThunk(
         return rejectWithValue('Error');
       }
       const data = await response.json();
-      console.log(data);
       return data;
     } catch (e: any) {
       return rejectWithValue(e);
     }
   }
 );
+
 // export const deleteVacancies = createAsyncThunk(
-//   "vacancies/deleteVacancy",
-//   async function (_id, { rejectWithValue }) {
+//   'vacancies/deleteVacancy',
+//   async function (id, { rejectWithValue }) {
 //     try {
-//       const response = await fetch(`https://api/v1/vacancies/${_id}`);
+//       const response = await fetch(`https://localhost/api/v1/vacancies/${id}`, {
+//         method: 'DELETE',
+//         headers: {
+//           'Content-type': 'application/json',
+//         },
+//         credentials: "include",
+//       });
 //       if (!response.ok) {
-//         return rejectWithValue("Error");
+//         return rejectWithValue('Error');
 //       }
 //       const data = await response.json();
 //       return data;
@@ -37,7 +43,7 @@ export const getVacancies = createAsyncThunk(
 //     }
 //   }
 // );
-// method delete добавить
+
 export const vacanciesSlice = createSlice({
   name: 'vacancies',
   initialState: {
@@ -94,7 +100,7 @@ export const {
   handleOpenForm,
   handleOpenModal,
   handleOpenEditForm,
-  handleCloseModal
+  handleCloseModal,
 } = vacanciesSlice.actions;
 
 export default vacanciesSlice.reducer;

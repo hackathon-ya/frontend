@@ -1,18 +1,25 @@
-// import Modal from '../../components/Modals/Modal';
 import styles from './CandidatesInfo.module.scss';
-// import { useState } from 'react';
-import ButtonMUI from '../../components/ButtonMUI/ButtonMUI';
+import { Button } from '@mui/material';
 import comparison from '../../assets/images/sravnenie.svg';
 import strelkaUP from '../../assets/images/strelka_up.svg';
 
 type CadndidatesProps = {
   onClick: () => void;
+  handleLike: () => void;
   like: boolean;
+  applicant: any;
+  months: number,
+  years: number;
 };
 
-const CandidatesInfo = (props: CadndidatesProps) => {
-  const { onClick } = props;
-  //   const [showModal, setShowModal] = useState(false);
+const CandidatesInfo = ({
+  applicant,
+  onClick,
+  handleLike,
+  like,
+  months,
+  years,
+}: CadndidatesProps) => {
   return (
     <div className={styles.card}>
       <div className={styles.candidatesInfo}>
@@ -20,19 +27,16 @@ const CandidatesInfo = (props: CadndidatesProps) => {
           <h3 className={styles.candidatesInfo__header}>Интернет-маркетолог</h3>
           <h4 className={styles.candidatesInfo__pay}>80 000 - 120 000 ₽</h4>
           <p className={styles.candidatesInfo__name}>
-            Иванов Дмитрий Алексеевич
+            {`${applicant.first_name} ${applicant.last_name}`}
           </p>
-          <p className={styles.candidatesInfo__sity}>Москва</p>
+          <p className={styles.candidatesInfo__sity}>{applicant.city}</p>
           <p className={styles.candidatesInfo__experience}>
-            Опыт от 1 года до 3 лет
+          {`Опыт работы ${years} года и ${months} месяцев`}
           </p>
           <div className={styles.candidatesInfo__list}>
             <p className={styles.candidatesInfo__list_title}>Навыки</p>
             <div className={styles.candidatesInfo__skills}>
-              <div className={styles.candidatesInfo__skill}>Навык 1</div>
-              <div className={styles.candidatesInfo__skill}>Навык 1</div>
-              <div className={styles.candidatesInfo__skill}>Навык 1</div>
-              <div className={styles.candidatesInfo__skill}>Навык 1</div>
+              {applicant.skills.map((skill: string) => <div className={styles.candidatesInfo__skill} key={skill}>{skill}</div>)}
             </div>
           </div>
         </div>
@@ -43,7 +47,7 @@ const CandidatesInfo = (props: CadndidatesProps) => {
             </p>
           </div>
           <div className={styles.candidatesInfo__comparisons}>
-            <button type='button' className={styles.candidatesInfo__comparison}>
+            <button type="button" className={styles.candidatesInfo__comparison}>
               <img
                 src={comparison}
                 className={styles.candidatesInfo__image}
@@ -52,9 +56,9 @@ const CandidatesInfo = (props: CadndidatesProps) => {
             </button>
           </div>
           <button
-            type='button'
+            type="button"
             className={
-              props.like
+              like
                 ? styles.candidatesInfo__like_active
                 : styles.candidatesInfo__like
             }
@@ -76,7 +80,9 @@ const CandidatesInfo = (props: CadndidatesProps) => {
         </div>
         <div className={styles.candidatesInfo__box}>
           <h3 className={styles.candidatesInfo__about_title}>Образование</h3>
-          <p className={styles.candidatesInfo__about_text}>Высшее, 2016-2020</p>
+          <p className={styles.candidatesInfo__about_text}>
+            {applicant.education}, 2016-2020
+          </p>
           <p className={styles.candidatesInfo__about_text}>
             Московский Институт Технологий и Управления
           </p>
@@ -91,37 +97,47 @@ const CandidatesInfo = (props: CadndidatesProps) => {
         <div className={styles.candidatesInfo__box}>
           <h3 className={styles.candidatesInfo__about_title}>Контакты</h3>
           <p className={styles.candidatesInfo__about_text}>
-            Telegram:{' '}
+            Telegram:
             <a
-              href='https://t.me/candidate2023'
+              href={`https://t.me/${applicant.telegram}`}
               className={styles.candidatesInfo__link}
             >
-              https://t.me/candidate2023
+              {`https://t.me/${applicant.telegram}`}
             </a>
           </p>
           <p className={styles.candidatesInfo__about_text}>
-            E-mail: pochtapochta2023@gmail.com
+            E-mail: {applicant.email}
           </p>
         </div>
       </div>
       <div className={styles.candidatesInfo__buttonWrapper}>
         <div>
-          <ButtonMUI variant='contained' type='button' text='Пригласить' />
-          <ButtonMUI variant='outlined' type='button' text='Скачать резюме' />
+          <Button
+            className={styles.candidatesInfo__button_close}
+            type="button"
+            variant="contained"
+          >
+            Пригласить
+          </Button>
+          <Button
+            className={styles.candidatesInfo__button_downland}
+            type="button"
+            variant="outlined"
+          >
+            Скачать резюме
+          </Button>
         </div>
       </div>
       <button
         className={styles.candidatesInfo__close}
-        type='button'
+        type="button"
         onClick={onClick}
       >
         <img className={styles.candidatesInfo__close_image} src={strelkaUP} />
       </button>
       {/* <Modal
-        show={showModal}
         title={'Удалить вакансию?'}
         subtitle={'Вы действительно хотите удалить вакансию?'}
-        closeModal={() => setShowModal(false)}
       /> */}
     </div>
   );

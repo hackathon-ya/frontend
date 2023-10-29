@@ -5,14 +5,14 @@ import Favorites from './pages/Favorites/Favorites';
 import Vacancies from './pages/Vacancies/Vacancies';
 import DraftVacancies from './pages/DraftVacancies/DraftVacancies';
 import ArchiveVacancies from './pages/ArchiveVacancies/ArchiveVacancies';
-import Candidates from './pages/Candidates/Candidates';
+import Applicant from './pages/Applicant/Applicant';
 
 function App() {
   return (
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<Candidates />} />
+        <Route path="/" element={<Applicant />} />
         <Route path="favorites" element={<Favorites />} />
         <Route path="vacancies" element={<Vacancies />}>
           <Route path="active" element={<Vacancies />} />
