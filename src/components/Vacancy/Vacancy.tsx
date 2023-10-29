@@ -4,6 +4,7 @@ import strelkaUP from '../../assets/images/strelka_up.svg';
 import styles from './Vacancy.module.scss';
 import ButtonIcon from '../../components/ButtonIcon/ButtonIcon';
 import {
+  // deleteVacancies,
   handleOpenEditForm,
   handleOpenModal,
 } from '../../store/vacancies/vacanciesSlice';

@@ -2,8 +2,13 @@ import FormFind from '../../components/FormFind/FormFind';
 // import Candidates from '../Candidates/Candidates';
 import styles from './Favorites.module.scss';
 import BarCheckbox from '../../components/BarCheckbox/BarCheckbox';
+import CandidatesCard from '../CandidatesCard/CandidatesCard';
+import { favaritesSelectors } from '../../store/favorites/favoritesSelector';
+import { useSelector } from 'react-redux';
 
 const Favorites = () => {
+  const favorites = useSelector(favaritesSelectors.getFavorites);
+  console.log(favorites)
   return (
     <section className={styles.applicant}>
       <BarCheckbox />
@@ -12,7 +17,9 @@ const Favorites = () => {
           <h3 className={styles.header__title}>Избранные резюме</h3>
           <FormFind />
         </div>
-        {/* <Candidates /> */}
+        {favorites.map((favorit: any) => (
+          <CandidatesCard key={favorit.id} applicant={favorit} />
+        ))}
       </div>
     </section>
   );

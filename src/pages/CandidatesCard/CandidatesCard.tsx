@@ -31,7 +31,6 @@ const CandidatesCard = ({ applicant }: CadndidatesProps) => {
 
   const { years, months } = monthsToYearsAndMonths(applicant.experience_months);
 
-  console.log((Number(applicant.experience_months)));
   return (
     <>
       {open ? (

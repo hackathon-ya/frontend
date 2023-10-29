@@ -6,6 +6,7 @@ import strelkaUP from '../../assets/images/strelka_up.svg';
 import {
   handleOpenModal,
   handleOpenEditForm,
+  // deleteVacancies,
 } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -75,6 +76,7 @@ const ActiveVacancies = ({ vacancy }: ActiveVacanciesProps) => {
                 type="button"
                 variant="outlined"
                 className={styles.button_outlined}
+                // onClick={() => dispatch(deleteVacancies(vacancy.id))}
               >
                 Закрыть вакансию
               </Button>
