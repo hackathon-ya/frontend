@@ -4,11 +4,18 @@ import styles from './Favorites.module.scss';
 import BarCheckbox from '../../components/BarCheckbox/BarCheckbox';
 import CandidatesCard from '../CandidatesCard/CandidatesCard';
 import { favaritesSelectors } from '../../store/favorites/favoritesSelector';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getFovorites } from '../../store/favorites/favoritesSlice';
+import { useEffect } from 'react';
 
 const Favorites = () => {
+  const dispatch = useDispatch<any>();
+  useEffect(() => {
+    dispatch(getFovorites());
+  }, [dispatch]);
   const favorites = useSelector(favaritesSelectors.getFavorites);
-  console.log(favorites)
+
+  console.log(favorites);
   return (
     <section className={styles.applicant}>
       <BarCheckbox />

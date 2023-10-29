@@ -3,19 +3,34 @@ import styles from './CandidatesCard.module.scss';
 import comparison from '../../assets/images/sravnenie.svg';
 import { Button } from '@mui/material';
 import CandidatesInfo from '../../components/CandidatesInfo/CandidatesInfo';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { savedApplicant } from '../../store/applicant/applicantSlice';
+import { deleteApplicant } from '../../store/applicant/applicantSlice';
+import { useDispatch } from 'react-redux';
 
 type CadndidatesProps = {
   applicant: any;
 };
 
 const CandidatesCard = ({ applicant }: CadndidatesProps) => {
+  const dispatch = useDispatch<any>();
   const [open, setOpen] = useState(true);
-  const [like, setLike] = useState(false);
+
+  useEffect(() => {
+    if (applicant.is_favorite) {
+      handleLike();
+    } else {
+      handleDeleteLike();
+    }
+  }, [applicant.is_favorite, handleLike, handleDeleteLike]);
 
   function handleLike() {
-    setLike(!like);
+    dispatch(savedApplicant(applicant.id));
   }
+  function handleDeleteLike() {
+    dispatch(deleteApplicant(applicant.id));
+  }
+
   const onClick = () => {
     setOpen(!open);
   };
@@ -25,7 +40,7 @@ const CandidatesCard = ({ applicant }: CadndidatesProps) => {
     months: number;
   } {
     const years = Math.floor(experienceMonths / 12);
-    const months =  experienceMonths % 12;
+    const months = experienceMonths % 12;
     return { years, months };
   }
 
@@ -46,7 +61,9 @@ const CandidatesCard = ({ applicant }: CadndidatesProps) => {
                   {`${applicant.first_name} ${applicant.last_name}`}
                 </p>
                 <p className={styles.candidates__sity}>{applicant.city}</p>
-                <p className={styles.candidates__experience}>{`Опыт работы ${years} года и ${months} месяцев`}</p>
+                <p
+                  className={styles.candidates__experience}
+                >{`Опыт работы ${years} года и ${months} месяцев`}</p>
                 <div className={styles.candidates__list}>
                   <p className={styles.candidates__list_title}>Навыки</p>
                   <div className={styles.candidates__skills}>
@@ -66,7 +83,7 @@ const CandidatesCard = ({ applicant }: CadndidatesProps) => {
                 </div>
                 <div className={styles.candidates__comparisons}>
                   <button
-                    type="button"
+                    type='button'
                     className={styles.candidates__comparison}
                   >
                     <img
@@ -77,13 +94,15 @@ const CandidatesCard = ({ applicant }: CadndidatesProps) => {
                   </button>
                 </div>
                 <button
-                  type="button"
+                  type='button'
                   className={
-                    like
+                    applicant.is_favorite
                       ? styles.candidates__like_active
                       : styles.candidates__like
                   }
-                  onClick={handleLike}
+                  onClick={
+                    applicant.is_favorite ? handleDeleteLike : handleLike
+                  }
                 />
               </div>
             </div>
@@ -91,8 +110,8 @@ const CandidatesCard = ({ applicant }: CadndidatesProps) => {
               <div>
                 <Button
                   className={styles.candidates__button_close}
-                  type="button"
-                  variant="contained"
+                  type='button'
+                  variant='contained'
                 >
                   Пригласить
                 </Button>
@@ -101,7 +120,7 @@ const CandidatesCard = ({ applicant }: CadndidatesProps) => {
 
             <button
               className={styles.candidates__close}
-              type="button"
+              type='button'
               onClick={onClick}
             >
               <img className={styles.candidates__close_image} src={strelkaUP} />
@@ -115,7 +134,7 @@ subtitle={'Вы действительно хотите удалить вака�
       ) : (
         <CandidatesInfo
           onClick={onClick}
-          like={like}
+          like={applicant.is_favorite}
           applicant={applicant}
           handleLike={handleLike}
           key={applicant.id}

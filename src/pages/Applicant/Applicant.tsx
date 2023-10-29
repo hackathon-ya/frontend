@@ -20,7 +20,9 @@ const Applicant = () => {
       <BarCheckbox />
       <div className={styles.applicant_header}>
         <div className={styles.headerWrapper}>
-          <h3 className={styles.header__title}>{`Найдено ${applicants.length} кандидата`}</h3>
+          <h3
+            className={styles.header__title}
+          >{`Найдено ${applicants.length} кандидата`}</h3>
           <FormFind />
         </div>
         <div className={styles.candidate__page}>
@@ -29,6 +31,7 @@ const Applicant = () => {
               <CandidatesCard
                 key={applicant.id}
                 applicant={applicant}
+                applicants={applicants}
               />
             ))}
           </div>

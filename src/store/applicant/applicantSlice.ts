@@ -5,7 +5,7 @@ export const getApplicant = createAsyncThunk(
   'applicant/getApplicant',
   async function (_, { rejectWithValue }) {
     try {
-      const response = await fetch('http://localhost/api/v1/candidates/', {
+      const response = await fetch('http://158.160.53.161/api/v1/candidates/', {
         headers: {
           'Content-type': 'application/json',
         },
@@ -21,6 +21,54 @@ export const getApplicant = createAsyncThunk(
     }
   }
 );
+
+export const savedApplicant = createAsyncThunk(
+  'applicant/savedApplicant',
+  async function (id: number, { rejectWithValue }) {
+    try {
+      const response = await fetch(
+        `http://158.160.53.161/api/v1/candidates/${id}/favorite/`,
+        {
+          headers: {
+            'Content-type': 'application/json',
+          },
+          method: 'POST',
+        }
+      );
+      if (!response.ok) {
+        return rejectWithValue('Error');
+      }
+      const data = await response.json();
+      console.log(data);
+      return data;
+    } catch (e: any) {
+      return rejectWithValue(e);
+    }
+  }
+);
+
+export const deleteApplicant = createAsyncThunk(
+  'applicant/deleteApplicant',
+  async function (id: number, { rejectWithValue }) {
+    try {
+      const response = await fetch(
+        `http://158.160.53.161/api/v1/candidates/${id}/favorite/`,
+        {
+          headers: {
+            'Content-type': 'application/json',
+          },
+          method: 'DELETE',
+        }
+      );
+      if (!response.ok) {
+        return rejectWithValue('Error');
+      }
+    } catch (e: any) {
+      return rejectWithValue(e);
+    }
+  }
+);
+
 export const applicantSlice = createSlice({
   name: 'applicant',
   initialState: {
