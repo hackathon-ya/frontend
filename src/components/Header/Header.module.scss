@@ -1,6 +1,6 @@
-@import "../../vendor/constants";
+@import '../../vendor/constants';
 .header {
-  background-color: $header;
+  background-color: $clBasicText;
   height: 100px;
   width: 1440px;
   padding: 40px 152px 0 308px;
@@ -15,22 +15,58 @@
   flex-direction: row;
   align-items: center;
 }
-
-.link {
-  color: $clBasicText;
-  margin-right: 26px;
+.active {
+  color: #fff;
 }
+
+.active_rigth{
+  margin-right: 32px;
+  color: #fff;
+}
+.link {
+  margin-right: 32px;
+}
+
 .img {
-  padding: 8px 10px 0;
+  padding: 8px 0 0;
   width: 24px;
   height: 24px;
 }
-
+.link_like {
+  background: url(../../assets/images/Like.svg) no-repeat;
+  width: 24px;
+  height: 24px;
+  align-self: center;
+}
+.link_like:hover {
+  background: url(../../assets/images/header__like_active.svg) no-repeat;
+}
 .profileWrapper {
   display: flex;
   align-items: end;
 }
 
 .iconsWrapper {
+  width: 193px;
   display: flex;
+  justify-content: space-between;
+}
+.text {
+  color: $clTextOnBlackBackground;
+  padding-left: 8px;
+}
+
+.active_like {
+  background: url(../../assets/images/like_white.svg) no-repeat;
+  background-size: 24px 24px;
+}
+
+.like {
+  width: 24px;
+  height: 37px;
+  background: url(../../assets/images/like_gray.svg) no-repeat 0 7px;
+}
+
+.like:hover {
+  background: url(../../assets/images/like_white.svg) no-repeat 0 7px;
 }

@@ -15,6 +15,7 @@ export const getVacancies = createAsyncThunk(
         return rejectWithValue('Error');
       }
       const data = await response.json();
+      console.log(data);
       return data;
     } catch (e: any) {
       return rejectWithValue(e);
@@ -41,10 +42,11 @@ export const vacanciesSlice = createSlice({
   name: 'vacancies',
   initialState: {
     vacancies: [],
+    vacanciesView: 'active',
+    show: false,
 
     vacanciesStatus: 'initial',
     error: null,
-    vacanciesView: 'active',
   },
   reducers: {
     handleActive: (state) => {
@@ -55,6 +57,18 @@ export const vacanciesSlice = createSlice({
     },
     handleDraft: (state) => {
       state.vacanciesView = 'draft';
+    },
+    handleOpenForm: (state) => {
+      state.vacanciesView = 'add';
+    },
+    handleOpenModal: (state) => {
+      state.show = true;
+    },
+    handleCloseModal: (state) => {
+      state.show = false;
+    },
+    handleOpenEditForm: (state) => {
+      state.vacanciesView = 'edit';
     },
   },
   extraReducers: (builder) =>
@@ -73,7 +87,14 @@ export const vacanciesSlice = createSlice({
       }),
 });
 
-export const { handleActive, handleArchive, handleDraft } =
-  vacanciesSlice.actions;
+export const {
+  handleActive,
+  handleArchive,
+  handleDraft,
+  handleOpenForm,
+  handleOpenModal,
+  handleOpenEditForm,
+  handleCloseModal
+} = vacanciesSlice.actions;
 
 export default vacanciesSlice.reducer;

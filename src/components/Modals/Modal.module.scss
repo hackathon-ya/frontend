@@ -1,5 +1,5 @@
-@import "../../vendor/constants.scss";
-@import "../../assets/styles/fonts-mixins";
+@import '../../vendor/constants.scss';
+@import '../../assets/styles/fonts-mixins';
 
 .modal {
   position: fixed;
@@ -19,30 +19,58 @@
   opacity: 0.6;
 }
 .container {
-  width: 369px;
-  height: 128px;
-  padding: 36px 32px 32px 27px;
+  width: 317px;
+  height: 144px;
+  padding: 52px 32px;
   margin: auto;
   position: relative;
   z-index: 2;
   background-color: #fff;
   border-radius: 8px;
 }
+
 .title {
-  @include h3-medium;
-  margin-bottom: 8px;
+  @include h2-medium;
+  margin-bottom: 12px;
+  color: $clBasicText;
 }
 
 .subtitle {
   @include text-regular;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
+  color: $clPlaceholder;
 }
 
 .close {
   background: url(../../assets/images/Close.svg) no-repeat center;
   position: absolute;
   top: 8px;
-  right: 8px;
+  right: 10px;
   width: 24px;
   height: 24px;
+}
+
+.modal__cancell {
+  height: 40px;
+  text-transform: none;
+  background-color: #fff;
+  border-color: $clBasicClick;
+  color: $clBasicClick;
+  @include text-medium;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.modal__action {
+  height: 40px;
+  text-transform: none;
+  background-color: $clBasicButton;
+  box-shadow: none;
+  color: #fff;
+  @include text-medium;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
 }

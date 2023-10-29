@@ -1,0 +1,144 @@
+@import '../../vendor/constants';
+@import '../../assets/styles/fonts-mixins';
+.addVacancy {
+  width: 428px;
+  display: flex;
+  flex-direction: column;
+}
+.addVacancy__image {
+  width: 24px;
+  height: 24px;
+  margin-right: auto;
+  background-repeat: no-repeat;
+}
+.addVacancy__button_back {
+  padding: 0;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: center;
+  width: 77px;
+  align-self: flex-start;
+  border: none;
+  background: none;
+  @include text-medium;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.addVacancy__link {
+  text-align: end;
+  text-decoration: none;
+  color: $clBasicClick;
+  @include text-medium;
+}
+
+.addVacancy__title {
+  text-align: start;
+  @include h2-medium;
+  margin-bottom: 40px;
+}
+.addVacancy__subtitle {
+  text-align: start;
+  @include text-medium;
+  margin-bottom: 24px;
+}
+.addVacancy__input_title {
+  margin-bottom: 4px;
+  text-align: start;
+  @include text-medium;
+  line-height: 16px;
+}
+.addVacancy__inputs {
+  margin-bottom: 16px;
+}
+.addVacancy__input_moneys {
+  display: flex;
+}
+.addVacancy__input_box {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+  margin: 0;
+  width: 428px;
+  height: 40px;
+  border-radius: 4px;
+}
+.addVacancy__image_done {
+  margin-right: 12px;
+  width: 24px;
+  height: 24px;
+  z-index: 2;
+}
+.addVacancy__skills {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 114px));
+  grid-template-rows: repeat(auto-fit, min(32px));
+  gap: 10px 10px;
+}
+.addVacancy__skill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 114px;
+  height: 32px;
+  border-radius: 4px;
+  background: #ededed;
+  @include text-medium;
+  line-height: 16px;
+}
+.addVacancy__skill_button {
+  padding: 0;
+  margin-left: 10px;
+  width: 24px;
+  height: 24px;
+  background: none;
+  background-image: url(../../assets/images/close_mini.svg);
+  background-repeat: no-repeat;
+  border: none;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.addVacancy__wishes {
+  margin-top: 36px;
+  margin-bottom: 24px;
+  text-align: start;
+  @include text-medium;
+}
+.addVacancy__buttons {
+  display: flex;
+  margin-top: 36px;
+}
+.button__published {
+  width: 227px;
+  height: 40px;
+  background-color: $clBasicButton;
+  color: #fff;
+  @include text-medium;
+  line-height: 20px;
+  text-transform: none;
+  margin-right: auto;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.button__save {
+  width: 184px;
+  height: 40px;
+  border-radius: 6px;
+  border: 1px solid $clBasicClick;
+  background-color: #fff;
+  color: $clBasicClick;
+  @include text-medium;
+  line-height: 20px;
+  text-transform: none;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}

@@ -1,51 +1,108 @@
-import Modal from "../../components/Modals/Modal";
-import styles from "./ActiveVacansies.module.scss";
-import { useEffect, useState } from "react";
-import ButtonIcon from "../../components/ButtonIcon/ButtonIcon";
-import ButtonMUI from "../../components/ButtonMUI/ButtonMUI";
-import { useDispatch } from "react-redux";
-import { getVacancies } from "../../store/vacancies/vacanciesSlice";
+import Modal from '../../components/Modals/Modal';
+import styles from './ActiveVacansies.module.scss';
+import ButtonIcon from '../../components/ButtonIcon/ButtonIcon';
+import Vacancy from '../../components/Vacancy/Vacancy';
+import strelkaUP from '../../assets/images/strelka_up.svg';
+import {
+  handleOpenForm,
+  handleOpenModal,
+  handleOpenEditForm,
+  getVacancies,
+} from '../../store/vacancies/vacanciesSlice';
+import { useDispatch } from 'react-redux';
+import { useEffect, useState } from 'react';
+import { Button } from '@mui/material';
 
 const ActiveVacancies = () => {
+  const [open, setOpen] = useState(true);
   const dispatch = useDispatch<any>();
-  const [showModal, setShowModal] = useState(false);
-
+  const onClick = () => {
+    setOpen(!open);
+  };
+  
   useEffect(() => {
     dispatch(getVacancies());
   }, [dispatch]);
 
   return (
-    <div className={styles.card}>
-      <div className={styles.vacancie}>
-        <div className={styles.vacancieWrapper}>
-          <h3 className={styles.header}>Интернет-маркетолог</h3>
-          <h4 className={styles.pay}>80 000 - 120 000 ₽</h4>
-          <p className={styles.company}>ООО название компании</p>
-          <p className={styles.sity}>Москва</p>
-          <p className={styles.experience}>Опыт от 1 года до 3 лет</p>
-        </div>
-        <div>
-          <ButtonIcon type="button" className={styles.edit} />
-          <ButtonIcon
-            type="button"
-            className={styles.close}
-            openModal={() => setShowModal(true)}
-          />
-        </div>
+    <div>
+      <div className={styles.headerWrapper}>
+        <h3 className={styles.header__block}>Активные вакансии</h3>
+        <Button
+          type="button"
+          variant="outlined"
+          className={styles.header__button}
+          onClick={() => dispatch(handleOpenForm())}
+        >
+          + Создать новую
+        </Button>
       </div>
-      <div className={styles.buttonWrapper}>
-        <div>
-          <ButtonMUI variant="outlined" text="+5 новых откликов" />
-          <ButtonMUI variant="outlined" text="Показать 420 кандидатов" />
-        </div>
-        <ButtonMUI variant="contained" text="Закрыть вакансию" />
-      </div>
-      <Modal
-        show={showModal}
-        title={"Удалить вакансию?"}
-        subtitle={"Вы действительно хотите удалить вакансию?"}
-        closeModal={() => setShowModal(false)}
-      />
+      {open ? (
+        <>
+          <div className={styles.card} id="card">
+            <div className={styles.vacancie}>
+              <div className={styles.vacancieWrapper}>
+                <h3 className={styles.vacancy}>Интернет-маркетолог</h3>
+                <h4 className={styles.pay}>80 000 - 120 000 ₽</h4>
+                <p className={styles.company}>ООО название компании</p>
+                <p className={styles.sity}>Москва</p>
+                <p className={styles.experience}>Опыт от 1 года до 3 лет</p>
+              </div>
+              <div>
+                <ButtonIcon
+                  type="button"
+                  className={styles.edit}
+                  openModal={() => dispatch(handleOpenEditForm())}
+                />
+
+                <ButtonIcon
+                  type="button"
+                  className={styles.close}
+                  openModal={() => dispatch(handleOpenModal())}
+                />
+              </div>
+            </div>
+            <div className={styles.buttonWrapper}>
+              <div>
+                <Button
+                  type="button"
+                  variant="contained"
+                  className={styles.button_contained}
+                >
+                  Показать 420 кандидатов
+                </Button>
+                <Button
+                  type="button"
+                  variant="outlined"
+                  className={styles.button_outlined}
+                >
+                  +5 новых откликов
+                </Button>
+              </div>
+              <Button
+                type="button"
+                variant="outlined"
+                className={styles.button_outlined}
+              >
+                Закрыть вакансию
+              </Button>
+            </div>
+            <button
+              className={styles.close__info}
+              type="button"
+              onClick={onClick}
+            >
+              <img className={styles.close_image} src={strelkaUP} />
+            </button>
+            <Modal
+              title={'Удалить вакансию?'}
+              subtitle={'Вы действительно хотите удалить вакансию?'}
+            />
+          </div>
+        </>
+      ) : (
+        <Vacancy onClick={onClick} />
+      )}
     </div>
   );
 };

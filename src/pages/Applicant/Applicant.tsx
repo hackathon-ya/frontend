@@ -1,5 +1,12 @@
+import styles from './Applicant.module.scss';
+import Candidates from '../Candidates/Candidates';
+
 const Applicant = () => {
-  return <div className="find">Find</div>;
+  return (
+    <section className={styles.applicant}>
+      <Candidates />
+    </section>
+  );
 };
 
 export default Applicant;
