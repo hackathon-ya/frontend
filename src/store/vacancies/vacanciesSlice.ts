@@ -1,13 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const getVacancies = createAsyncThunk(
-  "vacancies/getVacancies",
+  'vacancies/getVacancies',
   async function (_, { rejectWithValue }) {
     try {
-      const response = await fetch("https://api/v1/vacancies");
+      const response = await fetch('http://localhost/api/v1/vacancies/', {
+        headers: {
+          'Content-type': 'application/json',
+        },
+        method: 'GET',
+      });
       if (!response.ok) {
-        return rejectWithValue("Error");
+        return rejectWithValue('Error');
       }
       const data = await response.json();
       return data;
@@ -33,38 +38,38 @@ export const getVacancies = createAsyncThunk(
 // );
 // method delete добавить
 export const vacanciesSlice = createSlice({
-  name: "vacancies",
+  name: 'vacancies',
   initialState: {
     vacancies: [],
 
-    vacanciesStatus: "initial",
+    vacanciesStatus: 'initial',
     error: null,
-    vacanciesView: "active",
+    vacanciesView: 'active',
   },
   reducers: {
     handleActive: (state) => {
-      state.vacanciesView = "active";
+      state.vacanciesView = 'active';
     },
     handleArchive: (state) => {
-      state.vacanciesView = "archive";
+      state.vacanciesView = 'archive';
     },
     handleDraft: (state) => {
-      state.vacanciesView = "draft";
+      state.vacanciesView = 'draft';
     },
   },
   extraReducers: (builder) =>
     builder
       .addCase(getVacancies.pending, (state) => {
-        state.vacanciesStatus = "pending";
+        state.vacanciesStatus = 'pending';
         state.error = null;
       })
       .addCase(getVacancies.fulfilled, (state, action) => {
-        state.vacanciesStatus = "success";
+        state.vacanciesStatus = 'success';
         state.vacancies = action.payload;
         state.error = null;
       })
       .addCase(getVacancies.rejected, (state) => {
-        state.vacanciesStatus = "error";
+        state.vacanciesStatus = 'error';
       }),
 });
 
