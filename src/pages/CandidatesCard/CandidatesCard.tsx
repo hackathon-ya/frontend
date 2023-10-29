@@ -18,9 +18,9 @@ const CandidatesCard = ({ applicant }: CadndidatesProps) => {
 
   useEffect(() => {
     if (applicant.is_favorite) {
-      handleLike();
-    } else {
       handleDeleteLike();
+    } else {
+      handleLike();
     }
   }, [applicant.is_favorite, handleLike, handleDeleteLike]);
 
