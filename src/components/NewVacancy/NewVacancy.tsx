@@ -10,11 +10,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import {
   handleActive,
   handleOpenModal,
-  postVacancy,
 } from '../../store/vacancies/vacanciesSlice';
 import { vacanciesSelectors } from '../../store/vacancies/vacanciesSelectors';
 import Modal from '../Modals/Modal.tsx';
-// import Response from '../Response/Response.tsx';
 import { Button } from '@mui/material';
 import { useState } from 'react';
 
@@ -24,12 +22,13 @@ interface Vacancy {
   city: string;
   min_salary: number;
   max_salary: number;
-  skills: Array;
+  skills: Array<string>;
   description: string;
   experience: string;
   form_of_employment: string;
   work_arrangement: string;
   inputValue: string;
+  formData: object;
 }
 
 const NewVacancy = ({ text }: { text: string }) => {
@@ -46,9 +45,10 @@ const NewVacancy = ({ text }: { text: string }) => {
   const dispatch = useDispatch<any>();
 
   const view = useSelector(vacanciesSelectors.getView);
-  const [skills, setSkills] = useState([]);
+  const [skills, setSkills] = useState<string[]>([]);
+  
   const handleAdd = () => {
-    const formData = getValues('skills');
+    const formData = getValues('skills') as string[];
     if (formData) {
       setSkills([...skills, formData]);
       reset();
@@ -56,16 +56,14 @@ const NewVacancy = ({ text }: { text: string }) => {
   };
 
   const onSubmit = () => {
-    const skillsValue = getValues('skills');
-    console.log(skillsValue)
-    if (skillsValue) {
-      setSkills([...skills, skillsValue]);
+    const skillsValue = getValues('skills') as string[];
+    if (skillsValue === undefined) {
+      setSkills([...skills]);
+      setValue('skills', skills)
     }
-    const formData = getValues();
-    console.log(formData);
+    const formData = getValues();      
   };
 
-  console.log(skills);
   return (
     <section className={styles.addVacancy}>
       <Link to="/vacancies/active" onClick={() => dispatch(handleActive())}>
@@ -298,13 +296,9 @@ const NewVacancy = ({ text }: { text: string }) => {
             subtitle={'Все изменения будут сохранены'}
           />
         </div>
-        {/* <Response /> */}
       </form>
     </section>
   );
 };
 
 export default NewVacancy;
-function getValues() {
-  throw new Error('Function not implemented.');
-}

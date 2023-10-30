@@ -38,9 +38,9 @@ const Vacancies = () => {
             </Button>
           </div>
 
-          {vacansies.map((vacancy: any) => (
-            <ActiveVacancies key={vacancy.id} vacancy={vacancy} />
-          ))}
+          {vacansies.map((vacancy: any, index: number) => {
+            <ActiveVacancies key={index} vacancy={vacancy} />;
+          })}
         </div>
       )}
 

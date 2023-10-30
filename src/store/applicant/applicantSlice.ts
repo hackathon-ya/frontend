@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { url } from '../../constants/url';
 
 export const getApplicant = createAsyncThunk(
   'applicant/getApplicant',
   async function (_, { rejectWithValue }) {
     try {
-      const response = await fetch('http://localhost/api/v1/candidates/', {
+      const response = await fetch(`${url}/candidates/`, {
         headers: {
           'Content-type': 'application/json',
         },

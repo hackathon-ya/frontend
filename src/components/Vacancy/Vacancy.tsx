@@ -4,7 +4,6 @@ import strelkaUP from '../../assets/images/strelka_up.svg';
 import styles from './Vacancy.module.scss';
 import ButtonIcon from '../../components/ButtonIcon/ButtonIcon';
 import {
-  // deleteVacancies,
   handleOpenEditForm,
   handleOpenModal,
 } from '../../store/vacancies/vacanciesSlice';
@@ -12,8 +11,6 @@ import { useDispatch } from 'react-redux';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 import { Key } from 'react';
-// import SendMessage from '../Modals/SendMessage/SendMessage';
-
 
 type VacancyProps = {
   onClick: () => void;
@@ -49,7 +46,7 @@ const Vacancy = ({ onClick, vacancy }: VacancyProps) => {
           </div>
         </div>
         <p className={styles.vacancy__header_text}>{vacancy.company_name}</p>
-        <p className={styles.vacancy__header_text}>{vacancy.sity}</p>
+        <p className={styles.vacancy__header_text}>{vacancy.sity.name}</p>
         <div className={styles.vacancy__header_expiriencs}>
           <img src={suitcase} className={styles.vacancy__header_icon} alt="" />
           <p className={styles.vacancy__header_text}>Опыт о 1 года до 3 лет</p>
@@ -65,9 +62,9 @@ const Vacancy = ({ onClick, vacancy }: VacancyProps) => {
             </h4>
             <h4 className={styles.vacancy__info_title}>Ключевые навыки</h4>
             <div className={styles.vacancy__info_skills}>
-              {vacancy.skills.map((skill: string, index: Key) => (
-                <p className={styles.vacancy__info_skill} key={index}>{skill}</p>
-              ))}
+              {/* {vacancy.skills.map((name: string, index: Key) => (
+                <p className={styles.vacancy__info_skill} key={index}>{name}</p>
+              ))} */}
             </div>
             <h4 className={styles.vacancy__info_title}>
               Дополнительная информация
@@ -101,7 +98,6 @@ const Vacancy = ({ onClick, vacancy }: VacancyProps) => {
             type="button"
             variant="outlined"
             className={styles.button_outlined}
-            // onClick={() => dispatch(deleteVacancies(vacancy.id))}
           >
             Закрыть вакансию
           </Button>

@@ -6,7 +6,6 @@ import strelkaUP from '../../assets/images/strelka_up.svg';
 import {
   handleOpenModal,
   handleOpenEditForm,
-  // deleteVacancies,
 } from '../../store/vacancies/vacanciesSlice';
 import { useDispatch } from 'react-redux';
 import { useState } from 'react';
@@ -23,7 +22,7 @@ const ActiveVacancies = ({ vacancy }: ActiveVacanciesProps) => {
   const onClick = () => {
     setOpen(!open);
   };
-
+console.log(vacancy)
   return (
     <div>
       {open ? (
