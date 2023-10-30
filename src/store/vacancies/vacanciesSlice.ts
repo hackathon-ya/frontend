@@ -6,7 +6,7 @@ export const getVacancies = createAsyncThunk(
   'vacancies/getVacancies',
   async function (_, { rejectWithValue }) {
     try {
-      const response = await  fetch(`${url}/vacancies/`, {
+      const response = await fetch(`${url}/vacancies/`, {
         headers: {
           'Content-type': 'application/json',
         },
@@ -38,7 +38,7 @@ export const postVacancy = createAsyncThunk(
         return rejectWithValue('Error');
       }
       const data = await response.json();
-      console.log(data)
+      console.log(data);
       return data;
     } catch (e: any) {
       return rejectWithValue(e);

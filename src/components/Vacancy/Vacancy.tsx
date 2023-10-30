@@ -15,9 +15,17 @@ import { Key } from 'react';
 type VacancyProps = {
   onClick: () => void;
   vacancy: any;
+  job_title: string;
+  min_salary: number;
+  max_salary: number;
+  company_name: string;
+  city: any;
+  description: string;
 };
 
 const Vacancy = ({ onClick, vacancy }: VacancyProps) => {
+  const { job_title, min_salary, max_salary, company_name, city, description } =
+    vacancy.vacancy;
   const dispatch = useDispatch<any>();
 
   return (
@@ -25,30 +33,28 @@ const Vacancy = ({ onClick, vacancy }: VacancyProps) => {
       <div className={styles.vacancy__header}>
         <div className={styles.vacancy__box}>
           <div className={styles.vacancy__header_promo}>
-            <h3 className={styles.vacancy__header_title}>
-              {vacancy.job_title}
-            </h3>
+            <h3 className={styles.vacancy__header_title}>{job_title}</h3>
             <h4 className={styles.vacancy__header_subtitle}>
-              {`${vacancy.min_salary} - ${vacancy.max_salary}`}
+              {`${min_salary} - ${max_salary}`}
             </h4>
           </div>
           <div className={styles.vacancy__header_icons}>
             <ButtonIcon
-              type="button"
+              type='button'
               className={styles.vacancy__header_icon_edit}
               openModal={() => dispatch(handleOpenEditForm())}
             />
             <ButtonIcon
-              type="button"
+              type='button'
               className={styles.vacancy__header_icon_delete}
               openModal={() => dispatch(handleOpenModal())}
             />
           </div>
         </div>
-        <p className={styles.vacancy__header_text}>{vacancy.company_name}</p>
-        <p className={styles.vacancy__header_text}>{vacancy.sity.name}</p>
+        <p className={styles.vacancy__header_text}>{company_name}</p>
+        <p className={styles.vacancy__header_text}>{city.name}</p>
         <div className={styles.vacancy__header_expiriencs}>
-          <img src={suitcase} className={styles.vacancy__header_icon} alt="" />
+          <img src={suitcase} className={styles.vacancy__header_icon} alt='' />
           <p className={styles.vacancy__header_text}>Опыт о 1 года до 3 лет</p>
         </div>
 
@@ -58,7 +64,7 @@ const Vacancy = ({ onClick, vacancy }: VacancyProps) => {
           <div className={styles.vacancy__info_box}>
             <h4 className={styles.vacancy__info_title}>Описание вакансии</h4>
             <h4 className={styles.vacancy__list}>
-              <p>{vacancy.description}</p>
+              <p>{description}</p>
             </h4>
             <h4 className={styles.vacancy__info_title}>Ключевые навыки</h4>
             <div className={styles.vacancy__info_skills}>
@@ -77,26 +83,26 @@ const Vacancy = ({ onClick, vacancy }: VacancyProps) => {
 
         <div className={styles.vacancy__header_buttons}>
           <div>
-            <Link to="/">
+            <Link to='/'>
               <Button
-                type="button"
-                variant="contained"
+                type='button'
+                variant='contained'
                 className={styles.button_contained}
               >
                 Показать 420 кандидатов
               </Button>
             </Link>
             <Button
-              type="button"
-              variant="outlined"
+              type='button'
+              variant='outlined'
               className={styles.button_outlined}
             >
               +5 новых откликов
             </Button>
           </div>
           <Button
-            type="button"
-            variant="outlined"
+            type='button'
+            variant='outlined'
             className={styles.button_outlined}
           >
             Закрыть вакансию
@@ -104,7 +110,7 @@ const Vacancy = ({ onClick, vacancy }: VacancyProps) => {
         </div>
         <button
           className={styles.vacancy__close}
-          type="button"
+          type='button'
           onClick={onClick}
         >
           <img className={styles.vacancy__close_image} src={strelkaUP} />

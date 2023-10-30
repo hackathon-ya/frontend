@@ -18,7 +18,8 @@ const Vacancies = () => {
     }
   }, [dispatch]);
 
-  const vacansies = useSelector(vacanciesSelectors.getVacancies);
+  const vacancies = useSelector(vacanciesSelectors.getVacancies);
+  console.log(vacancies);
   const view = useSelector(vacanciesSelectors.getView);
   return (
     <section className={styles.vacancies}>
@@ -29,18 +30,17 @@ const Vacancies = () => {
           <div className={styles.headerWrapper}>
             <h3 className={styles.header__block}>Активные вакансии</h3>
             <Button
-              type="button"
-              variant="outlined"
+              type='button'
+              variant='outlined'
               className={styles.header__button}
               onClick={() => dispatch(handleOpenForm())}
             >
               + Создать новую
             </Button>
           </div>
-
-          {vacansies.map((vacancy: any, index: number) => {
-            <ActiveVacancies key={index} vacancy={vacancy} />;
-          })}
+          {vacancies.map((vacancy: any) => (
+            <ActiveVacancies key={vacancy.id} vacancy={vacancy} />
+          ))}
         </div>
       )}
 
