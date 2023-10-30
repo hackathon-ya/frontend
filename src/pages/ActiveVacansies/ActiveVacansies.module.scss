@@ -73,16 +73,6 @@
   margin-bottom: 8px;
 }
 
-.headerWrapper {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  margin-bottom: 40px;
-}
-
-.header__block {
-  align-self: center;
-}
 .close__info {
   display: flex;
   justify-content: center;
@@ -99,16 +89,6 @@
 }
 .close_image {
   transform: rotate(180deg);
-}
-
-.header__button {
-  height: 50px;
-  width: 250px;
-  @include text-medium;
-  color: $clBasicClick;
-  text-transform: none;
-  border-radius: 6px;
-  border-color: $clBasicClick;
 }
 
 .button_outlined {
