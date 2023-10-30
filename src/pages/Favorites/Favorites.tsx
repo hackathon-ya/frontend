@@ -9,11 +9,11 @@ import { getFovorites } from '../../store/favorites/favoritesSlice';
 import { useEffect } from 'react';
 
 const Favorites = () => {
+  const favorites = useSelector(favaritesSelectors.getFavorites);
   const dispatch = useDispatch<any>();
   useEffect(() => {
     dispatch(getFovorites());
-  }, [dispatch]);
-  const favorites = useSelector(favaritesSelectors.getFavorites);
+  }, [dispatch, favorites]);
 
   console.log(favorites);
   return (

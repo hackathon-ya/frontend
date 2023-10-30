@@ -8,12 +8,12 @@ import { applicantSelectors } from '../../store/applicant/applicantSelectors';
 import CandidatesCard from '../CandidatesCard/CandidatesCard';
 
 const Applicant = () => {
+  const applicants = useSelector(applicantSelectors.getApplicant);
+
   const dispatch = useDispatch<any>();
   useEffect(() => {
     dispatch(getApplicant());
-  }, [dispatch]);
-
-  const applicants = useSelector(applicantSelectors.getApplicant);
+  }, [dispatch, applicants]);
 
   return (
     <section className={styles.applicant}>
@@ -28,11 +28,7 @@ const Applicant = () => {
         <div className={styles.candidate__page}>
           <div className={styles.candidates__vacancy}>
             {applicants.map((applicant: any) => (
-              <CandidatesCard
-                key={applicant.id}
-                applicant={applicant}
-                applicants={applicants}
-              />
+              <CandidatesCard key={applicant.id} applicant={applicant} />
             ))}
           </div>
         </div>

@@ -7,6 +7,7 @@ import { useEffect, useState } from 'react';
 import { savedApplicant } from '../../store/applicant/applicantSlice';
 import { deleteApplicant } from '../../store/applicant/applicantSlice';
 import { useDispatch } from 'react-redux';
+import { getFovorites } from '../../store/favorites/favoritesSlice';
 
 type CadndidatesProps = {
   applicant: any;
@@ -17,13 +18,8 @@ const CandidatesCard = ({ applicant }: CadndidatesProps) => {
   const [open, setOpen] = useState(true);
 
   useEffect(() => {
-    if (applicant.is_favorite) {
-      handleDeleteLike();
-    } else {
-      handleLike();
-    }
-  }, [applicant.is_favorite]);
-  // applicant.is_favorite, handleLike, handleDeleteLike
+    dispatch(getFovorites());
+  }, [dispatch]);
 
   function handleLike() {
     dispatch(savedApplicant(applicant.id));
@@ -138,6 +134,7 @@ subtitle={'Вы действительно хотите удалить вака�
           like={applicant.is_favorite}
           applicant={applicant}
           handleLike={handleLike}
+          handleDeleteLike={handleDeleteLike}
           key={applicant.id}
           years={years}
           months={months}
