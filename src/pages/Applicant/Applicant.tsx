@@ -1,19 +1,21 @@
 import styles from './Applicant.module.scss';
 import FormFind from '../../components/FormFind/FormFind';
 import BarCheckbox from '../../components/BarCheckbox/BarCheckbox';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getApplicant } from '../../store/applicant/applicantSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { applicantSelectors } from '../../store/applicant/applicantSelectors';
 import CandidatesCard from '../CandidatesCard/CandidatesCard';
 
 const Applicant = () => {
+  const dispatch = useDispatch<any>();
+  const [click, setClick] = useState(false);
+
   const applicants = useSelector(applicantSelectors.getApplicant);
 
-  const dispatch = useDispatch<any>();
   useEffect(() => {
     dispatch(getApplicant());
-  }, [dispatch, applicants]);
+  }, [dispatch, click]);
 
   return (
     <section className={styles.applicant}>
@@ -28,7 +30,12 @@ const Applicant = () => {
         <div className={styles.candidate__page}>
           <div className={styles.candidates__vacancy}>
             {applicants.map((applicant: any) => (
-              <CandidatesCard key={applicant.id} applicant={applicant} />
+              <CandidatesCard
+                key={applicant.id}
+                applicant={applicant}
+                setClick={setClick}
+                click={click}
+              />
             ))}
           </div>
         </div>

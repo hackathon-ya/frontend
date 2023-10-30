@@ -3,32 +3,32 @@ import styles from './CandidatesCard.module.scss';
 import comparison from '../../assets/images/sravnenie.svg';
 import { Button } from '@mui/material';
 import CandidatesInfo from '../../components/CandidatesInfo/CandidatesInfo';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { savedApplicant } from '../../store/applicant/applicantSlice';
 import { deleteApplicant } from '../../store/applicant/applicantSlice';
 import { useDispatch } from 'react-redux';
-import { getFovorites } from '../../store/favorites/favoritesSlice';
 
 type CadndidatesProps = {
   applicant: any;
+  click: boolean;
+  setClick: any;
 };
 
-const CandidatesCard = ({ applicant }: CadndidatesProps) => {
+const CandidatesCard = ({ applicant, click, setClick }: CadndidatesProps) => {
   const dispatch = useDispatch<any>();
   const [open, setOpen] = useState(true);
 
-  useEffect(() => {
-    dispatch(getFovorites());
-  }, [dispatch]);
-
   function handleLike() {
+    setClick(!click);
     dispatch(savedApplicant(applicant.id));
   }
+
   function handleDeleteLike() {
+    setClick(!click);
     dispatch(deleteApplicant(applicant.id));
   }
 
-  const onClick = () => {
+  const onOpen = () => {
     setOpen(!open);
   };
 
@@ -118,7 +118,7 @@ const CandidatesCard = ({ applicant }: CadndidatesProps) => {
             <button
               className={styles.candidates__close}
               type='button'
-              onClick={onClick}
+              onClick={onOpen}
             >
               <img className={styles.candidates__close_image} src={strelkaUP} />
             </button>
@@ -130,7 +130,7 @@ subtitle={'Вы действительно хотите удалить вака�
         </>
       ) : (
         <CandidatesInfo
-          onClick={onClick}
+          onClick={onOpen}
           like={applicant.is_favorite}
           applicant={applicant}
           handleLike={handleLike}
