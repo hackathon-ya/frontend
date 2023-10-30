@@ -21,11 +21,19 @@ type VacancyProps = {
   company_name: string;
   city: any;
   description: string;
+  skills: any;
 };
 
 const Vacancy = ({ onClick, vacancy }: VacancyProps) => {
-  const { job_title, min_salary, max_salary, company_name, city, description } =
-    vacancy.vacancy;
+  const {
+    job_title,
+    min_salary,
+    max_salary,
+    company_name,
+    city,
+    description,
+    skills,
+  } = vacancy.vacancy;
   const dispatch = useDispatch<any>();
 
   return (
@@ -68,9 +76,11 @@ const Vacancy = ({ onClick, vacancy }: VacancyProps) => {
             </h4>
             <h4 className={styles.vacancy__info_title}>Ключевые навыки</h4>
             <div className={styles.vacancy__info_skills}>
-              {/* {vacancy.skills.map((name: string, index: Key) => (
-                <p className={styles.vacancy__info_skill} key={index}>{name}</p>
-              ))} */}
+              {skills.map((skill: any, index: Key) => (
+                <p className={styles.vacancy__info_skill} key={index}>
+                  {skill.name}
+                </p>
+              ))}
             </div>
             <h4 className={styles.vacancy__info_title}>
               Дополнительная информация

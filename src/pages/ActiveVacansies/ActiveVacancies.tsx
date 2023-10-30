@@ -18,10 +18,12 @@ interface ActiveVacanciesProps {
   max_salary: number;
   company_name: string;
   city: any;
+  job_title: string;
 }
 
 const ActiveVacancies = (vacancy: ActiveVacanciesProps) => {
-  const { min_salary, max_salary, company_name, city } = vacancy.vacancy;
+  const { min_salary, max_salary, company_name, city, job_title } =
+    vacancy.vacancy;
   const [open, setOpen] = useState(true);
   const dispatch = useDispatch<any>();
   const onClick = () => {
@@ -34,7 +36,7 @@ const ActiveVacancies = (vacancy: ActiveVacanciesProps) => {
           <div className={styles.card} id='card'>
             <div className={styles.vacancie}>
               <div className={styles.vacancieWrapper}>
-                <h3 className={styles.vacancy}>Интернет-маркетолог</h3>
+                <h3 className={styles.vacancy}>{job_title}</h3>
                 <h4
                   className={styles.pay}
                 >{`${min_salary} - ${max_salary}`}</h4>
