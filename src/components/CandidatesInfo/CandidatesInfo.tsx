@@ -5,10 +5,11 @@ import strelkaUP from '../../assets/images/strelka_up.svg';
 
 type CadndidatesProps = {
   onClick: () => void;
+  handleDeleteLike: () => void;
   handleLike: () => void;
   like: boolean;
   applicant: any;
-  months: number,
+  months: number;
   years: number;
 };
 
@@ -16,6 +17,7 @@ const CandidatesInfo = ({
   applicant,
   onClick,
   handleLike,
+  handleDeleteLike,
   like,
   months,
   years,
@@ -31,12 +33,16 @@ const CandidatesInfo = ({
           </p>
           <p className={styles.candidatesInfo__sity}>{applicant.city}</p>
           <p className={styles.candidatesInfo__experience}>
-          {`Опыт работы ${years} года и ${months} месяцев`}
+            {`Опыт работы ${years} года и ${months} месяцев`}
           </p>
           <div className={styles.candidatesInfo__list}>
             <p className={styles.candidatesInfo__list_title}>Навыки</p>
             <div className={styles.candidatesInfo__skills}>
-              {applicant.skills.map((skill: string) => <div className={styles.candidatesInfo__skill} key={skill}>{skill}</div>)}
+              {applicant.skills.map((skill: string) => (
+                <div className={styles.candidatesInfo__skill} key={skill}>
+                  {skill}
+                </div>
+              ))}
             </div>
           </div>
         </div>
@@ -47,7 +53,7 @@ const CandidatesInfo = ({
             </p>
           </div>
           <div className={styles.candidatesInfo__comparisons}>
-            <button type="button" className={styles.candidatesInfo__comparison}>
+            <button type='button' className={styles.candidatesInfo__comparison}>
               <img
                 src={comparison}
                 className={styles.candidatesInfo__image}
@@ -56,7 +62,8 @@ const CandidatesInfo = ({
             </button>
           </div>
           <button
-            type="button"
+            type='button'
+            onClick={like ? handleDeleteLike : handleLike}
             className={
               like
                 ? styles.candidatesInfo__like_active
@@ -114,15 +121,15 @@ const CandidatesInfo = ({
         <div>
           <Button
             className={styles.candidatesInfo__button_close}
-            type="button"
-            variant="contained"
+            type='button'
+            variant='contained'
           >
             Пригласить
           </Button>
           <Button
             className={styles.candidatesInfo__button_downland}
-            type="button"
-            variant="outlined"
+            type='button'
+            variant='outlined'
           >
             Скачать резюме
           </Button>
@@ -130,7 +137,7 @@ const CandidatesInfo = ({
       </div>
       <button
         className={styles.candidatesInfo__close}
-        type="button"
+        type='button'
         onClick={onClick}
       >
         <img className={styles.candidatesInfo__close_image} src={strelkaUP} />

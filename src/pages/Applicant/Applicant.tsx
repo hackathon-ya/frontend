@@ -1,7 +1,7 @@
 import styles from './Applicant.module.scss';
 import FormFind from '../../components/FormFind/FormFind';
 import BarCheckbox from '../../components/BarCheckbox/BarCheckbox';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { getApplicant } from '../../store/applicant/applicantSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { applicantSelectors } from '../../store/applicant/applicantSelectors';
@@ -9,11 +9,13 @@ import CandidatesCard from '../CandidatesCard/CandidatesCard';
 
 const Applicant = () => {
   const dispatch = useDispatch<any>();
-  useEffect(() => {
-    dispatch(getApplicant());
-  }, [dispatch]);
+  const [click, setClick] = useState(false);
 
   const applicants = useSelector(applicantSelectors.getApplicant);
+
+  useEffect(() => {
+    dispatch(getApplicant());
+  }, [dispatch, click]);
 
   return (
     <section className={styles.applicant}>

@@ -4,11 +4,17 @@ import styles from './Favorites.module.scss';
 import BarCheckbox from '../../components/BarCheckbox/BarCheckbox';
 import CandidatesCard from '../CandidatesCard/CandidatesCard';
 import { favaritesSelectors } from '../../store/favorites/favoritesSelector';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { getFovorites } from '../../store/favorites/favoritesSlice';
+import { useEffect, useState } from 'react';
 
 const Favorites = () => {
   const favorites = useSelector(favaritesSelectors.getFavorites);
-  console.log(favorites)
+  const dispatch = useDispatch<any>();
+  const [click, setClick] = useState(false);
+  useEffect(() => {
+    dispatch(getFovorites());
+  }, [dispatch, click]);
   return (
     <section className={styles.applicant}>
       <BarCheckbox />
@@ -18,7 +24,12 @@ const Favorites = () => {
           <FormFind />
         </div>
         {favorites.map((favorit: any) => (
-          <CandidatesCard key={favorit.id} applicant={favorit} />
+          <CandidatesCard
+            key={favorit.id}
+            applicant={favorit}
+            click={click}
+            setClick={setClick}
+          />
         ))}
       </div>
     </section>

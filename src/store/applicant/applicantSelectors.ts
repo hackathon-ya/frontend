@@ -6,4 +6,4 @@ const getApplicant = (state: {
 
 export const applicantSelectors = {
   getApplicant,
-}
+};
