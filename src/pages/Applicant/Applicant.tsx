@@ -30,7 +30,12 @@ const Applicant = () => {
         <div className={styles.candidate__page}>
           <div className={styles.candidates__vacancy}>
             {applicants.map((applicant: any, index: number) => (
-              <CandidatesCard key={index} applicant={applicant} />
+              <CandidatesCard
+                key={index}
+                applicant={applicant}
+                setClick={setClick}
+                click={click}
+              />
             ))}
           </div>
         </div>
