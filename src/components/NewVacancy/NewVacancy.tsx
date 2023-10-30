@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom';
-import { SubmitHandler, useForm, Controller } from 'react-hook-form';
+import { useForm, Controller } from 'react-hook-form';
 import back from '../../assets/images/arrow_left.svg';
-import done from '../../assets/images/check_mini.svg';
 import styles from './NewVacancy.module.scss';
 import InputMUI from '../InputMUI/InputMUI';
 import InputSelectMUI from '../InputSelectMUI/InputSelectMUI';
@@ -17,6 +16,7 @@ import { vacanciesSelectors } from '../../store/vacancies/vacanciesSelectors';
 import Modal from '../Modals/Modal.tsx';
 // import Response from '../Response/Response.tsx';
 import { Button } from '@mui/material';
+import { useState } from 'react';
 
 interface Vacancy {
   job_title: string;
@@ -24,31 +24,48 @@ interface Vacancy {
   city: string;
   min_salary: number;
   max_salary: number;
-  skills: string;
+  skills: Array;
   description: string;
   experience: string;
   form_of_employment: string;
   work_arrangement: string;
+  inputValue: string;
 }
 
 const NewVacancy = ({ text }: { text: string }) => {
-  const { handleSubmit, control } = useForm<Vacancy>({
-    defaultValues: {
-      city: "Москва",
-      form_of_employment: "Полная",
-      experience: 'Полная',
-      work_arrangement: 'Не важен'
-    },
-  });
+  const { handleSubmit, control, getValues, reset, setValue } =
+    useForm<Vacancy>({
+      defaultValues: {
+        city: 'Москва',
+        form_of_employment: 'Полная',
+        experience: 'Полная',
+        work_arrangement: 'Не важен',
+      },
+    });
+
   const dispatch = useDispatch<any>();
 
   const view = useSelector(vacanciesSelectors.getView);
-
-  const onSubmit: SubmitHandler<Vacancy> = (data) => {
-    console.log(data);
-    // dispatch(postVacancy(data));
+  const [skills, setSkills] = useState([]);
+  const handleAdd = () => {
+    const formData = getValues('skills');
+    if (formData) {
+      setSkills([...skills, formData]);
+      reset();
+    }
   };
 
+  const onSubmit = () => {
+    const skillsValue = getValues('skills');
+    console.log(skillsValue)
+    if (skillsValue) {
+      setSkills([...skills, skillsValue]);
+    }
+    const formData = getValues();
+    console.log(formData);
+  };
+
+  console.log(skills);
   return (
     <section className={styles.addVacancy}>
       <Link to="/vacancies/active" onClick={() => dispatch(handleActive())}>
@@ -144,39 +161,34 @@ const NewVacancy = ({ text }: { text: string }) => {
           <h4 className={styles.addVacancy__input_title}>Ключевые навыки</h4>
           <div className={styles.addVacancy__input_box}>
             <Controller
-              render={({ field: { onChange } }) => (
+              render={({ field }) => (
                 <InputMUI
+                  {...field}
                   variant="outlined"
                   id="input-vacancy-name"
                   className="addVacancy__input_skills"
                   placeholder="Навыки"
-                  onChange={onChange}
                 />
               )}
               control={control}
               name="skills"
             />
-
-            <img className={styles.addVacancy__image_done} src={done} />
+            <button
+              type="button"
+              className={styles.addVacancy__image_done}
+              onClick={() => {
+                handleAdd();
+              }}
+            />
           </div>
-          {/* <div className={styles.addVacancy__skills}>
-            <div className={styles.addVacancy__skill}>
-              навык 1
-              <button className={styles.addVacancy__skill_button}></button>
-            </div>
-            <div className={styles.addVacancy__skill}>
-              навык 1
-              <button className={styles.addVacancy__skill_button}></button>
-            </div>
-            <div className={styles.addVacancy__skill}>
-              навык 1
-              <button className={styles.addVacancy__skill_button}></button>
-            </div>
-            <div className={styles.addVacancy__skill}>
-              навык 1
-              <button className={styles.addVacancy__skill_button}></button>
-            </div>
-          </div> */}
+          <div className={styles.addVacancy__skills}>
+            {skills.map((skill) => (
+              <div key={skill} className={styles.addVacancy__skill}>
+                {skill}
+                <button className={styles.addVacancy__skill_button}></button>
+              </div>
+            ))}
+          </div>
         </div>
         <div className={styles.addVacancy__inputs}>
           <h4 className={styles.addVacancy__input_title}>Описание вакансии</h4>
@@ -217,7 +229,7 @@ const NewVacancy = ({ text }: { text: string }) => {
                 id="input-vacancy-busyness"
                 className="addVacancy__input_select"
                 currencies={constants.Busyness}
-                defaultValue='Полная'
+                defaultValue="Полная"
                 onChange={onChange}
               />
             )}
@@ -293,3 +305,6 @@ const NewVacancy = ({ text }: { text: string }) => {
 };
 
 export default NewVacancy;
+function getValues() {
+  throw new Error('Function not implemented.');
+}

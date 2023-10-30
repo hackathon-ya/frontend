@@ -11,6 +11,7 @@ import {
 import { useDispatch } from 'react-redux';
 import { Button } from '@mui/material';
 import { Link } from 'react-router-dom';
+import { Key } from 'react';
 // import SendMessage from '../Modals/SendMessage/SendMessage';
 
 
@@ -64,8 +65,8 @@ const Vacancy = ({ onClick, vacancy }: VacancyProps) => {
             </h4>
             <h4 className={styles.vacancy__info_title}>Ключевые навыки</h4>
             <div className={styles.vacancy__info_skills}>
-              {vacancy.skills.map((skill: string) => (
-                <p className={styles.vacancy__info_skill} key={skill}>{skill}</p>
+              {vacancy.skills.map((skill: string, index: Key) => (
+                <p className={styles.vacancy__info_skill} key={index}>{skill}</p>
               ))}
             </div>
             <h4 className={styles.vacancy__info_title}>
