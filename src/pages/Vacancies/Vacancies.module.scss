@@ -1,0 +1,32 @@
+@import '../../vendor/constants.scss';
+@import '../../assets/styles/fonts-mixins';
+
+.vacancies {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+.wrapper {
+  margin: 60px 152px 0 48px;
+}
+
+.headerWrapper {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.header__block {
+  align-self: center;
+}
+
+.header__button {
+  height: 50px;
+  width: 250px;
+  @include text-medium;
+  color: $clBasicClick;
+  text-transform: none;
+  border-radius: 6px;
+  border-color: $clBasicClick;
+}

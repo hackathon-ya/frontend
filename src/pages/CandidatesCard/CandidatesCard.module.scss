@@ -1,0 +1,217 @@
+@import '../../vendor/constants.scss';
+@import '../../assets/styles/fonts-mixins';
+.card {
+  width: 980px;
+  background-color: $clActive;
+  padding: 32px;
+  border-radius: 12px;
+  margin-bottom: 28px;
+  box-sizing: border-box;
+  box-shadow: 0px 4px 6px 0px rgba(176, 190, 197, 0.2),
+    0px 8px 24px 0px rgba(176, 190, 197, 0.2);
+}
+.candidate__page {
+  display: flex;
+  flex-direction: row;
+}
+.headerWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 258px;
+  margin-bottom: 40px;
+}
+
+.header__title {
+  @include h2-regular;
+  margin-bottom: 16px;
+}
+.candidates__buttonWrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.candidates__buttons {
+  display: flex;
+  flex-direction: row;
+  height: 44px;
+}
+.candidates {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.candidates__wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.candidates__vacancie {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.candidates__header {
+  margin-bottom: 8px;
+  text-align: left;
+  @include h3-medium;
+}
+.candidates__pay {
+  margin-bottom: 12px;
+  @include text-medium;
+}
+.candidates__name {
+  margin-bottom: 4px;
+  @include text-regular;
+  color: $text;
+}
+.candidates__sity {
+  margin-bottom: 14px;
+  @include text-regular;
+  color: $text;
+}
+.candidates__experience {
+  @include text-regular;
+  color: $text;
+}
+.candidates__list {
+  width: 420px;
+  margin-top: 14px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.candidates__list_title {
+  @include text-medium;
+  color: #797981;
+}
+.candidates__skills {
+  width: 335px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(auto, 77px));
+  grid-template-rows: repeat(1, 32px);
+  gap: 8px;
+}
+.candidates__skill {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include button-text;
+  width: 77px;
+  height: 28px;
+  border-radius: 4px;
+  background-color: $clDisabled;
+}
+.candidates__comparisons {
+  display: flex;
+  width: 127px;
+  height: 44px;
+  align-items: center;
+  text-align: center;
+}
+.candidates__coincidences {
+  background: linear-gradient(to right, #c2e5ce 72%, #fff 28%);
+  display: flex;
+  padding: 0;
+  align-items: center;
+  width: 200px;
+  height: 36px;
+  border-radius: 4px;
+  border: 1px solid #c2e5ce;
+  margin-right: 12px;
+  text-align: center;
+  justify-content: center;
+}
+.candidates__coincidences_text {
+  @include text-medium;
+}
+.candidates__comparison {
+  width: 127px;
+  background-color: $clActive;
+  border: none;
+  border-radius: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  @include text-regular;
+  color: $text;
+  padding: 10px;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.candidates__image {
+  width: 24px;
+  height: 24px;
+  margin: 0;
+}
+.candidates__text {
+  font-family: Inter;
+  color: $clBasicClick;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-align: center;
+}
+.candidates__like {
+  display: flex;
+  cursor: pointer;
+  margin-left: 12px;
+  border: none;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  background: url(../../assets/images/Like_blue.svg) no-repeat center;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.candidates__like_active {
+  display: flex;
+  cursor: pointer;
+  margin-left: 12px;
+  border: none;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  background: url(../../assets/images/like_active.svg) no-repeat center;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.candidates__button_close {
+  height: 40px;
+  width: 118px;
+  text-transform: none;
+  color: $clActive;
+  background-color: $clBasicButton;
+  border: none;
+  @include text-medium;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.candidates__close {
+  padding: 8px;
+  width: 100%;
+  align-self: center;
+  background: none;
+  border: none;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.candidates__close_image {
+  transform: rotate(180deg);
+}

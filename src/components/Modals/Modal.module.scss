@@ -1,0 +1,76 @@
+@import '../../vendor/constants.scss';
+@import '../../assets/styles/fonts-mixins';
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: $header;
+  opacity: 0.6;
+}
+.container {
+  width: 317px;
+  height: 144px;
+  padding: 52px 32px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.title {
+  @include h2-medium;
+  margin-bottom: 12px;
+  color: $clBasicText;
+}
+
+.subtitle {
+  @include text-regular;
+  margin-bottom: 20px;
+  color: $clPlaceholder;
+}
+
+.close {
+  background: url(../../assets/images/Close.svg) no-repeat center;
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  width: 24px;
+  height: 24px;
+}
+
+.modal__cancell {
+  height: 40px;
+  text-transform: none;
+  background-color: #fff;
+  border-color: $clBasicClick;
+  color: $clBasicClick;
+  @include text-medium;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.modal__action {
+  height: 40px;
+  text-transform: none;
+  background-color: $clBasicButton;
+  box-shadow: none;
+  color: #fff;
+  @include text-medium;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}

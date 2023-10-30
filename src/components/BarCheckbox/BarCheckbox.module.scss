@@ -1,0 +1,75 @@
+@import '../../vendor/constants';
+@import '../../assets/styles/fonts-mixins.scss';
+.barCheckbox {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  padding: 60px 106px 0 60px;
+  text-align: left;
+  background-color: $clBasicText;
+  width: 200px;
+  padding: 60px 0 20px 60px;
+}
+.barCheckbox__header {
+  margin-bottom: 32px;
+}
+.barCheckbox__header_title {
+  @include h3-medium;
+  color: $clActive;
+  margin-bottom: 16px;
+}
+.barCheckbox__subtitle {
+  margin-bottom: 16px;
+  color: $clTextOnBlackBackground;
+  @include text-medium;
+}
+.barCheckbox__header_button {
+  display: flex;
+  flex-direction: row;
+  @include text-medium;
+  color: $clBasicClick;
+  align-items: center;
+  &:hover {
+    opacity: 0.6;
+    cursor: pointer;
+  }
+}
+.barCheckbox__header_image {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
+}
+.barCheckbox__conteiner {
+  margin-bottom: 28px;
+}
+.barCheckbox__conteiner:last-of-type {
+  margin-bottom: 32px;
+}
+.barCheckbox__box {
+  margin: 0;
+  color: $clTextOnBlackBackground;
+  @include text-medium;
+  margin-bottom: 12px;
+}
+.barCheckbox__box:last-child {
+  margin-bottom: 0;
+}
+.barCheckbox__checkbox {
+  width: 24px;
+  height: 24px;
+  color: #fff;
+  margin-right: 8px;
+}
+.barCheckbox__checkbox_active {
+  color: $clActive;
+  border: 1px solid $clBasicClick;
+  border-radius: 3px;
+  background-color: $clBasicClick;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  margin-right: 8px;
+}
+.typography {
+  @include text-medium;
+}

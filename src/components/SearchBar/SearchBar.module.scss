@@ -1,0 +1,13 @@
+@import "../../assets/styles/fonts-mixins";
+.box {
+  border-radius: 4px;
+  background: url(../../assets/images/Search.svg) no-repeat 10px 5px;
+  background-color: #fff;
+  width: 428px;
+  @include button-text;
+  margin:0 83px;
+}
+.input {
+  padding-left: 44px;
+  width: 100%;
+}
