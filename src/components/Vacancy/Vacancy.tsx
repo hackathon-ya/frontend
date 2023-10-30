@@ -15,13 +15,6 @@ import { Key } from 'react';
 type VacancyProps = {
   onClick: () => void;
   vacancy: any;
-  job_title: string;
-  min_salary: number;
-  max_salary: number;
-  company_name: string;
-  city: any;
-  description: string;
-  skills: any;
 };
 
 const Vacancy = ({ onClick, vacancy }: VacancyProps) => {

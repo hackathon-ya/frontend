@@ -29,6 +29,7 @@ const ActiveVacancies = (vacancy: ActiveVacanciesProps) => {
   const onClick = () => {
     setOpen(!open);
   };
+
   return (
     <div>
       {open ? (
@@ -100,7 +101,7 @@ const ActiveVacancies = (vacancy: ActiveVacanciesProps) => {
           </div>
         </>
       ) : (
-        <Vacancy onClick={onClick} vacancy={vacancy} key={vacancy.id} />
+        <Vacancy onClick={onClick} vacancy={vacancy}/>
       )}
     </div>
   );

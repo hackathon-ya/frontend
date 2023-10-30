@@ -19,7 +19,7 @@ const Vacancies = () => {
   }, [dispatch]);
 
   const vacancies = useSelector(vacanciesSelectors.getVacancies);
-  console.log(vacancies);
+
   const view = useSelector(vacanciesSelectors.getView);
   return (
     <section className={styles.vacancies}>
@@ -30,8 +30,8 @@ const Vacancies = () => {
           <div className={styles.headerWrapper}>
             <h3 className={styles.header__block}>Активные вакансии</h3>
             <Button
-              type='button'
-              variant='outlined'
+              type="button"
+              variant="outlined"
               className={styles.header__button}
               onClick={() => dispatch(handleOpenForm())}
             >
@@ -39,7 +39,15 @@ const Vacancies = () => {
             </Button>
           </div>
           {vacancies.map((vacancy: any) => (
-            <ActiveVacancies key={vacancy.id} vacancy={vacancy} />
+            <ActiveVacancies
+              key={vacancy.id}
+              vacancy={vacancy}
+              min_salary={vacancy.min_salary}
+              max_salary={vacancy.max_salary}
+              company_name={vacancy.company_name}
+              city={undefined}
+              job_title={vacancy.job_title}
+            />
           ))}
         </div>
       )}
