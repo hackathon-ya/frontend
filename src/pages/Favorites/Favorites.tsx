@@ -14,8 +14,6 @@ const Favorites = () => {
   useEffect(() => {
     dispatch(getFovorites());
   }, [dispatch, favorites]);
-
-  console.log(favorites);
   return (
     <section className={styles.applicant}>
       <BarCheckbox />
