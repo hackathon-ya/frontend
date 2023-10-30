@@ -27,15 +27,12 @@ export const savedApplicant = createAsyncThunk(
   'applicant/savedApplicant',
   async function (id: number, { rejectWithValue }) {
     try {
-      const response = await fetch(
-        `http://158.160.53.161/api/v1/candidates/${id}/favorite/`,
-        {
-          headers: {
-            'Content-type': 'application/json',
-          },
-          method: 'POST',
-        }
-      );
+      const response = await fetch(`${url}/candidates/${id}/favorite/`, {
+        headers: {
+          'Content-type': 'application/json',
+        },
+        method: 'POST',
+      });
       if (!response.ok) {
         return rejectWithValue('Error');
       }
@@ -52,15 +49,12 @@ export const deleteApplicant = createAsyncThunk(
   'applicant/deleteApplicant',
   async function (id: number, { rejectWithValue }) {
     try {
-      const response = await fetch(
-        `http://158.160.53.161/api/v1/candidates/${id}/favorite/`,
-        {
-          headers: {
-            'Content-type': 'application/json',
-          },
-          method: 'DELETE',
-        }
-      );
+      const response = await fetch(`${url}/candidates/${id}/favorite/`, {
+        headers: {
+          'Content-type': 'application/json',
+        },
+        method: 'DELETE',
+      });
       if (!response.ok) {
         return rejectWithValue('Error');
       }

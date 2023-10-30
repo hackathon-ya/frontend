@@ -6,8 +6,7 @@ export const getVacancies = createAsyncThunk(
   'vacancies/getVacancies',
   async function (_, { rejectWithValue }) {
     try {
-
-      const response = await fetch('http://158.160.53.161/api/v1/vacancies/', {
+      const response = await fetch(`${url}/vacancies/`, {
         headers: {
           'Content-type': 'application/json',
         },
