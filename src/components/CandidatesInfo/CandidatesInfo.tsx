@@ -7,11 +7,13 @@ import strelkaUP from '../../assets/images/strelka_up.svg';
 
 type CadndidatesProps = {
   onClick: () => void;
+  handleLike: () => void;
   like: boolean;
 };
 
 const CandidatesInfo = (props: CadndidatesProps) => {
   const { onClick } = props;
+  const { handleLike } = props;
   //   const [showModal, setShowModal] = useState(false);
   return (
     <div className={styles.card}>
@@ -53,6 +55,7 @@ const CandidatesInfo = (props: CadndidatesProps) => {
           </div>
           <button
             type='button'
+            onClick={handleLike}
             className={
               props.like
                 ? styles.candidatesInfo__like_active
