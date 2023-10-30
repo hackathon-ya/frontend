@@ -23,11 +23,34 @@ export const getVacancies = createAsyncThunk(
   }
 );
 
+export const postVacancy = createAsyncThunk(
+  'vacancies/postVacancies',
+  async function (requestData: any, { rejectWithValue }) {
+    try {
+      const response = await fetch('http://158.160.53.161/api/v1/vacancies/', {
+        headers: {
+          'Content-type': 'application/json',
+        },
+        method: 'POST',
+        body: JSON.stringify(requestData),
+      });
+      if (!response.ok) {
+        return rejectWithValue('Error');
+      }
+      const data = await response.json();
+      console.log(data);
+      return data;
+    } catch (e: any) {
+      return rejectWithValue(e);
+    }
+  }
+);
+
 // export const deleteVacancies = createAsyncThunk(
 //   'vacancies/deleteVacancy',
 //   async function (id, { rejectWithValue }) {
 //     try {
-//       const response = await fetch(`https://localhost/api/v1/vacancies/${id}/`, {
+//       const response = await fetch(`http://158.160.53.161/api/v1/vacancies/${id}/`, {
 //         method: 'DELETE',
 //         headers: {
 //           'Content-type': 'application/json',
