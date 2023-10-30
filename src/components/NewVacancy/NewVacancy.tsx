@@ -22,7 +22,7 @@ interface Vacancy {
   city: string;
   min_salary: number;
   max_salary: number;
-  skills: Array<string>;
+  skills: Array<string> | string;
   description: string;
   experience: string;
   form_of_employment: string;
@@ -48,7 +48,7 @@ const NewVacancy = ({ text }: { text: string }) => {
   const [skills, setSkills] = useState<string[]>([]);
   
   const handleAdd = () => {
-    const formData = getValues('skills') as string[];
+    const formData = getValues('skills') as string;
     if (formData) {
       setSkills([...skills, formData]);
       reset();
@@ -56,12 +56,12 @@ const NewVacancy = ({ text }: { text: string }) => {
   };
 
   const onSubmit = () => {
-    const skillsValue = getValues('skills') as string[];
+    const skillsValue = getValues('skills') as string;
     if (skillsValue === undefined) {
       setSkills([...skills]);
       setValue('skills', skills)
     }
-    const formData = getValues();      
+    // const formData = getValues(); вывод данных
   };
 
   return (
