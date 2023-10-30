@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { url } from '../../constants/url';
 
 export const getFovorites = createAsyncThunk(
   'applicant/getFavorites',
   async function (_, { rejectWithValue }) {
     try {
-      const response = await fetch('http://158.160.53.161/api/v1/favorites/', {
+      const response = await  fetch(`${url}/favorites/`, {
         headers: {
           'Content-type': 'application/json',
         },

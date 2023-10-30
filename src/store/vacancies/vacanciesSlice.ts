@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { url } from '../../constants/url';
 
 export const getVacancies = createAsyncThunk(
   'vacancies/getVacancies',
   async function (_, { rejectWithValue }) {
     try {
+
       const response = await fetch('http://158.160.53.161/api/v1/vacancies/', {
         headers: {
           'Content-type': 'application/json',
@@ -15,7 +17,6 @@ export const getVacancies = createAsyncThunk(
         return rejectWithValue('Error');
       }
       const data = await response.json();
-      console.log(data);
       return data;
     } catch (e: any) {
       return rejectWithValue(e);
@@ -27,7 +28,7 @@ export const postVacancy = createAsyncThunk(
   'vacancies/postVacancies',
   async function (requestData: any, { rejectWithValue }) {
     try {
-      const response = await fetch('http://158.160.53.161/api/v1/vacancies/', {
+      const response = await fetch(`${url}/vacancies/`, {
         headers: {
           'Content-type': 'application/json',
         },
@@ -50,7 +51,8 @@ export const postVacancy = createAsyncThunk(
 //   'vacancies/deleteVacancy',
 //   async function (id, { rejectWithValue }) {
 //     try {
-//       const response = await fetch(`http://158.160.53.161/api/v1/vacancies/${id}/`, {
+//       const response = await fetch(fetch(`${url}/vacancies/${id}/`, {
+
 //         method: 'DELETE',
 //         headers: {
 //           'Content-type': 'application/json',
