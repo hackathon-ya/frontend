@@ -22,7 +22,8 @@ const CandidatesCard = ({ applicant }: CadndidatesProps) => {
     } else {
       handleLike();
     }
-  }, [applicant.is_favorite, handleLike, handleDeleteLike]);
+  }, [applicant.is_favorite]);
+  // applicant.is_favorite, handleLike, handleDeleteLike
 
   function handleLike() {
     dispatch(savedApplicant(applicant.id));
