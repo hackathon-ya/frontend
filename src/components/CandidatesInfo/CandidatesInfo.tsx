@@ -5,8 +5,8 @@ import strelkaUP from '../../assets/images/strelka_up.svg';
 
 type CadndidatesProps = {
   onClick: () => void;
-  handleLike: () => void;
   handleDeleteLike: () => void;
+  handleLike: () => void;
   like: boolean;
   applicant: any;
   months: number;
