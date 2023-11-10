@@ -1,11 +1,11 @@
 # Яндекс Хакатон  
 ## Разработка сервиса найма 
 [Сервер](http://158.160.53.161/)  
-[яндекс диск](https://disk.yandex.ru/d/idlfJg5-Nz1Sfg)
+[Яндекс диск](https://disk.yandex.ru/d/idlfJg5-Nz1Sfg)
 ### Команда frontend разработчиков  
 
-- Погорелая Дарья
-- Глебов Станислав
+[Погорелая Дарья] (https://github.com/DaryaPogo)
+[Глебов Станислав] (https://github.com/Snooper227)
 
 ### Используемый стек  
 
@@ -17,7 +17,20 @@
 - React hook form
 - React router dom
 
-### Установка  
-убедитесь что находитесь в папке frontend  
-npm i  
-npm run dev  
+### Запуск в режиме разработки
+1. Склонируйте репозиторий
+   ```bash
+   git@github.com:hackathon-ya/frontend.git
+   ```
+2. Перейдите в директорию с проектом:
+   ```bash
+   cd frontend/
+   ```
+4. Установите зависимоти
+   ```bash
+     npm i
+   ```
+5. Запустите
+   ```bash
+     npm run dev  
+   ```
