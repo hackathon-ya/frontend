@@ -4,8 +4,8 @@
 [Яндекс диск](https://disk.yandex.ru/d/idlfJg5-Nz1Sfg)
 ### Команда frontend разработчиков  
 
-[Погорелая Дарья] (https://github.com/DaryaPogo)
-[Глебов Станислав] (https://github.com/Snooper227)
+[Погорелая Дарья](https://github.com/DaryaPogo),  
+[Глебов Станислав](https://github.com/Snooper227)
 
 ### Используемый стек  
 
@@ -28,9 +28,9 @@
    ```
 4. Установите зависимоти
    ```bash
-     npm i
+   npm i
    ```
 5. Запустите
    ```bash
-     npm run dev  
+   npm run dev  
    ```
