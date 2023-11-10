@@ -4,7 +4,7 @@
 [Яндекс диск](https://disk.yandex.ru/d/idlfJg5-Nz1Sfg)
 ### Команда frontend разработчиков  
 
-[Погорелая Дарья](https://github.com/DaryaPogo),  
+[Погорелая Дарья](https://github.com/DaryaPogo)  
 [Глебов Станислав](https://github.com/Snooper227)
 
 ### Используемый стек  
